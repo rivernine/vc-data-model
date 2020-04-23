@@ -5531,7 +5531,7 @@ the <a>verifiable credential</a>, as described below.
           <p>
 <code>nonTransferable</code> <a>속성</a>은
 <a>검증가능한 크리덴셜</a>을 <code>credentialSubject</code>의해 발생, 증명된  
-<a>검증가능한 프레젠테이션</a>에만캡슐화해야 함을 나타낸다.
+<a>검증가능한 프레젠테이션</a>에만 캡슐화해야 함을 나타낸다.
 프루프 작성자가 <code>credentialSubject</code>가 아닌 <code>nonTransferable</code><a>속성</a>을 포함한 
 <a>검증가능한 크리덴셜</a>을 포함하는
 <a>검증가능한 프레젠테이션</a>은 유효하지 않다.              
@@ -5563,11 +5563,10 @@ the <a>verifiable credential</a>, as described below.
       </section>
 
       <section class="informative" id="credential-uniquely-identifies-a-subject">
-        <h4>주체 고유 식별 크리덴셜</h4>
+        <h4>주체를 고유하게 식별하는 크리덴셜</h4>
 
         <p>
 이 경우 <code>credentialSubject</code> <a>속성</a>은 <a>주체</a>의 여러 측면을 설명하는 <a>속성</a>들이 포함될 수 있으며
-<a>속성</a>이 포함될 수 있으며,
 그<a>주체</a>를 명확하게 식별하기 위해 결합된다. 일부 활용 사례는 <a>의사(주체)</a>가 보드-인증을 받았는지 확인하는 것과 같이 
 <a>보유자</a>를 전혀 식별하지 않을 수 있다.
 다른 사용 사례에서는 <a>검증자</a>가 <a>주체</a>와 <a>보유자</a>사이의 관계를 결정하기 위해 범위 밖 지식을 사용해야 할 수 있다.
@@ -5609,12 +5608,13 @@ the <a>verifiable credential</a>, as described below.
 다른 <a>보유자</a>에게 <a>검증가능한 크리덴셜</a>의 전체 또는 일부를 전달해야 할지도 모른다.
 예를 들어, 만약 환자 (<a>주체</a>) 너무 아파서 
 약사 (<a>검증자</a>)에게  처방전 (<a>검증가능한 크레덴셜</a>)을 받을 수 없는 경우,
-그의 친구가 약을 수령하기 위해 처방전을 가져가야할 지 모른다. 
+그의 친구가 약을 수령하기 위해 처방전을 가져갈 수도 있다. 
         </p>
 
         <p>
 데이터 모델은 <a>주체</a>가 
-새로운<a>검증가능한 크리덴셜</a>을 발급하고, 그 <a>검증가능한 크리덴셜</a>을
+새로운<a>검증가능한 크리덴셜</a>을 발급하여 새로운 <a>보유자</a>에게 전달하고, 
+새로운 <a>보유자</a>는 두 개의 <a>검증가능한 크리덴셜</a>을
 모두 <a>보유자</a>에게 제시할 수 있는 새로운 <a>홀더</a>에게 부여함으로써 이를 허용하고 있다.
 하지만, 두 번째 <a>검증가능한 크리덴셜</a>의 내용은 어플리케에션별로 다를 수 있으며, 
 이 규격은 두 번째 <a>검증가능한 크리덴셜</a>의 내용을 표준화할 수 없다. 
@@ -5685,7 +5685,7 @@ the <a>verifiable credential</a>, as described below.
 가장 쉽게 수락할 수 있도록 아이와 부모 사이의 관계를 표현한다.
         </p>
 
-        <pre class="example nohighlight" title="A relationship credential issued to a parent">{
+        <pre class="example nohighlight" title="부모에게 발급된 크리덴셜  관계">{
   "@context": [
     "https://www.w3.org/2018/credentials/v1",
     "https://www.w3.org/2018/credentials/examples/v1"
@@ -5711,7 +5711,7 @@ the <a>verifiable credential</a>, as described below.
 대부분을 수락할 수 있도록 아이와 부모 사이의 관계를 별도의 <a>크리덴셜</a>로 표현한다.
         </p>
 
-        <pre class="example nohighlight" title="A relationship credential issued by a child">{
+        <pre class="example nohighlight" title="아이에 의해 발급된 크리덴셜 관계">{
   "@context": [
     "https://www.w3.org/2018/credentials/v1",
     "https://www.w3.org/2018/credentials/examples/v1"
@@ -5732,7 +5732,7 @@ the <a>verifiable credential</a>, as described below.
         </pre>
 
         <p>
-위의 예에서, 아이는 <a>검증자</a>가 위의 <a>크리덴셜</a>이 제공될 경우 아이의
+위의 예에서, 아이는 <a>검증자</a>가 위의 <a>크리덴셜</a>이 제공될 경우
 아이의 <a>크리덴셜</a>을 가장 잘 받아들여질 수 있도록 아이와 부모 사이의 관계를 
 별도의 <a>크리덴셜</a>로 표현한다.
         </p>
