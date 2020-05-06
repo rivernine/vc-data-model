@@ -154,16 +154,17 @@ pre .comment {
         최초번역일: 2020-01-11<br />
         최종수정일: 2020-01-11<br />
       </p>
-      <dt><span style="font-weight: 500;">번역자 (가나다순)</span>: </dt>
+      <dt><span style="font-weight: 500;">에디터 (가나다순)</span>: </dt>
       <dd><a href="mailto:jshim10@illinois.edu" ]>심재훈</a></dd>
-      <dd><a href="mailto:anh1026@kaist.ac.kr" ]>안형철</a></dd>
-      <dd><a href="mailto:benjioh5@gmail.com" ]>오효근</a> (<a href="https://www.scvsoft.net/">SCVSoft Co., Ltd.</a>)</dd>
-      <dd><a href="https://www.linkedin.com/in/minho-yoo-1b968837/" ]>유민호</a> (<a href="https://iotrust.kr/">IoTrust Co.,
-          Ltd.</a>)</dd>
-      <dd><a href="mailto:magnified02@gmail.com" ]>유수웅</a></dd>
-      <dd><a href="mailto:projector301@gmail.com" ]>윤희태</a> (<a href="https://http://blockcrafters.com/">Block Crafters Co.,
-          Ltd.</a>)</dd>
+      <dd><a href="https://www.linkedin.com/in/minho-yoo-1b968837/" ]>유민호</a> (<a href="https://iotrust.kr/">IoTrust Co.,Ltd.</a>)</dd>
+      <dd><a href="mailto:projector301@gmail.com" ]>윤희태</a> (<a href="https://http://blockcrafters.com/">Block Crafters Co.,Ltd.</a>)</dd>
       <dd><a href="mailto:daoauth@gmail.com" ]>임도형</a></dd>
+      <dd>&nbsp;</dd>
+      <dt><span style="font-weight: 500;">번역자 (가나다순)</span>: </dt>
+      <dd><a href="mailto:anh1026@kaist.ac.kr" ]>안형철</a></dd>
+  
+      <dd><a href="mailto:magnified02@gmail.com" ]>유수웅</a></dd>
+  
       <dd><a href="mailto:hyunsy822@gmail.com" ]>현수영</a></dd>
       <dd><a href="mailto:bentconomy@gmail.com" ]>Benny Jung</a></dd>
     </div>
@@ -177,74 +178,6 @@ pre .comment {
 방식으로 표현하는 메커니즘을 제공한다.
       </p>
     </section>
-
-    pre .subject {
-      font-weight: bold;
-      color: RoyalBlue;
-    }
-
-    pre .property {
-      font-weight: bold;
-      color: DarkGoldenrod;
-    }
-
-    pre .comment {
-      font-weight: bold;
-      color: SteelBlue;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-
-    .color-text {
-      font-weight: bold;
-      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="advisement" style="font-size:small">
-    <p>
-      이 문서는 <a href="https://www.w3.org/TR/vc-data-model/">W3C Verifiable Credentials Data Model v1.0</a>의 한국어
-      번역본입니다.
-    </p>
-    <p>
-      이 문서에 오역 및 오타를 포함할 수 있습니다. <b>영어 원문만이 공식적이고 규범적인 효력을 가지고 있습니다.</b><br />
-      문의나 개선사항은 <a href="https://github.com/ssimeetupkorea/ssimeetupkorea.github.io">깃헙 링크</a>나 <a
-        href="mailto:jshim10@illinois.edu">jshim10@illinois.edu</a>로 연락주시기 바랍니다.<br />
-    </p>
-
-    <p>
-      원문작성일: 2019-11-19<br />
-      최초번역일: 2020-01-11<br />
-      최종수정일: 2020-01-11<br />
-    </p>
-    <dt><span style="font-weight: 500;">에디터 (가나다순)</span>: </dt>
-    <dd><a href="mailto:jshim10@illinois.edu" ]>심재훈</a></dd>
-    <dd><a href="https://www.linkedin.com/in/minho-yoo-1b968837/" ]>유민호</a> (<a href="https://iotrust.kr/">IoTrust Co.,Ltd.</a>)</dd>
-    <dd><a href="mailto:projector301@gmail.com" ]>윤희태</a> (<a href="https://http://blockcrafters.com/">Block Crafters Co.,Ltd.</a>)</dd>
-    <dd><a href="mailto:daoauth@gmail.com" ]>임도형</a></dd>
-    <dd>&nbsp;</dd>
-    <dt><span style="font-weight: 500;">번역자 (가나다순)</span>: </dt>
-    <dd><a href="mailto:anh1026@kaist.ac.kr" ]>안형철</a></dd>
-
-    <dd><a href="mailto:magnified02@gmail.com" ]>유수웅</a></dd>
-
-    <dd><a href="mailto:hyunsy822@gmail.com" ]>현수영</a></dd>
-    <dd><a href="mailto:bentconomy@gmail.com" ]>Benny Jung</a></dd>
-  </div>
-  <section id='abstract'>
-    <p>
-      <a>Credentials</a> are a part of our daily lives; driver's licenses are used to
-      assert that we are capable of operating a motor vehicle, university degrees
-      can be used to assert our level of education, and government-issued passports
-      enable us to travel between countries. This specification provides a mechanism
-      to express these sorts of <a>credentials</a> on the Web in a way that is
-      cryptographically secure, privacy respecting, and machine-verifiable.
-    </p>
-  </section>
 
   <section id='sotd'>
 
@@ -273,6 +206,7 @@ pre .comment {
       management and steady guidance of the group through the W3C standardization
       process.
     </p>
+  </section>
     <section class="informative">
       <h2>소개</h2>
 
@@ -305,10 +239,10 @@ pre .comment {
 <a>검증가능한 크리덴셜</a>을 구성하는 요소
         </li>
         <li>
-<a>검증가능한 프리젠테이션</a>을 구성하는 요소
+<a>검증가능한 프레젠테이션</a>을 구성하는 요소
         </li>
         <li>
-<a>검증가능한 크리덴셜</a>과 <a>검증가능한 프리젠테이션</a>이 유용할 것으로 기대되는 생태계
+<a>검증가능한 크리덴셜</a>과 <a>검증가능한 프레젠테이션</a>이 유용할 것으로 기대되는 생태계
         </li>
         <li>
 본 사양에 영향을 미치는 요구사항과 활용 사례
@@ -353,13 +287,13 @@ pre .comment {
         </p>
 
         <p>
-<a>검증가능한 크리덴셜</a>의 <a>보유자</a>는 <a>검증가능한 프리젠테이션</a>을 
-생성한 다음 <a>검증가능한 프리젠테이션</a>을 <a>검증자</a>와 공유하여 특정 특성을 
+<a>검증가능한 크리덴셜</a>의 <a>보유자</a>는 <a>검증가능한 프레젠테이션</a>을 
+생성한 다음 <a>검증가능한 프레젠테이션</a>을 <a>검증자</a>와 공유하여 특정 특성을 
 가진 <a>검증가능한 크리덴셜</a>을 보유하고 있음을 증명할 수 있다.
         </p>
 
         <p>
-<a>검증가능한 크리덴셜</a>과 <a>검증가능한 프리젠테이션</a>은 신속하게 
+<a>검증가능한 크리덴셜</a>과 <a>검증가능한 프레젠테이션</a>은 신속하게 
 전송 가능하므로, 먼 거리에서의 신뢰를 구축하려고 할 때 물리적 크리덴셜보다 더 편리하다.
         </p>
 
@@ -372,7 +306,7 @@ pre .comment {
 본 문서의 섹션 <a href="#privacy-considerations"></a>에서 개인 프라이버시 
 고려사항에서 이러한 여러 문제를 간략하게 다룬다. 또한 문서 전체적으로 
 영지식증명(Zero-knowledge Proof)와 같은 프라이버시 향상 기술이 사용된 
-데이터 모델을 어떻게 활용할 수 있는지 예제도 제공할 것이다.
+데이터 모델을 어떻게 활용할 수 있는지 예제도 제공한다.
         </p>
       </section>
 
@@ -390,7 +324,7 @@ pre .comment {
           <dt><a>보유자</a> holder </dt>
           <dd>
 하나 이상의 <a>검증가능한 크리덴셜</a>을 보유하고 그것으로부터 
-<a>검증가능한 프리젠테이션</a>을 생성하는 역할. 
+<a>검증가능한 프레젠테이션</a>을 생성하는 역할. 
 <a>보유자</a>의 사례로는 학생, 직원 및 고객 등이 있다. 
           </dd>
           <dt><a>발급자</a> issuer</dt>
@@ -414,7 +348,7 @@ pre .comment {
           <dt><a>검증자</a> verifier</dt>
           <dd>
 검증 절차를 위해 하나 이상의 <a>검증가능한 크리덴셜</a>, 혹은 
-<a>검증가능한 프리젠테이션</a>을 받는 역할. <a>검증자</a>의 
+<a>검증가능한 프레젠테이션</a>을 받는 역할. <a>검증자</a>의 
 사례로는 직원, 보안 담당자, 웹사이트 등이 있다.
           </dd>
           <dt><a>검증가능한 데이터 레지스트리</a> verifiable data registry</dt>
@@ -484,7 +418,7 @@ pre .comment {
           </li>
           <li>
 <a>보유자</a>는 다른 <a>발급자</a>의 <a>검증가능한 크리덴셜</a> 컬렉션을 단일 아티팩트, 
-<a>검증가능한 프리젠테이션</a>으로 수집한다.
+<a>검증가능한 프레젠테이션</a>으로 수집한다.
           </li>
           <li>
 <a>발급자</a>는 모든 <a>주체</a>에 대해 <a>검증가능한 크리덴셜</a>을 발급할 수 있다.
@@ -494,7 +428,7 @@ pre .comment {
 신뢰 관계이기 때문에 어떤 당국의 등록이나 승인이 필요하지 않다.
           </li>
           <li>
-<a>검증가능한 프리젠테이션</a>을 통해 모든 <a>검증자</a>가 <a>발급자</a>로부터 
+<a>검증가능한 프레젠테이션</a>을 통해 모든 <a>검증자</a>가 <a>발급자</a>로부터 
 <a>검증가능한 크리덴셜</a>의 신뢰성을 확인할 수 있다.
           </li>
           <li>
@@ -506,8 +440,8 @@ pre .comment {
 <a>검증자</a>와 상호 작용할 수 있다.
           </li>
           <li>
-<a>보유자</a>는 <a>검증가능한 프리젠테이션</a>을 공유할 수 있으며, 
-이 <a>검증가능한 프리젠테이션</a>은 <a>발급자</a>에게 <a>검증자</a>의 신원을 
+<a>보유자</a>는 <a>검증가능한 프레젠테이션</a>을 공유할 수 있으며, 
+이 <a>검증가능한 프레젠테이션</a>은 <a>발급자</a>에게 <a>검증자</a>의 신원을 
 공개하지 않고 <a>검증</a>할 수 있다.
           </li>
           <li>
@@ -516,11 +450,11 @@ pre .comment {
           </li>
           <li>
 <a>보유자</a>는 클레임의 신뢰성에 영향을 미치지 않고 <a>발급자</a>에 해당 조치를 
-공개하지 않고 <a>검증가능한 프리젠테이션</a>을 모든 <a>검증자</a>에게 제출할 수 있다.
+공개하지 않고 <a>검증가능한 프레젠테이션</a>을 모든 <a>검증자</a>에게 제출할 수 있다.
           </li>
           <li>
 <a>검증자</a>는 모든 <a>발급자</a>의 <a>클레임</a> 증명을 포함하는 모든 
-<a>보유자</a>의 <a>검증가능한 프리젠테이션</a>을 <a>검증</a>할 수 있다.
+<a>보유자</a>의 <a>검증가능한 프레젠테이션</a>을 <a>검증</a>할 수 있다.
           </li>
           <li>
 <a>검증</a>은 <a>발급자</a>와 <a>검증자</a> 간의 직접적인 상호 작용에 의존하지 않는다.
@@ -540,7 +474,7 @@ pre .comment {
 전체 <a>검증가능한 크리덴셜</a>을 공개하지 않고 <a>클레임</a>을 제시할 수 있다.
           </li>
           <li>
-<a>검증가능한 프리젠테이션</a>은 <a>검증가능한 크리덴셜</a>의 특성을 공개하거나 
+<a>검증가능한 프레젠테이션</a>은 <a>검증가능한 크리덴셜</a>의 특성을 공개하거나 
 <a>검증자</a>가 요청한 <a>파생된 조건자</a>를 충족할 수 있다. <a>파생된 조건자</a>는 
 보다 큰, 보다 적은, 같음, 집합 등 부울 조건이다.
           </li>
@@ -548,10 +482,10 @@ pre .comment {
 <a>발급자</a>는 취소할 수 있는 <a>검증가능한 크리덴셜</a>을 발급할 수 있다.
           </li>
           <li>
-<a>검증가능한 크리덴셜</a> 및 <a>검증가능한 프리젠테이션</a>은 하나 이상의 기계 판독 
+<a>검증가능한 크리덴셜</a> 및 <a>검증가능한 프레젠테이션</a>은 하나 이상의 기계 판독 
 가능한 데이터 형식으로 직렬화할 수 있어야 한다. 직렬화 및/또는 직렬화 해제 
 프로세스는 결정적이고 양방향이며 무손실이어야 한다. <a>검증가능한 크리덴셜</a> 또는 
-<a>검증가능한 프리젠테이션</a>의 모든 직렬화는 최종 프로세스에서 이 문서에 정의된 
+<a>검증가능한 프레젠테이션</a>의 모든 직렬화는 최종 프로세스에서 이 문서에 정의된 
 일반 데이터 모델로 변환할 수 있어야 하며, 따라서 <a>검증가능한 크리덴셜</a>을 
 상호 운용 가능한 방식으로 처리할 수 있다. 또한 직렬화된 양식은 데이터 또는 
 콘텐츠의 손실 없이 데이터 모델에서 생성될 수 있어야 한다. 
@@ -577,6 +511,7 @@ pre .comment {
         </ul>
       </section>
 
+      <section id="conformance">Conformance</section>
       <p>
         This specification makes no normative statements with regard to the
         conformance of roles in the ecosystem, such as <a>issuers</a>, <a>holders</a>,
