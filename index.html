@@ -90,31 +90,93 @@
             company: "University of Kent", companyURL: "https://www.kent.ac.uk/"
           }
         ],
-      // name of the WG
-      wg: "Verifiable Claims Working Group",
+        // name of the WG
+        wg:           "Verifiable Claims Working Group",
 
-      // URI of the public WG page
-      wgURI: "https://www.w3.org/2017/vc/",
+        // URI of the public WG page
+        wgURI:        "https://www.w3.org/2017/vc/",
 
-      // name (with the @w3c.org) of the public mailing to which comments are due
-      wgPublicList: "public-vc-comments",
+        // name (with the @w3c.org) of the public mailing to which comments are due
+        wgPublicList: "public-vc-comments",
 
-      // URI of the patent status for this WG, for Rec-track documents
-      // !!!! IMPORTANT !!!!
-      // This is important for Rec-track documents, do not copy a patent URI from a random
-      // document unless you know what you're doing. If in doubt ask your friendly neighborhood
-      // Team Contact.
-      wgPatentURI: "https://www.w3.org/2004/01/pp-impl/98922/status",
-      maxTocLevel: 2,
-      inlineCSS: true,
-      errata: "https://w3c.github.io/vc-data-model/errata.html"
-    };
-  </script>
-  <style>
-    pre .highlight {
-      font-weight: bold;
-      color: Green;
-    }
+        // URI of the patent status for this WG, for Rec-track documents
+        // !!!! IMPORTANT !!!!
+        // This is important for Rec-track documents, do not copy a patent URI from a random
+        // document unless you know what you're doing. If in doubt ask your friendly neighborhood
+        // Team Contact.
+        wgPatentURI:  "https://www.w3.org/2004/01/pp-impl/98922/status",
+        maxTocLevel: 2,
+        inlineCSS: true,
+        errata: "https://w3c.github.io/vc-data-model/errata.html"
+      };
+    </script>
+    <style>
+pre .highlight {
+  font-weight: bold;
+  color: Green;
+}
+pre .subject {
+  font-weight: bold;
+  color: RoyalBlue;
+}
+pre .property {
+  font-weight: bold;
+  color: DarkGoldenrod;
+}
+pre .comment {
+  font-weight: bold;
+  color: SteelBlue;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.color-text {
+  font-weight: bold;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+    </style>
+  </head>
+  <body>
+    <div class="advisement" style="font-size:small">
+      <p>
+        이 문서는 <a href="https://www.w3.org/TR/vc-data-model/">W3C Verifiable Credentials Data Model v1.0</a>의 한국어
+        번역본입니다.
+      </p>
+      <p>
+        이 문서에 오역 및 오타를 포함할 수 있습니다. <b>영어 원문만이 공식적이고 규범적인 효력을 가지고 있습니다.</b><br />
+        문의나 개선사항은 <a href="https://github.com/ssimeetupkorea/ssimeetupkorea.github.io">깃헙 링크</a>나 <a
+          href="mailto:jshim10@illinois.edu">jshim10@illinois.edu</a>로 연락주시기 바랍니다.<br />
+      </p>
+  
+      <p>
+        원문작성일: 2019-11-19<br />
+        최초번역일: 2020-01-11<br />
+        최종수정일: 2020-01-11<br />
+      </p>
+      <dt><span style="font-weight: 500;">번역자 (가나다순)</span>: </dt>
+      <dd><a href="mailto:jshim10@illinois.edu" ]>심재훈</a></dd>
+      <dd><a href="mailto:anh1026@kaist.ac.kr" ]>안형철</a></dd>
+      <dd><a href="mailto:benjioh5@gmail.com" ]>오효근</a> (<a href="https://www.scvsoft.net/">SCVSoft Co., Ltd.</a>)</dd>
+      <dd><a href="https://www.linkedin.com/in/minho-yoo-1b968837/" ]>유민호</a> (<a href="https://iotrust.kr/">IoTrust Co.,
+          Ltd.</a>)</dd>
+      <dd><a href="mailto:magnified02@gmail.com" ]>유수웅</a></dd>
+      <dd><a href="mailto:projector301@gmail.com" ]>윤희태</a> (<a href="https://http://blockcrafters.com/">Block Crafters Co.,
+          Ltd.</a>)</dd>
+      <dd><a href="mailto:daoauth@gmail.com" ]>임도형</a></dd>
+      <dd><a href="mailto:hyunsy822@gmail.com" ]>현수영</a></dd>
+      <dd><a href="mailto:bentconomy@gmail.com" ]>Benny Jung</a></dd>
+    </div>
+    <section id='abstract'>
+      <p>
+
+<a>크리덴셜</a>(자격)은 우리 일상 생활의 일부이다. 운전면허증은 우리가 자동차를 
+운전할 수 있음을 주장하는데 사용하고, 대학 학위는 교육 수준을 주장하는데 사용하며, 
+정부가 발급한 여권은 국가 간 여행을 가능하게 한다. 본 사양에서는 웹 상에서 이러한 
+종류의 <a>크리덴셜</a>을 암호학적으로 안전하고, 프라이버시를 존중하며, 기계가 읽을 수 있는 
+방식으로 표현하는 메커니즘을 제공한다.
+      </p>
+    </section>
 
     pre .subject {
       font-weight: bold;
@@ -211,413 +273,309 @@
       management and steady guidance of the group through the W3C standardization
       process.
     </p>
-
-    <p>
-      Portions of the work on this specification have been funded by the
-      United States Department of Homeland Security's Science and Technology
-      Directorate under contract HSHQDC-17-C-00019. The content of this specification
-      does not necessarily reflect the position or the policy of the U.S. Government
-      and no official endorsement should be inferred.
-    </p>
-
-    <p>
-      Comments regarding this document are welcome by the W3C Advisory Committee,
-      but readers should be aware that the Candidate Recommendation comment period
-      regarding the rest of this document has ended and the Working Group is
-      unlikley to make substantive modifications to the specification at this stage.
-      Please file issues directly on
-      <a href="https://github.com/w3c/vc-data-model/issues/">GitHub</a>,
-      or send them to
-      <a href="mailto:public-vc-comments@w3.org">public-vc-comments@w3.org</a>
-      (<a href="mailto:public-vc-comments-request@w3.org?subject=subscribe">subscribe</a>,
-      <a href="https://lists.w3.org/Archives/Public/public-vc-comments/">archives</a>).
-    </p>
-
-    <p>
-      The Working Group has received implementation feedback showing that there are
-      at least two implementations for each normative feature in the specification.
-      The group has obtained reports from nine (9) implementations. For details, see
-      the <a href="https://github.com/w3c/vc-test-suite/">test suite</a> and
-      <a href="https://w3c.github.io/vc-test-suite/implementations/">implementation report</a>.
-    </p>
-
-    <p>
-      Changes since the last publication of this document include:
-    </p>
-
-    <ul>
-      <li>
-        Non-normative insertion of an additional example and some minor editorial
-        modifications to a few sentences in the specification.
-      </li>
-    </ul>
-
-  </section>
-
-  <section class="informative">
-    <h2>Introduction</h2>
-
-    <p>
-      <a>Credentials</a> are a part of our daily lives; driver's licenses are used to
-      assert that we are capable of operating a motor vehicle, university degrees
-      can be used to assert our level of education, and government-issued passports
-      enable us to travel between countries. These <a>credentials</a> provide
-      benefits to us when used in the physical world, but their use on the Web
-      continues to be elusive.
-    </p>
-
-    <p>
-      Currently it is difficult to express education qualifications, healthcare
-      data, financial account details, and other sorts of third-party <a>verified</a>
-      machine-readable personal information on the Web. The difficulty of expressing
-      digital <a>credentials</a> on the Web makes it challenging to receive the same
-      benefits through the Web that physical <a>credentials</a> provide us in the
-      physical world.
-    </p>
-
-    <p>
-      This specification provides a standard way to express <a>credentials</a> on the
-      Web in a way that is cryptographically secure, privacy respecting, and
-      machine-verifiable.
-    </p>
-
-    <p>
-      For those unfamiliar with the concepts related to
-      <a>verifiable credentials</a>, the following sections provide an overview of:
-    </p>
-
-    <ul>
-      <li>
-        The components that constitute a <a>verifiable credential</a>
-      </li>
-      <li>
-        The components that constitute a <a>verifiable presentation</a>
-      </li>
-      <li>
-        An ecosystem where <a>verifiable credentials</a> and
-        <a>verifiable presentations</a> are expected to be useful
-      </li>
-      <li>
-        The use cases and requirements that informed this specification.
-      </li>
-    </ul>
-
     <section class="informative">
-      <h3>What is a Verifiable Credential?</h3>
+      <h2>소개</h2>
 
       <p>
-        In the physical world, a <a>credential</a> might consist of:
+<a>크리덴셜</a>(자격)은 우리 일상 생활의 일부이다. 운전면허증은 우리가 자동차를 
+운전할 수 있음을 주장하는데 사용하고, 대학 학위는 교육 수준을 주장하는데 사용하며, 
+정부가 발급한 여권은 국가 간 여행을 가능하게 한다. 이러한 <a>크리덴셜</a>은 
+물리적 환경에서 사용할 때는 우리에게 이점을 제공하지만, 웹에서 사용하기는 어렵다.
+      </p>
+
+      <p>
+현재 웹에서 교육 자격, 의료 데이터, 금융 계정 정보 및 기타 제 3 자의 기계적 
+<a>검증</a>(판독)이 가능한 개인 정보를 표현하기는 어렵다. 
+웹에서 디지털 <a>크리덴셜</a>을 표현하는 것이 어렵기 때문에 실제 세계에서 
+물리적 <a>크리덴셜</a>이 제공하는 것과 동일한 인정을 받기가 어렵다. 
+      </p>
+
+      <p>
+본 사양에서는 웹 상에서 이러한 종류의 <a>크리덴셜</a>을 암호학적으로 안전하고, 
+프라이버시를 존중하며, 기계가 읽을 수 있는 방식으로 표현하는 메커니즘을 제공한다.
+      </p>
+
+      <p>
+<a>검증가능한 크리덴셜</a>과 관련된 개념에 익숙치 않은 분들을 위해, 
+다음 섹션에서는 다음과 같은 개요를 제공한다.
       </p>
 
       <ul>
         <li>
-          Information related to identifying the <a>subject</a> of the <a>credential</a>
-          (for example, a photo, name, or identification number)
+<a>검증가능한 크리덴셜</a>을 구성하는 요소
         </li>
         <li>
-          Information related to the issuing authority (for example, a city government,
-          national agency, or certification body)
+<a>검증가능한 프리젠테이션</a>을 구성하는 요소
         </li>
         <li>
-          Information related to the type of <a>credential</a> this is (for example, a
-          Dutch passport, an American driving license, or a health insurance card)
+<a>검증가능한 크리덴셜</a>과 <a>검증가능한 프리젠테이션</a>이 유용할 것으로 기대되는 생태계
         </li>
         <li>
-          Information related to specific attributes or properties being asserted by
-          the issuing authority about the <a>subject</a> (for example, nationality,
-          the classes of vehicle entitled to drive, or date of birth)
-        </li>
-        <li>
-          Evidence related to how the <a>credential</a> was derived
-        </li>
-        <li>
-          Information related to constraints on the credential (for example, expiration
-          date, or terms of use).
+본 사양에 영향을 미치는 요구사항과 활용 사례
         </li>
       </ul>
 
-      <p>
-        A <a>verifiable credential</a> can represent all of the same information that a
-        physical <a>credential</a> represents. The addition of technologies, such as
-        digital signatures, makes <a>verifiable credentials</a> more tamper-evident and
-        more trustworthy than their physical counterparts.
-      </p>
+      <section class="informative" id="what-is-a-verifiable-credential">
+        <h3>검증가능한 크리덴셜은 무엇인가?</h3>
 
-      <p>
-        <a>Holders</a> of <a>verifiable credentials</a> can generate
-        <a>verifiable presentations</a> and then share these
-        <a>verifiable presentations</a> with <a>verifiers</a> to prove they possess
-        <a>verifiable credentials</a> with certain characteristics.
-      </p>
+        <p>
+물리적 환경에서 <a>크리덴셜</a>은 다음과 같은 구성으로 구성될 수 있다.
+        </p>
 
-      <p>
-        Both <a>verifiable credentials</a> and <a>verifiable presentations</a> can be
-        transmitted rapidly, making them more convenient than their physical
-        counterparts when trying to establish trust at a distance.
-      </p>
+        <ul>
+          <li>
+<a>크리덴셜</a> <a>주체</a>의 식별과 관련된 정보(예: 사진, 이름 또는 식별 번호)
+          </li>
+          <li>
+발행 기관과 관련된 정보(예: 시 정부, 국가 기관 또는 인증 기관) 
+          </li>
+          <li>
+<a>크리덴셜</a> 유형과 관련된 정보
+(예: 네덜란드 여권, 미국 운전 면허증 또는 건강 보험증) 
+          </li>
+          <li>
+발행 기관이 <a>주체</a>에 대해 주장하는 특정 속성과 관련된 정보
+(예: 국적, 운전 할 자격이 있는 차량의 클래스 또는 생년월일)
+          </li>
+          <li>
+<a>크리덴셜</a>이 파생된 방법에 대한 증거 
+          </li>
+          <li>
+크리덴셜의 제약 조건과 관련된 정보(예: 만료 날짜 또는 사용 약관).
+          </li>
+        </ul>
 
-      <p>
-        While this specification attempts to improve the ease of expressing digital
-        <a>credentials</a>, it also attempts to balance this goal with a number of
-        privacy-preserving goals. The persistence of digital information, and the ease
-        with which disparate sources of digital data can be collected and correlated,
-        comprise a privacy concern that the use of <a>verifiable</a> and easily
-        machine-readable <a>credentials</a> threatens to make worse. This document
-        outlines and attempts to address a number of these issues in Section
-        <a href="#privacy-considerations"></a>. Examples of how to use this data model
-        using privacy-enhancing technologies, such as zero-knowledge proofs, are also
-        provided throughout this document.
-      </p>
-    </section>
+        <p>
+<a>검증가능한 크리덴셜</a>은 물리적 <a>크리덴셜</a>이 나타내는 것과 동일한 
+모든 정보를 나타낼 수 있다. <a>검증가능한 크리덴셜</a>은 디지털 서명과 같은 
+기술이 추가를 통해 물리적 <a>크리덴셜</a>보다 신뢰할 수 있고 변조확인이 
+가능하도록(Tamper-evident) 만들 수 있다. 
+        </p>
 
-    <section class="informative">
-      <h3>Ecosystem Overview</h3>
+        <p>
+<a>검증가능한 크리덴셜</a>의 <a>보유자</a>는 <a>검증가능한 프리젠테이션</a>을 
+생성한 다음 <a>검증가능한 프리젠테이션</a>을 <a>검증자</a>와 공유하여 특정 특성을 
+가진 <a>검증가능한 크리덴셜</a>을 보유하고 있음을 증명할 수 있다.
+        </p>
 
-      <p>
-        This section describes the roles of the core actors and the relationships
-        between them in an ecosystem where <a>verifiable credentials</a> are expected
-        to be useful. A role is an abstraction that might be implemented in many
-        different ways. The separation of roles suggests likely interfaces and
-        protocols for standardization. The following roles are introduced in this
-        specification:
-      </p>
+        <p>
+<a>검증가능한 크리덴셜</a>과 <a>검증가능한 프리젠테이션</a>은 신속하게 
+전송 가능하므로, 먼 거리에서의 신뢰를 구축하려고 할 때 물리적 크리덴셜보다 더 편리하다.
+        </p>
 
-      <dl>
-        <dt><a>holder</a></dt>
-        <dd>
-          A role an <a>entity</a> might perform by possessing one or more
-          <a>verifiable credentials</a> and generating <a>verifiable presentations</a>
-          from them. Example holders include students, employees, and customers.
-        </dd>
-        <dt><a>issuer</a></dt>
-        <dd>
-          A role an <a>entity</a> performs by asserting <a>claims</a> about one or
-          more <a>subjects</a>, creating a <a>verifiable credential</a> from these
-          <a>claims</a>, and transmitting the <a>verifiable credential</a> to a
-          <a>holder</a>. Example issuers include corporations, non-profit organizations,
-          trade associations, governments, and individuals.
-        </dd>
-        <dt><a>subject</a></dt>
-        <dd>
-          An <a>entity</a> about which <a>claims</a> are made. Example subjects include
-          human beings, animals, and things. In many cases the <a>holder</a> of a
-          <a>verifiable credential</a> is the subject, but in certain cases it is not. For
-          example, a parent (the <a>holder</a>) might hold the
-          <a>verifiable credentials</a> of a child (the <a>subject</a>), or a pet owner
-          (the <a>holder</a>) might hold the <a>verifiable credentials</a> of their pet
-          (the <a>subject</a>). For more information about these special cases, see
-          Appendix <a href="#subject-holder-relationships"></a>.
-        </dd>
-        <dt><a>verifier</a></dt>
-        <dd>
-          A role an <a>entity</a> performs by receiving one or more
-          <a>verifiable credentials</a>, optionally inside a
-          <a>verifiable presentation</a>, for processing. Example verifiers include
-          employers, security personnel, and websites.
-        </dd>
-        <dt><a>verifiable data registry</a></dt>
-        <dd>
-          A role a system might perform by mediating the creation and <a>verification</a>
-          of identifiers, keys, and other relevant data, such as
-          <a>verifiable credential</a> schemas, revocation registries, issuer public keys,
-          and so on, which might be required to use <a>verifiable credentials</a>. Some
-          configurations might require correlatable identifiers for <a>subjects</a>.
-          Example verifiable data registries include trusted databases, decentralized
-          databases, government ID databases, and distributed ledgers. Often
-          there is more than one type of verifiable data registry utilized in an
-          ecosystem.
-        </dd>
-      </dl>
+        <p>
+본 사양의 목표는 디지털 <a>크리덴셜</a> 표현의 용이성을 향상시키려는 것이지만, 
+그와 더불어 개인 정보 보호 목표와의 균형을 맞추고자 한다. 
+디지털 정보의 지속성과 이질적인 디지털 데이터 소스를 수집하고 상호 연관시킬 수 있는 
+용이성은 검증 가능하고 쉽게 기계적 <a>검증가능한</a> <a>크리덴셜</a>의 사용이 
+악화될 수 있다는 개인 정보 보호 우려를 포함한다. 
+본 문서의 섹션 <a href="#privacy-considerations"></a>에서 개인 프라이버시 
+고려사항에서 이러한 여러 문제를 간략하게 다룬다. 또한 문서 전체적으로 
+영지식증명(Zero-knowledge Proof)와 같은 프라이버시 향상 기술이 사용된 
+데이터 모델을 어떻게 활용할 수 있는지 예제도 제공할 것이다.
+        </p>
+      </section>
 
-      <figure id="roles">
-        <img style="margin: auto; display: block; width: 75%;" src="diagrams/ecosystem.svg" alt="diagram showing how
+      <section class="informative" id="ecosystem-overview">
+        <h3>생태계 개요</h3>
+
+        <p>
+본 섹션에서는 <a>검증가능한 크리덴셜</a>이 유용할 것으로 예상되는 생태계에서 
+핵심 행위자들의 역할과 그들 간의 관계에 대해 설명한다. 역할은 여러 가지 방법으로 
+구현될 수 있는 추상화이다. 역할의 분리는 표준화를 위한 인터페이스와 프로토콜을 
+암시한다. 이 사양에서는 다음과 같은 역할이 등장한다:
+        </p>
+
+        <dl>
+          <dt><a>보유자</a> holder </dt>
+          <dd>
+하나 이상의 <a>검증가능한 크리덴셜</a>을 보유하고 그것으로부터 
+<a>검증가능한 프리젠테이션</a>을 생성하는 역할. 
+<a>보유자</a>의 사례로는 학생, 직원 및 고객 등이 있다. 
+          </dd>
+          <dt><a>발급자</a> issuer</dt>
+          <dd>
+하나 이상의 <a>주체</a>에 대한 <a>클레임</a>을 확증하고, 
+이러한 <a>클레임</a>으로부터 <a>검증가능한 크리덴셜</a>을 생성하며, 
+<a>보유자</a>에게 <a>검증가능한 크리덴셜</a>을 전달하는 역할. <a>발급자</a>의 
+사례로는 회사, 비영리 단체, 무역 협회, 정부, 개인 등이 있다. 
+          </dd>
+          <dt><a>주체</a> subject</dt>
+          <dd>
+<a>클레임</a>의 대상이 되는 <a>엔터티</a>. 
+주체의 사례로는 인간, 동물 그리고 사물이있다. 대부분의 경우 <a>검증가능한 크리덴셜</a>의
+ <a>보유자</a>가 주체이지만 경우에 따라서는 그렇지 않다. 
+ 예를 들면, 부모(<a>보유자</a>)는 자녀(<a>주체</a>)의 <a>검증가능한 크리덴셜</a>을 
+ 보유하거나 애완동물 소유자(<a>보유자</a>)가 애완동물의 
+ <a>검증가능한 크리덴셜</a>(<a>주체</a>)을 보유할 수 있다. 
+ 이러한 특수한 경우에 대한 자세한 내용은 
+ 부록 <a href="#subject-holder-relationships"></a>참조.
+          </dd>
+          <dt><a>검증자</a> verifier</dt>
+          <dd>
+검증 절차를 위해 하나 이상의 <a>검증가능한 크리덴셜</a>, 혹은 
+<a>검증가능한 프리젠테이션</a>을 받는 역할. <a>검증자</a>의 
+사례로는 직원, 보안 담당자, 웹사이트 등이 있다.
+          </dd>
+          <dt><a>검증가능한 데이터 레지스트리</a> verifiable data registry</dt>
+          <dd>
+<a>검증가능한 크리덴셜</a> 스키마, 폐기 레지스트리, 발급자 공개 키 등과 같은 식별자, 
+키 및 기타 관련 데이터의 생성 및 확인을 중재하는 역할. 
+검증가능한 데이터 레지스트리에는 신뢰할 수 있는 데이터베이스, 분산된 데이터베이스, 
+정부 ID 데이터베이스 및 분산 원장이 포함된다. 종종 생태계에 사용되는 
+검증가능한 데이터 레지스트리 유형이 두 개 이상 있다. 
+          </dd>
+        </dl>
+
+        <figure id="roles">
+          <img style="margin: auto; display: block; width: 75%;"
+	       src="diagrams/ecosystem.svg" alt="diagram showing how
 	       credentials flow from issuer to holder and
 	       presentations flow from holder to verifier where all
 	       three parties can use information from a logical
 	       verifiable data registry">
-        <figcaption style="text-align: center;">
-          The roles and information flows forming the basis for this specification.
-        </figcaption>
-      </figure>
+          <figcaption style="text-align: center;">
+            본 사양의 기초를 형성하는 역할과 정보 흐름도.
+          </figcaption>
+        </figure>
 
-      <p class="note">
-        <a href="#roles"></a> above provides an example ecosystem in which to ground the
-        rest of the concepts in this specification. Other ecosystems exist, such as
-        protected environments or proprietary systems, where
-        <a>verifiable credentials</a> also provide benefit.
-      </p>
-    </section>
+        <p class="note">
+위의 그림 <a href="#roles"></a> 은 본 명세서의 나머지 개념을 접목하는 
+예제 생태계를 제공한다. 보호된 환경이나 독점 시스템과 같은 다른 생태계도 존재하며,
+ 여기서도 <a>검증가능한 크리덴셜</a>는 이점을 제공한다. 
+        </p>
+      </section>
 
-    <section class="informative">
-      <h3>Use Cases and Requirements</h3>
+      <section class="informative" id="use-cases-and-requirements">
+        <h3>유스케이스와 요구 사항</h3>
 
-      <p>
-        The Verifiable Credentials Use Cases document [[VC-USECASES]] outlines a number
-        of key topics that readers might find useful, including:
-      </p>
+        <p>
+검증가능한 크리덴셜 유스케이스 문서 [[VC-USECASES]]는 독자가 유용하게 사용할 수 있는 여러 가지 주요 주제를 간략하게 설명한다:
 
-      <ul>
-        <li>
-          A more thorough explanation of the
-          <a href="https://www.w3.org/TR/vc-use-cases/#user-roles">roles</a>
-          introduced above
-        </li>
-        <li>
-          The
-          <a href="https://www.w3.org/TR/vc-use-cases/#user-needs">needs</a>
-          identified in market verticals, such as education, finance, healthcare, retail,
-          professional licensing, and government
-        </li>
-        <li>
-          Common
-          <a href="https://www.w3.org/TR/vc-use-cases/#user-tasks">tasks</a>
-          performed by the roles in the ecosystem, as well as their associated
-          requirements
-        </li>
-        <li>
-          Common
-          <a href="https://www.w3.org/TR/vc-use-cases/#user-sequences">sequences
-            and flows</a> identified by the Working Group.
-        </li>
-      </ul>
+        </p>
 
-      <p>
-        As a result of documenting and analyzing the use cases document, the following
-        desirable ecosystem characteristics were identified for this specification:
-      </p>
-      <!-- requirement list start -->
-      <ul>
-        <li>
-          <a>Verifiable credentials</a> represent statements made by an <a>issuer</a> in
-          a tamper-evident and privacy-respecting manner.
-        </li>
-        <li>
-          <a>Holders</a> assemble collections of <a>verifiable credentials</a> from
-          different <a>issuers</a> into a single artifact, a
-          <a>verifiable presentation</a>.
-        </li>
-        <li>
-          <a>Issuers</a> can issue <a>verifiable credentials</a> about any <a>subject</a>.
-        </li>
-        <li>
-          Acting as <a>issuer</a>, <a>holder</a>, or <a>verifier</a> requires neither
-          registration nor approval by any authority, as the trust involved is bilateral
-          between parties.
-        </li>
-        <li>
-          <a>Verifiable presentations</a> allow any <a>verifier</a> to <a>verify</a> the
-          authenticity of <a>verifiable credentials</a> from any <a>issuer</a>.
-        </li>
-        <li>
-          <a>Holders</a> can receive <a>verifiable credentials</a> from anyone.
-        </li>
-        <li>
-          <a>Holders</a> can interact with any <a>issuer</a> and any <a>verifier</a>
-          through any user agent.
-        </li>
-        <li>
-          <a>Holders</a> can share <a>verifiable presentations</a>, which can then be
-          <a>verified</a> without revealing the identity of the <a>verifier</a> to the
-          <a>issuer</a>.
-        </li>
-        <li>
-          <a>Holders</a> can store <a>verifiable credentials</a> in any location, without
-          affecting their <a>verifiability</a> and without the <a>issuer</a> knowing
-          anything about where they are stored or when they are accessed.
-        </li>
-        <li>
-          <a>Holders</a> can present <a>verifiable presentations</a> to any
-          <a>verifier</a> without affecting authenticity of the claims and without
-          revealing that action to the <a>issuer</a>.
-        </li>
-        <li>
-          A <a>verifier</a> can <a>verify</a> <a>verifiable presentations</a> from any
-          <a>holder</a>, containing proofs of <a>claims</a> from any <a>issuer</a>.
-        </li>
-        <li>
-          <a>Verification</a> should not depend on direct interactions between
-          <a>issuers</a> and <a>verifiers</a>.
-        </li>
-        <li>
-          <a>Verification</a> should not reveal the identity of the <a>verifier</a> to
-          any <a>issuer</a>.
-        </li>
-        <li>
-          The specification must provide a means for <a>issuers</a> to issue
-          <a>verifiable credentials</a> that support selective disclosure, without
-          requiring all conformant software to support that feature.
-        </li>
-        <li>
-          <a>Issuers</a> can issue <a>verifiable credentials</a> that support
-          selective disclosure.
-        </li>
-        <li>
-          If a single <a>verifiable credential</a> supports selective disclosure, then
-          <a>holders</a> can present proofs of <a>claims</a> without revealing the entire
-          <a>verifiable credential</a>.
-        </li>
-        <li>
-          <a>Verifiable presentations</a> can either disclose the attributes of a
-          <a>verifiable credential</a>, or satisfy <a>derived predicates</a> requested by
-          the <a>verifier</a>. <a>Derived predicates</a> are Boolean conditions, such as
-          greater than, less than, equal to, is in set, and so on.
-        </li>
-        <li>
-          <a>Issuers</a> can issue revocable <a>verifiable credentials</a>.
-        </li>
-        <li>
-          <a>Verifiable credentials</a> and <a>verifiable presentations</a> have to be
-          serializable in one or more machine-readable data formats. The process of
-          serialization and/or de-serialization has to be deterministic, bi-directional,
-          and lossless. Any serialization of a <a>verifiable credential</a> or
-          <a>verifiable presentation</a> needs to be transformable to the generic data
-          model defined in this document in a deterministic process such that the
-          resulting <a>verifiable credential</a> can be processed in an interoperable
-          fashion. The serialized form also needs to be able to be generated from the data
-          model without loss of data or content.
-        </li>
-        <li>
-          The data model and serialization must be extendable with minimal coordination.
-        </li>
-        <li>
-          Revocation by the <a>issuer</a> should not reveal any identifying information
-          about the <a>subject</a>, the <a>holder</a>, the specific
-          <a>verifiable credential</a>, or the <a>verifier</a>.
-        </li>
-        <li>
-          <a>Issuers</a> can disclose the revocation reason.
-        </li>
-        <li>
-          <a>Issuers</a> revoking <a>verifiable credentials</a> should distinguish between
-          revocation for cryptographic integrity (for example, the signing key is
-          compromised) versus revocation for a status change (for example, the driver’s
-          license is suspended).
-        </li>
-        <li>
-          <a>Issuers</a> can provide a service for refreshing a
-          <a>verifiable credential</a>.
-        </li>
-      </ul>
-    </section>
+        <ul>
+          <li>
+위에서 소개한 <a href="https://www.w3.org/TR/vc-use-cases/#user-roles">역할</a>에 대한 보다 자세한 설명
+          </li>
+          <li>
+교육, 금융, 의료, 소매, 전문 라이센스 및 정부와 같은 시장에서 확인된 
+<a href="https://www.w3.org/TR/vc-use-cases/#user-needs">요구 사항</a>
+          </li>
+          <li>
+생태계의 역할에 의해 수행되는 일반적인 
+<a href="https://www.w3.org/TR/vc-use-cases/#user-tasks">작업</a>과 
+관련된 요구 사항
+          </li>
+          <li>
+워킹 그룹에서 식별한 공통 
+<a href="https://www.w3.org/TR/vc-use-cases/#user-sequences">시퀀스 및 흐름</a>
+          </li>
+        </ul>
 
-    <section id="conformance" class="normative">
-      <p>
-        A <dfn>conforming document</dfn> is any concrete expression of the data model
-        that complies with the normative statements in this specification.
-        Specifically, all relevant normative statements in Sections
-        <a href="#basic-concepts"></a>, <a href="#advanced-concepts"></a>, and
-        <a href="#syntaxes"></a> of this document MUST be enforced. A serialization
-        format for the conforming document MUST be deterministic, bi-directional,
-        and lossless as described in Section <a href="#syntaxes"></a>.
-        The <a>conforming document</a> MAY be transmitted or stored in any such
-        serialization format.
-      </p>
+        <p>
+유스케이스 문서를 문서화하고 분석한 결과, 
+이 사양에 대해 다음과 같은 바람직한 생태계 특성이 확인되었다:
+        </p>
+<!-- requirement list start -->
+        <ul>
+          <li>
+<a>검증가능한 크리덴셜</a>은 변조 검증이 가능하고 개인 정보 보호에 중요한 방식으로 <a>발급자</a>가 작성한 진술을 나타낸다.
+          </li>
+          <li>
+<a>보유자</a>는 다른 <a>발급자</a>의 <a>검증가능한 크리덴셜</a> 컬렉션을 단일 아티팩트, 
+<a>검증가능한 프리젠테이션</a>으로 수집한다.
+          </li>
+          <li>
+<a>발급자</a>는 모든 <a>주체</a>에 대해 <a>검증가능한 크리덴셜</a>을 발급할 수 있다.
+          </li>
+          <li>
+<a>발급자</a>, <a>보유자</a> 또는 <a>검증자</a>로서 행동하는 것은 당사자 간에 
+신뢰 관계이기 때문에 어떤 당국의 등록이나 승인이 필요하지 않다.
+          </li>
+          <li>
+<a>검증가능한 프리젠테이션</a>을 통해 모든 <a>검증자</a>가 <a>발급자</a>로부터 
+<a>검증가능한 크리덴셜</a>의 신뢰성을 확인할 수 있다.
+          </li>
+          <li>
+<a>보유자</a>는 누구에게나 <a>검증가능한 크리덴셜</a>을 받을 수 있다.
+          </li>
+          <li>
 
-      <p>
-        A <dfn>conforming processor</dfn> is any algorithm realized as software and/or
-        hardware that generates or consumes a <a>conforming document</a>. Conforming
-        processors MUST produce errors when non-conforming documents are consumed.
-      </p>
+<a>보유자</a>는 아무 사용자 에이전트를 통해 모든 <a>발급자</a> 및 
+<a>검증자</a>와 상호 작용할 수 있다.
+          </li>
+          <li>
+<a>보유자</a>는 <a>검증가능한 프리젠테이션</a>을 공유할 수 있으며, 
+이 <a>검증가능한 프리젠테이션</a>은 <a>발급자</a>에게 <a>검증자</a>의 신원을 
+공개하지 않고 <a>검증</a>할 수 있다.
+          </li>
+          <li>
+<a>보유자</a>는 <a>검증가능성</a>에 영향을 미치지 않고 <a>발급자</a>가 저장위치 또는 
+액세스 시기에 대해 전혀 알지 못하면서도 <a>검증가능한 크리덴셜</a>을 저장할 수 있다.
+          </li>
+          <li>
+<a>보유자</a>는 클레임의 신뢰성에 영향을 미치지 않고 <a>발급자</a>에 해당 조치를 
+공개하지 않고 <a>검증가능한 프리젠테이션</a>을 모든 <a>검증자</a>에게 제출할 수 있다.
+          </li>
+          <li>
+<a>검증자</a>는 모든 <a>발급자</a>의 <a>클레임</a> 증명을 포함하는 모든 
+<a>보유자</a>의 <a>검증가능한 프리젠테이션</a>을 <a>검증</a>할 수 있다.
+          </li>
+          <li>
+<a>검증</a>은 <a>발급자</a>와 <a>검증자</a> 간의 직접적인 상호 작용에 의존하지 않는다.
+          </li>
+          <li>
+<a>검증</a>은 어떤 <a>발급자</a>에게도 <a>검증자</a>의 신원을 공개하지 않아야한다.
+          </li>
+          <li>
+이 사양은 <a>발급자</a>가 해당 기능을 지원하기 위해 모든 준수한 소프트웨어가 필요 없이 
+선택적 공개를 지원하는 <a>검증가능한 크리덴셜</a>을 발급할 수 있는 수단을 제공해야 한다.
+          </li>
+          <li>
+<a>발급자</a>는 선택적 공개를 지원하는 <a>검증가능한 크리덴셜</a>을 발급할 수 있다.
+          </li>
+          <li>
+단일 <a>검증가능한 크리덴셜</a>이 선택적 공개를 지원하는 경우 <a>보유자</a>는 
+전체 <a>검증가능한 크리덴셜</a>을 공개하지 않고 <a>클레임</a>을 제시할 수 있다.
+          </li>
+          <li>
+<a>검증가능한 프리젠테이션</a>은 <a>검증가능한 크리덴셜</a>의 특성을 공개하거나 
+<a>검증자</a>가 요청한 <a>파생된 조건자</a>를 충족할 수 있다. <a>파생된 조건자</a>는 
+보다 큰, 보다 적은, 같음, 집합 등 부울 조건이다.
+          </li>
+          <li>
+<a>발급자</a>는 취소할 수 있는 <a>검증가능한 크리덴셜</a>을 발급할 수 있다.
+          </li>
+          <li>
+<a>검증가능한 크리덴셜</a> 및 <a>검증가능한 프리젠테이션</a>은 하나 이상의 기계 판독 
+가능한 데이터 형식으로 직렬화할 수 있어야 한다. 직렬화 및/또는 직렬화 해제 
+프로세스는 결정적이고 양방향이며 무손실이어야 한다. <a>검증가능한 크리덴셜</a> 또는 
+<a>검증가능한 프리젠테이션</a>의 모든 직렬화는 최종 프로세스에서 이 문서에 정의된 
+일반 데이터 모델로 변환할 수 있어야 하며, 따라서 <a>검증가능한 크리덴셜</a>을 
+상호 운용 가능한 방식으로 처리할 수 있다. 또한 직렬화된 양식은 데이터 또는 
+콘텐츠의 손실 없이 데이터 모델에서 생성될 수 있어야 한다. 
+          </li>
+          <li>
+데이터 모델과 직렬화는 최소한의 조정으로 확장할 수 있어야 한다.
+          </li>
+          <li>
+<a>발급자</a>에 의한 폐기는 <a>주체</a>, <a>보유자</a>, 
+특정 <a>검증가능한 크리덴셜</a> 또는 검증에 대한 식별 정보를 공개하지 않아야한다.
+          </li>
+          <li>
+<a>발급자</a>는 폐기 사유를 공개할 수 있다.
+          </li>
+          <li>
+<a>검증가능한 크리덴셜</a>을 해지하는 <a>발급자</a>는 암호화 무결성에 대한 
+폐기(예: 서명 키가 손상된 경우)와 상태 변경에 대한 
+폐기(예: 운전 면허증이 일시 중단됨)를 구분해야 한다.
+          </li>
+          <li>
+<a>발급자</a>는 <a>검증가능한 크리덴셜</a>을 갱신하는 서비스를 제공할 수 있다.
+          </li>
+        </ul>
+      </section>
 
       <p>
         This specification makes no normative statements with regard to the
