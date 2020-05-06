@@ -674,7 +674,7 @@ specification.
         <p>
 A <a>claim</a> is a statement about a <a>subject</a>. A <a>subject</a> is
 a thing about which <a>claims</a> can be made. <a>Claims</a> are expressed using
-<strong><em>subject</em></strong>-<dfn data-lt="property|properties|속성">property</dfn>-<dfn>value</dfn>
+<strong><em>subject</em></strong>-<dfn data-lt="property|properties|속성|속성들">property</dfn>-<dfn>value</dfn>
 relationships.
         </p>
 
@@ -1456,8 +1456,8 @@ JSON-LD 문서의 이해가 쉬워질 것이다.
 
         <p>
 예를 들어, <code>UniversityDegreeCredential</code>과 같은 <code>type</code>의 <a>크리덴셜</a> 객체는 
-다음 항목을 위한 <a>식별자</a>가 <code>credentialSubject</code> 속성에 포함되어 있다는 것을 
-검증자에게 전송한다:
+다음 항목을 위한 식별자가 <code>credentialSubject</code> 속성에 포함되어 있다는 것을 
+<a>검증자</a>에게 전송한다:
         </p>
 
         <ul>
@@ -1482,15 +1482,14 @@ JSON-LD 문서의 이해가 쉬워질 것이다.
 이 규격에 기술된 데이터 모델에 사용되는 타입 시스템은 타입과 데이터를 연결하는 여러가지 방법을 허용한다. 
 구현자와 작성자는 검증가능한 크리덴셜 구현 가이드[[?VC-IMP-GUIDE]]의 타이핑에 관한 섹션을 읽어야 한다.
         </p>
-
-      <section id="credential-subject">
+      </section>
 
       <section id="credential-subject">
         <h3>자격 주체</h3>
 
         <p>
-<a>검증가능한 크리덴셜</a> 에는 하나 이상의 <a>주체들</a>에 대한 <a>클레임이</a> 포함된다. 
-이 규격은 하나 이상의 <a>주체들</a>에 대한 <a>클레임</a>을 <a>표현</a>하기 위한 항목인
+<a>검증가능한 크리덴셜</a> 에는 하나 이상의 <a>주체들</a>에 대한 <a>클레임</a>이 포함된다. 
+이 규격은 하나 이상의 <a>주체들</a>에 대한 <a>클레임</a>을 표현하기 위한 항목인
 <code>credentialSubject</code> 
 <a>속성</a>을 정의한다.
         </p>
@@ -1530,12 +1529,12 @@ The value of the <code>credentialSubject</code> <a>property</a> is defined as
         </pre>
 
         <p>
-<a>검증 가능한 크리덴셜</a>로 여러 <a>주체</a>와 관련된 정보를 표현할 수 있다. 
+<a>검증가능한 크리덴셜</a>로 여러 <a>주체</a>와 관련된 정보를 표현할 수 있다. 
 아래의 예는 배우자 관계인 두 <a>주체</a>를 지정한다. 
 여러 <a>주체</a>를 <code>credentialSubject</code> 특성과 연관시키기 위해 배열 표기법을 사용한다.
         </p>
 
-        <pre class="example nohighlight" title="검증 가능한 크리덴셜로 여러 주체 지정">
+        <pre class="example nohighlight" title="검증가능한 크리덴셜로 여러 주체 지정">
 {
   "@context": [
     "https://www.w3.org/2018/credentials/v1",
@@ -1629,7 +1628,7 @@ The value of the <code>credentialSubject</code> <a>property</a> is defined as
         </pre>
 
         <p class="note">
-<code>issuer</code> <a>특성</a>값은 JWK (예를 들어, <code>"https://example.com/keys/foo.jwk"</code>) 
+<code>issuer</code> <a>속성</a>값은 JWK (예를 들어, <code>"https://example.com/keys/foo.jwk"</code>) 
 또는 a <a>DID</a> (예를 들어, <code>"did:example:abfe13f712120431c276e12ecab"</code>)이 될 수 있다.	
         </p>
 
@@ -1649,7 +1648,7 @@ The value of the <code>credentialSubject</code> <a>property</a> is defined as
 <code>issuanceDate</code> <a>속성</a>의 값은 
 <a>크리덴셜</a>이 유효한 날짜와 시간을 나타내는 [[!RFC3339]] 결합 날짜 및 시간 
 문자열의 문자열 값이어야하며 이는 미래의 날짜와 시간 일 수 있습니다. 이 값은 <code>credentialSubject</code> 
-<a>특성</a>과 연관된 정보가 유효 해지는 가장 빠른 시점을 나타냅니다.
+<a>속성</a>과 연관된 정보가 유효 해지는 가장 빠른 시점을 나타냅니다.
 
           </dd>
         </dl>
@@ -1689,7 +1688,7 @@ The value of the <code>credentialSubject</code> <a>property</a> is defined as
         <h3>프루프들 (시그니쳐들)</h3>
 
         <p>
-<a>크리덴셜</a> 또는 <a>프레젠테이션</a>이 <a>검증 가능한 크리덴셜</a> 또는 <a>검증 가능한 프레젠테이션</a>이 되도록 최소한 하나의 증명 메커니즘과 
+<a>크리덴셜</a> 또는 <a>프레젠테이션</a>이 <a>검증가능한 크리덴셜</a> 또는 <a>검증가능한 프레젠테이션</a>이 되도록 최소한 하나의 증명 메커니즘과 
 그 증거를 평가하는데 필요한 세부 사항을 표현해야 한다. 즉, <a>검증</a> 할 수 있어야 한다.
 
         </p>
@@ -1724,7 +1723,7 @@ The value of the <code>credentialSubject</code> <a>property</a> is defined as
         </p>
 
         <pre class="example nohighlight"
-          title="검증 가능한 크리덴셜에 프루프 속성 사용">
+          title="검증가능한 크리덴셜에 프루프 속성 사용">
 {
   "@context": [
     "https://www.w3.org/2018/credentials/v1",
@@ -1841,7 +1840,7 @@ Unencoded Payload Option [[RFC7797]]. 프루프메커니즘 목록은 Verifiable
         </dl>
         <p>
 <a>크리덴셜</a> 상태 정보의 정확한 내용은 
-특정 <code>credentialStatus</code><a>유형</a> 정의에 의해 결정되며 
+특정 <code>credentialStatus</code><a href="#types">유형</a> 정의에 의해 결정되며 
 구현이 간단한지 또는 개인정보 보안강화 여부와 같은 요소에 따라 다르다.
         </p>
 
@@ -1955,7 +1954,7 @@ JWT 증명 방법을 이용한 <a>검증가능한 프레젠테이션</a> 예시�
         <p>
 예를 들어, <code>생년월일</code> <a>클레임</a>이 포함된 <a>검증가능한 크리덴셜</a>을 사용하여 
 <code>15세 이상</code>의 제시된 값을 암호학적으로 <a>검증가능한</a>방식으로 도출할 수 있다. 
-즉, <a>검증자</a>는 <a>발행자</a>를 신뢰하는 경우 파생된 값을 계속 신회할 수 있다.
+즉, <a>검증자</a>는 <a>발급자</a>를 신뢰하는 경우 파생된 값을 계속 신회할 수 있다.
         </p>
 
         <p class="note">
@@ -1985,7 +1984,7 @@ ZKP 스타일의 <a>검증가능한 프레젠테이션</a> 예시를 보고싶�
       </section>
     </section>
 
-    <section>
+    <section id="advanced-concepts">
       <h2>Advanced Concepts</h2>
 
       <p>
@@ -2339,7 +2338,7 @@ specification does not define concrete implementations for those extension
 개발자가 활용할 수 있도록 비공식적인 확장 기능 목록을 제공한다.
         </p>
 
-        <section>
+        <section id="semantic-interoperability">
           <h4>Semantic Interoperability</h4>
 
           <p>
@@ -2737,7 +2736,7 @@ the <a>verifier</a> to <code>https://example.edu/refresh/3732</code>.
 제 3자 서비스를 사용하여 <a>보유자</a> 또는 <a>주체</a>의 상관관계를 표현하기 위해 
 제공된 정보를 사용하는 것을 금지하는 사용 기간을 명시한다. 
 <a>검증자</a>가 상관관계를 위해 제 3자 서비스를 사용하는 경우, 
-<a>보유자</a>는 <a>프리젠테이션</a>을 작성하는 조건을 위반한다.
+<a>보유자</a>는 <a>프레젠테이션</a>을 작성하는 조건을 위반한다.
         </p>
 
         <p>
@@ -2830,7 +2829,7 @@ the <a>verifier</a> to <code>https://example.edu/refresh/3732</code>.
 사용된다. 반면에 <code>proof</code> <a>속성</a>은 <a>발급자</a>의 진위 및 
 <a>검증가능한 크리덴셜</a>의 무결성과 관련된 기계-검증가능한 수학적 증명을 
 표현하는 데 사용된다. <code>proof</code> <a>속성</a>에 대한 자세한 내용은 
-<a href="#proofs-signatures">을 참조.
+<a href="#proofs-signatures"></a>을 참조.
         </p>
 
       </section>
@@ -2864,7 +2863,7 @@ the <a>verifier</a> to <code>https://example.edu/refresh/3732</code>.
           </li>
           <li>
 검증가능한 크리덴셜을 발급 받고 나면, 
-추가적인 <a>발급자</a>의 관여 없이도 <a>발급자</a>가 아닌 <a>검증자의</a> 데이터 스키마 형식에 따라 
+추가적인 <a>발급자</a>의 관여 없이도 <a>발급자</a>가 아닌 <a>검증자</a>의 데이터 스키마 형식에 따라 
 파생된 <a>검증가능한 크리덴셜</a>을 생성할 수 있는 기능. 
 이를 통해 <a>보유자</a>가 발급 받은 <a>검증가능한 크리덴셜</a>을 사용함에 있어 유연성이 크게 향상된다.
           </li>
@@ -3154,7 +3153,7 @@ CL 서명을 사용하여, <a>검증가능한 크리덴셜</a> 값의 선택적 
 또는 <a>검증가능한 프레젠테이션</a>의 규범적 구조적 표현이다. 모든 직렬화는 
 특정 형식의 데이터 모델의 표현이다. 본 섹션에서는 데이터 모델이 JSON-LD와 일반 JSON에서 
 실현되는 방식을 명시한다. 비록 이 두 구문에서만 구문적 매핑이 제공되지만, 데이터 모델을 
-표현할 수 있는 기타 데이터 표현 구문(XML, YAML 또는 CBOR)도 사용할 수 있다. <a>검증</a>과 <a>확인</a> 
+표현할 수 있는 기타 데이터 표현 구문(XML, YAML 또는 CBOR)도 사용할 수 있다. <a>검증</a>과 <a>유효성 검사</a> 
 필요사항이 데이터 모델의 관점에서 정의되므로, 모든 직렬화 구문은 결정적으로 처리, <a>검증</a> 
 또는 비교를 위한 데이터 모델로 변환되어야 한다. 본 사양은 어떠한 특정 직렬화 형식을 
 지원하기 위한 요구사항을 만들지 않는다.
@@ -3280,7 +3279,7 @@ IEEE754로 표현할 수 있는 숫자 값은 숫자 타입으로 표현해야�
 <code>verifiableCredential</code>과 <code>proof</code> <a>속성</a>은 
 <em>그래프 컨테이너(Graph Containers)</em>로 처리된다. 
 이는 다른 개체가 주장하는 데이터 집합을 분리하는데 사용되는 메커니즘이다. 
-이것은 각 <a>발행자</a>가 제공한 데이터 그래프와 각 그래프에 대한 유래를 보장하기 위해 
+이것은 각 <a>발급자</a>가 제공한 데이터 그래프와 각 그래프에 대한 유래를 보장하기 위해 
 <a>검증가능한 크리덴셜</a>을 제시하는 <a>보유자</a>가 제공하는 정보 간의 
 적절한 암호학적 구분을 보장한다.
             </li>
@@ -3326,7 +3325,7 @@ being actively utilized to issue <a>verifiable credentials</a> are:
 
           <p>
             JSON Web Token (JWT) [RFC7519]은 여전히 두 당사자 간에 전달되는 <a>클레임</a>을 표현하기 위해 
-            널리 사용되는 수단이다.JWT에 대한 검증 가능한 크리덴셜 데이터 모델을 제공함으로써 
+            널리 사용되는 수단이다.JWT에 대한 검증가능한 크리덴셜 데이터 모델을 제공함으로써 
             기존 시스템과 라이브러리가 섹션 <a href="#ecosystem-overview"></a>에 설명된 생태계에 참여할 수 있다. 
             JWT는 일련의 <a>클레임</a> JSON Web Signature (JWS) [RFC7515] 또는 JWE [RFC7516]에 
             포함된 JSON 개체로 인코딩한다. 이 규격에서 JWE의 사용은 범위를 벗어나므로 다루지 않는다.
@@ -3336,12 +3335,12 @@ being actively utilized to issue <a>verifiable credentials</a> are:
             <h4>Relation to the Verifiable Credentials Data Model</h4>
 
             <p>
-              이 규격은 검증 가능한 크리덴셜 데이터 모델의 인코딩 규칙을 JWT 및 JWS에 정의한다. 
+              이 규격은 검증가능한 크리덴셜 데이터 모델의 인코딩 규칙을 JWT 및 JWS에 정의한다. 
               또한 JWT에 기초한 시스템이 이 규격을 준수할 수 있도록 특정 JWT 형식에 
               등록된 <a>클레임</a>의 이름과 특정 JWS 등록 헤더 파라미터 이름을
               언제 어떻게 사용하는지를 정의한다. 
               이러한 특정 <a>클레임</a>의 이름과 헤더 파라미터가 존재하는 경우, 
-              그에 대응되는 표준 <a>검증가능한 크리덴셜</a>과 <a>검증가능한 프리젠테이션</a>은 중복 방지를 위해 생략될 수 있다.
+              그에 대응되는 표준 <a>검증가능한 크리덴셜</a>과 <a>검증가능한 프레젠테이션</a>은 중복 방지를 위해 생략될 수 있다.
             </p>
           </section>
 
@@ -3354,7 +3353,7 @@ contain those parts of the standard <a>verifiable credentials</a> and
 <a>verifiable presentations</a> where no explicit encoding rules for JWT exist.
 These objects are enclosed in the JWT payload as follows:
 이 규격은 JWT에 대한 명시적 인코딩 규칙이 존재하지 않는 
-표준 <a>검증가능한 크리덴셜</a> 및 <a>검증가능한 프리젠테이션</a>의 일부를 포함하는 
+표준 <a>검증가능한 크리덴셜</a> 및 <a>검증가능한 프레젠테이션</a>의 일부를 포함하는 
 새로 등록된 두 개의 <a>클레임</a>의 이름에 대해 소개한다. 
 이러한 객체들은 다음과 같이 JWT 전송 데이터에 포함되어있다
 
@@ -3367,8 +3366,8 @@ These objects are enclosed in the JWT payload as follows:
 
               </li>
               <li>
-<code>vp</code>: JWT <a>검증가능한 프리젠테이션</a>에 반드시 있어야 하는 JSON 객체. 
-객체는 이 규격에 따라 <a>검증가능한 프리젠테이션</a>을 포함한다
+<code>vp</code>: JWT <a>검증가능한 프레젠테이션</a>에 반드시 있어야 하는 JSON 객체. 
+객체는 이 규격에 따라 <a>검증가능한 프레젠테이션</a>을 포함한다
               </li>
             </ul>
           </section>
@@ -3490,7 +3489,7 @@ UNIX 타임스탬프(<code>NumericDate</code>)로 인코딩되어야 한다.
 
             <p>
 여기에 지정되지 않은 JOSE 헤더 매개 변수 및/또는 JWT 클레임 이름 사용에 대한 
-자세한 내용은 검증 가능한 크리덴셜 구현 지침 [[?VC-IMP-GUIDE]] 문서를 참조하시오.
+자세한 내용은 검증가능한 크리덴셜 구현 지침 [[?VC-IMP-GUIDE]] 문서를 참조하시오.
             </p>
 
             <p>
@@ -3552,7 +3551,7 @@ JWT 특정 헤더 및 <a>클레임</a>을 변환하려면 반드시 다음 작�
               <li>
  <code>iss</code>의 경우, 
  새로운 검증가능한 크리덴셜 JSON 개체의 <code>issuer</code> <a>속성</a>이나 
- 새로운 검증 가능한 프레젠테이션 JSON 개체의 <code>holder</code> <a>속성</a>을 설정하는 데 이 값을 사용해야 한다.
+ 새로운 검증가능한 프레젠테이션 JSON 개체의 <code>holder</code> <a>속성</a>을 설정하는 데 이 값을 사용해야 한다.
 
                   </li>
                   <li>
@@ -3648,7 +3647,7 @@ txJy6M1-lD7a5HTzanYTWBPAUHDZGyGKXdJw-W_x0IWChBzI8t3kpG253fg6V3tPgHeKXE94fz_QpYfg
             </pre>
 
             <p>
-위의 예시에서 <a>검증가능한 프리젠테이션</a>은 
+위의 예시에서 <a>검증가능한 프레젠테이션</a>은 
 <code>JWS</code> 디지털 서명에 기초한 <code>proof</code>를 사용하며, 
 해당 <a>검증</a> 키는 <code>kid</code> 헤더 매개변수를 사용하여 얻을 수 있다.
 
@@ -3752,7 +3751,7 @@ Linked Data Signatures 구현에 전달하고 디지털 서명을 생성하는 �
 
           <p class="note">
 다양한 syntax 형식(예: JSON+JWT, JSON-LD+JWT 또는 JSON-LD+LD-Proofs)의 다양한 품질에 대한 자세한 내용은 
-검증 가능한 크리덴셜 구현 지침 [[VC-IMP-GUIDE]] 문서를 참조하십시오.
+검증가능한 크리덴셜 구현 지침 [[VC-IMP-GUIDE]] 문서를 참조하십시오.
           </p>
 
         </section>
@@ -3822,7 +3821,7 @@ Linked Data Signatures 구현에 전달하고 디지털 서명을 생성하는 �
 
       <p>
 구현자는 이러한 종류의 특성을 가진 데이터를 공유할 경우 <a>보유자</a>에게 경고할 것을 강력하게 
-권고한다. <a>발행자</a>는 가능하면 프라이버시를 보호하는 <a>검증가능한 크리덴셜</a>을 제공할 것을 
+권고한다. <a>발급자</a>는 가능하면 프라이버시를 보호하는 <a>검증가능한 크리덴셜</a>을 제공할 것을 
 강력하게 권고한다. 예를들면, <a>검증자</a>가 <a>개체</a>의 성인 여부를 확인하고자 하면, 생년월일을 
 담은 <a>검증가능한 크리덴셜</a>을 발행하는 대신 <code>ageOver</code> <a>검증가능한 크리덴셜</a>을 발행하는 것이다.
       </p>
@@ -3944,7 +3943,7 @@ long-lived identifiers.
 
       <p>
 <a>검증가능한 크리덴셜</a>을 받는 사람이 필요 이상으로 개인식별정보를 노출하지 않으면서도 
-다양한 상황에서 활용할 수 있도록 하기 위해 <a>발행자</a>는 <a>크리덴셜</a>의 정보를 예상되는 목적에 
+다양한 상황에서 활용할 수 있도록 하기 위해 <a>발급자</a>는 <a>크리덴셜</a>의 정보를 예상되는 목적에 
 필요한 최소한의 정보로 제한하는 것을 고려해야 한다. 개인식별정보를 <a>크리덴셜</a>에 포함하지 
 않도록 하는 방법 중 하나는 <a>주체</a>에 대한 특정한 정보를 제공하지 않으면서도 <a>검증자</a>의 
 요구를 만족시키는 추상 <a>속성</a>을 사용하는 것이다.
@@ -3952,7 +3951,7 @@ long-lived identifiers.
       <p>
 예를 들면, 본 문서는 강력한 개인식별정보인 생일을 사용하는 대신 <code>ageOver</code> <a>속성</a>을 사용한다. 
 만약 특정 시장의 소매업자가 일반적으로 구매자에게 특정 나이 이상을 요구하는 경우, 
-그 시장에서 신뢰받는 <a>발행자</a>는 <a>주체</a>의 생일에 대한 <a>클레임</a>을 포함하는 <a>검증가능한 크리덴셜</a>을 
+그 시장에서 신뢰받는 <a>발급자</a>는 <a>주체</a>의 생일에 대한 <a>클레임</a>을 포함하는 <a>검증가능한 크리덴셜</a>을 
 제공하기 보다는 <a>주체</a>가 그 조건을 만족한다고 주장하는 <a>검증가능한 크리덴셜</a>을 제공하는 것을 
 선택할 것이다. 이로인해 개인 소비자가 특정 개인식별정보를 드러내지 않으면서도 구매를 할 수 있게 된다.
       </p>
@@ -4545,7 +4544,7 @@ correlation arises from the presentation of <a>credentials</a>.
       <h3>Highly Dynamic Information</h3>
 
       <p>
-높은 동적인 정보에 대한 <a>검증가능한 크리덴셜</a>을 발급하는 경우, 구현자는 만료기간을 적절하게 설정해야합니다. <a>검증가능한 크리덴셜</a>의 유효기간보다 만료기간이 더 길다면 악용가능한 보안취약성이 발생할 수 있다. <a>검증가능한 크리덴셜</a>을 통해 표현되는 정보의 만료기간이 유효기간보다 짧으면 <a>보유</a>자와 <a>검증자</a>에게 부담을 줍니다. 따라서 사용사례와 <a>검증가능한 크리덴셜</a>에 포함된 정보의 예상 수명에 유효기간의 적절한 설정은 중요하다.
+높은 동적인 정보에 대한 <a>검증가능한 크리덴셜</a>을 발급하는 경우, 구현자는 만료기간을 적절하게 설정해야합니다. <a>검증가능한 크리덴셜</a>의 유효기간보다 만료기간이 더 길다면 악용가능한 보안취약성이 발생할 수 있다. <a>검증가능한 크리덴셜</a>을 통해 표현되는 정보의 만료기간이 유효기간보다 짧으면 <a>보유자</a>와 <a>검증자</a>에게 부담을 줍니다. 따라서 사용사례와 <a>검증가능한 크리덴셜</a>에 포함된 정보의 예상 수명에 유효기간의 적절한 설정은 중요하다.
       </p>
     </section>
 
@@ -4561,7 +4560,7 @@ correlation arises from the presentation of <a>credentials</a>.
 장치에서 암호, 핀, 패턴 또는 생체 인식 화면 잠금 해제 보호 활성화.
         </li>
         <li>
-<a>크리덴셜 정보 저장소</a>에 암호, 생체 인식 또는 다중 인증 활성화.
+<a>크리덴셜</a> <a>저장소</a>에 암호, 생체 인식 또는 다중 인증 활성화.
         </li>
         <li>
 암호 키에 액세스할 때 암호, 생체 인식 또는 다중 인증 활성화.
@@ -4591,7 +4590,7 @@ correlation arises from the presentation of <a>credentials</a>.
       <h3>Data First Approaches</h3>
 
       <p>
-정부에서 발행한 신분증과 같이 오늘날 사용하고 있는 많은 물리적인 <a>인증</a>들은 인쇄가 너무 작거나, 작지만 고해상도의 이미지에 의존하거나, 시각적 장애를 가진 사람들에게 제공할 수 없는 등의 제약이 포함되어 있는 특징들에 의해 접근성이 매우 열악하다.
+정부에서 발행한 신분증과 같이 오늘날 사용하고 있는 많은 물리적인 <a>인증서</a>들은 인쇄가 너무 작거나, 작지만 고해상도의 이미지에 의존하거나, 시각적 장애를 가진 사람들에게 제공할 수 없는 등의 제약이 포함되어 있는 특징들에 의해 접근성이 매우 열악하다.
       </p>
 
       <p>
@@ -4732,8 +4731,8 @@ HTML 또는 실행 가능한 스크립트를 포함 할 수있는 다른 마크 
       <h2>검증</h2>
 
       <p>
-이 사양은 <a>검증 가능한 크리덴셜</a> 또는 <a>검증 가능한 프레젠테이션</a>의 <a>검증</a> 프로세스에 대한 적합성 기준을 
-제공하지는 않지만 독자는 <a>검증 과정</a>에서 <a>검증자</a>가이 데이터 모델의 정보를 어떻게 활용할지 궁금 할 것이다. 
+이 사양은 <a>검증가능한 크리덴셜</a> 또는 <a>검증가능한 프레젠테이션</a>의 <a>검증</a> 프로세스에 대한 적합성 기준을 
+제공하지는 않지만 독자는 <a>유효성 검사</a>에서 <a>검증자</a>가 이 데이터 모델의 정보를 어떻게 활용할지 궁금 할 것이다. 
 이 섹션에서는 <a>검증자</a>가이 사양에서 예상되는 데이터 필드 사용과 관련하여 실무 그룹(working group)이 보유한 
 대화를 공유(capture)한다.
       </p>
@@ -4742,17 +4741,17 @@ HTML 또는 실행 가능한 스크립트를 포함 할 수있는 다른 마크 
         <h3>크리덴셜 주체</h3>
 
         <p>
-<a>보유자</a>가 제시 한 <a>검증 가능한 크리덴셜</a>에서 
-각 <code>credentialSubject</code>의 <a>id</a> <a>특성</a>과 연관된 값은 <a>검증자</a>에게 
+<a>보유자</a>가 제시 한 <a>검증가능한 크리덴셜</a>에서 
+각 <code>credentialSubject</code>의 <a>id</a> <a>속성</a>과 연관된 값은 <a>검증자</a>에게 
 <a>주체</a>를 식별해야 한다. <a>보유자</a>가 <a>주체</a>인 경우, <a>검증자</a>는 <a>보유자</a>와 관련된 공개 키 메타 데이터가있는 경우 
-<a>보유자</a>를 인증 할 수 있다. <a>검증자</a>는 <a>검증 가능한 프리젠테이션</a>에 포함 된 <a>보유자</a>에 의해 생성 된 서명을 
-사용하여 <a>보유자</a>를 인증 할 수있다. <a>id</a> <a>속성</a>은 선택 사항이다. <a>검증자</a>는 <a>검증 가능한 크리덴셜</a>에서 다른 
+<a>보유자</a>를 인증 할 수 있다. <a>검증자</a>는 <a>검증가능한 프레젠테이션</a>에 포함 된 <a>보유자</a>에 의해 생성 된 서명을 
+사용하여 <a>보유자</a>를 인증 할 수있다. <a>id</a> <a>속성</a>은 선택 사항이다. <a>검증자</a>는 <a>검증가능한 크리덴셜</a>에서 다른 
 <a>속성들</a>을 사용하여 <a>주체</a>를 고유하게 식별 할 수 있다.
         </p>
 
         <p class="note">
-인증 및 WebAuthn이 <a>검증 가능한 크리덴셜</a>로 작동하는 방법에 대한 자세한 내용은 
-검증 가능한 크리덴셜 구현 지침 [[VC-IMP-GUIDE]] 문서를 참조.
+인증 및 WebAuthn이 <a>검증가능한 크리덴셜</a>로 작동하는 방법에 대한 자세한 내용은 
+검증가능한 크리덴셜 구현 지침 [[VC-IMP-GUIDE]] 문서를 참조.
         </p>
 
       </section>
@@ -4766,8 +4765,8 @@ HTML 또는 실행 가능한 스크립트를 포함 할 수있는 다른 마크 
 
         <p>
 <code>issuer</code> <a>속성</a>에 대한 관련 메타 데이터가 <a>검증자</a>에게 제공 될 것으로 예상된다. 
-예를 들어, <a>발급자</a>는 발급 한 <a>검증 가능한 크리덴셜</a>을 디지털 서명하는 데 사용하는 공개 키가 
-포함 된 정보를 게시 할 수 있다. 이 메타 데이터는 <a>검증 가능한 크리덴셜</a>에서 증명을 확인할 때 관련이 있다.
+예를 들어, <a>발급자</a>는 발급 한 <a>검증가능한 크리덴셜</a>을 디지털 서명하는 데 사용하는 공개 키가 
+포함 된 정보를 게시 할 수 있다. 이 메타 데이터는 <a>검증가능한 크리덴셜</a>에서 증명을 확인할 때 관련이 있다.
         </p>
       </section>
 
@@ -4776,7 +4775,7 @@ HTML 또는 실행 가능한 스크립트를 포함 할 수있는 다른 마크 
 
         <p>
 <code>issuanceDate</code>는 <a>검증자</a>의 예상 범위 내에 있어야한다. 
-예를 들어, <a>검증자</a>는 <a>검증 가능한 크리덴셜</a>의 발급 날짜가 미래에 있지 않은지 확인할 수 있다.
+예를 들어, <a>검증자</a>는 <a>검증가능한 크리덴셜</a>의 발급 날짜가 미래에 있지 않은지 확인할 수 있다.
         </p>
       </section>
 
@@ -5241,7 +5240,7 @@ the <a>verifiable credential</a>, as described below.
         <p>
 이 경우 <code>credentialSubject</code> <a>속성</a>은 <a>주체</a>의 여러 측면을 설명하는 
 다수의 <a>속성</a>이 포함될 수 있으며
-그<a>주체</a>를 명확하게 식별하기 위해 결합된다. 일부 활용 사례는 <a>의사(주체)</a>가 보드-인증을 받았는지 확인하는 것과 같이 
+그<a>주체</a>를 명확하게 식별하기 위해 결합된다. 일부 활용 사례는 의사(<a>주체</a>)가 보드-인증을 받았는지 확인하는 것과 같이 
 <a>보유자</a>를 전혀 식별하지 않을 수 있다.
 다른 사용 사례에서는 <a>검증자</a>가 <a>주체</a>와 <a>보유자</a>사이의 관계를 결정하기 위해 범위 밖 지식을 사용해야 할 수 있다.
         </p>
@@ -5281,7 +5280,7 @@ the <a>verifiable credential</a>, as described below.
 <a>검증자</a>에게 제공된다. 그러나, 경우에 따라서, <a>주체</a>는 
 다른 <a>보유자</a>에게 <a>검증가능한 크리덴셜</a>의 전체 또는 일부를 전달해야 할지도 모른다.
 예를 들어, 만약 환자 (<a>주체</a>) 너무 아파서 
-약사 (<a>검증자</a>)에게  처방전 (<a>검증가능한 크레덴셜</a>)을 받을 수 없는 경우,
+약사 (<a>검증자</a>)에게  처방전 (<a>검증가능한 크리덴셜</a>)을 받을 수 없는 경우,
 그의 친구가 약을 수령하기 위해 처방전을 가져갈 수도 있다. 
         </p>
 
@@ -5527,7 +5526,7 @@ verifiable credential that was passed to it by the subject">
         <p>
 <a>발급자</a>가 <a>보유자</a>가 아닌 
 <a>주체</a>로 설명하는 <a>크리덴셜</a>을 <a>보유자</a>에게 부여하고
-<a>홀더</a>는 <a>주체</a>와 알려진 관계가 없는 경우,
+<a>보유자</a>는 <a>주체</a>와 알려진 관계가 없는 경우,
 그리고 나서 <a>발급자</a>는 <a>주체</a>의 <a>크리덴셜</a>에
 <a>보유자</a>의 관계를 삽입할 수 있다.
         </p>
