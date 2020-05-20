@@ -1,77 +1,61 @@
 <p>
-The following terms are used to describe concepts in this specification.
+아래 용어들은 이 사양의 컨셉들을 표현하기 위하여 사용된다.
 </p>
 
 <dl class="termlist">
-  <dt><dfn data-lt="claims">claim</dfn></dt>
+  <dt><dfn data-lt="claim|claims|클레임">클레임 (claim)</dfn></dt>
   <dd>
-An assertion made about a <a>subject</a>.
+어떤 <a>주체</a>에 대한 주장.
   </dd>
-  <dt><dfn data-lt="credential|credentials|크리덴셜">credential</dfn></dt>
+  <dt><dfn data-lt="credential|credentials|크리덴셜|인증서">크리덴셜 (credential)</dfn></dt>
   <dd>
-A set of one or more <a>claims</a> made by an <a>issuer</a>. A
-<dfn data-lt="verifiable credentials|검증가능한 크리덴셜|검증가능 크리덴셜">verifiable credential</dfn> is a
-tamper-evident credential that has authorship that can be cryptographically
-verified. Verifiable credentials can be used to build
-<a>verifiable presentations</a>, which can also be cryptographically verified.
-The <a>claims</a> in a credential can be about different <a>subjects</a>.
+<a>발급자</a>가 제기한 하나 이상의 클레임 집합. 
+<dfn data-lt="verifiable credential|verifiable credentials|검증가능한 크리덴셜|검증가능 크리덴셜">검증가능한 크리덴셜 (verifiable credential)</dfn>은 암호화된 검증을 생성할 수 있는 변조 방지 크리덴셜이다.
+검증가능한 크리덴셜을 사용하여 암호화된 <a>검증가능한 프레젠테이션</a>을 만들수 도 있다. 크리덴셜의 <a>클레임</a>들은 다른 <a>주체</a>에 관한 것일 수 있다.
   </dd>
-  <dt><dfn>data minimization</dfn></dt>
+  <dt><dfn data-lt="data minimization|데이터 최소화">데이터 최소화 (data minimization)</dfn></dt>
   <dd>
-The act of limiting the amount of shared data strictly to the minimum
-necessary to successfully accomplish a task or goal.
+작업 또는 목표를 성공적으로 수행하는 데 필요한 데이터를 최소로 제한하는 행위.
   </dd>
-  <dt><dfn data-lt="decentralized identifiers|DID|DIDs|DID들|탈중앙 ID|탈중앙 식별자들|탈중앙화 식별자|탈중앙 식별자">decentralized identifier</dfn></dt>
+  <dt><dfn data-lt="decentralized identifiers|DID|DIDs|DID들|탈중앙 ID|탈중앙 식별자들|탈중앙화 식별자|탈중앙 식별자">탈중앙 식별자 (decentralized identifier)</dfn></dt>
   <dd>
-A portable URL-based identifier, also known as a <strong><em>DID</em></strong>,
-associated with an <a>entity</a>. These identifiers are most often used in a
-<a>verifiable credential</a> and are associated with <a>subjects</a> such that a
-<a>verifiable credential</a> itself can be easily ported from one
-<a>repository</a> to another without the need to reissue the <a>credential</a>.
-An example of a DID is <code>did:example:123456abcdef</code>.
+    <a>엔터티</a>와 연결된 <strong><em>DID</em></strong>라고도 하는 휴대용 URL기반 식별자.
+    이러한 식별자들은 <a>검증가능한 크리덴셜</a>에서 가장 자주 사용되며 <a>주체</a>와 연결되어 <a>크리덴셜</a>을 다시 발급할 필요 없이 <a>검증가능한 크리덴셜</a>
+     자체를 한 <a>저장소</a>에서 다른 저장소로 쉽게 이식할 수 있도록 한다.
+    DID의 예는 <code>did:example:123456abcdef</code>.
   </dd>
-  <dt><dfn data-lt="decentralized identifier documents|DID document|DID documents|DID 문서|DID 문서들">decentralized identifier document</dfn></dt>
+  <dt><dfn data-lt="decentralized identifier document|decentralized identifier documents|DID document|DID documents|DID 문서|DID 문서들">DID 문서 (decentralized identifier document)</dfn></dt>
   <dd>
-Also referred to as a <strong><em>DID document</em></strong>, this is a document 
-that is accessible using a <a>verifiable data registry</a> and contains
-information related to a specific <a>decentralized identifier</a>, such as the
-associated <a>repository</a> and public key information.
+    <strong><em>DID 문서</em></strong>라고도 하는 이 문서는 <a>검증가능한 데이터 레지스트리</a>를 사용하여 액세스할 수 있으며, 특정 <a>탈중앙 식별자</a>와 관련된 <a>저장소</a> 및 공개키 정보등을 포함하는 문서이다.
   </dd>
-  <dt><dfn data-lt="predicates|derived predicates">derived predicate</dfn></dt>
+  <dt><dfn data-lt="predicate|predicates|derived predicate|derived predicates|파생된 술어|파생된 조건자">파생된 속성 (derived predicate)</dfn></dt>
   <dd>
-A verifiable, boolean assertion about the value of another attribute in a
-<a>verifiable credential</a>. These are useful in zero-knowledge-proof-style
-<a>verifiable presentations</a> because they can limit information disclosure.
-For example, if a <a>verifiable credential</a> contains an attribute
-for expressing a specific height in centimeters, a derived predicate
-might reference the height attribute in the <a>verifiable credential</a>
-demonstrating that the <a>issuer</a> attests to a height value meeting the
-minimum height requirement, without actually disclosing the specific height
-value. For example, the <a>subject</a> is taller than 150 centimeters.
+    <a>검증가능한 크리덴셜</a>의 다른 특성 값에 대한 검증가능한 명제. 이는 정보 공개를 제한할 수 있기 때문에 영지식증명 스타일의 <a>검증가능한 프레젠테이션</a>에 유용하다. 
+    예를 들어, <a>검증가능한 크리덴셜</a>에 특정 높이를 센티미터로 표현하는 특성이 포함된 경우, <a>발급자</a>는 <a>검증가능한 크리덴셜</a>에 포함된 높이 속성이 최소 높이 요구사항을 충족한다는걸 파생된 속성을 통해, 실제 값을 공개하지 않고, 증명할 수 있다.
+    예를 들어, <a>주체</a>는 키가 150센티미터보다 크다고 표현된다.
   </dd>
-  <dt><dfn>digital signature</dfn></dt>
+  <dt><dfn data-lt="digital signature|디지털 서명">디지털 서명 (digital signature)</dfn></dt>
   <dd>
-A mathematical scheme for demonstrating the authenticity of a digital message.
+디지털 메시지의 진위를 입증하기 위한 수학적 체계.
   </dd>
-  <dt><dfn data-lt="entities|entity's|개체|개체들">entity</dfn></dt>
+  <dt><dfn data-lt="entity|entities|entity's|개체|개체들|엔터티">엔터티 (entity)</dfn></dt>
   <dd>
-A thing with distinct and independent existence, such as a person,
-organization, or device that performs one or more roles in the ecosystem.
+생태계에서 하나 이상의 역할을 수행하는 사람, 조직, 또는 장치와 같이 뚜렷하고 독립적인 존재.
   </dd>
-  <dt><dfn data-lt="graphs|그래프">graph</dfn></dt>
+  <dt><dfn data-lt="graphs|그래프">그래프 (graph)</dfn></dt>
   <dd>
-A network of information composed of <a>subjects</a> and their relationship
-to other <a>subjects</a> or data.
+<a>주체</a>들과 다른 <a>주체</a>들 또는 데이터의 관계 정보로 이루어진 네트워크.
   </dd>
-  <dt><dfn data-lt="holders|holder's|holders'|보유자">holder</dfn></dt>
+  <dt><dfn data-lt="holder|holders|holder's|holders'|보유자">보유자 (holder)</dfn></dt>
   <dd>
 A role an <a>entity</a> might perform by possessing one or more
 <a>verifiable credentials</a> and generating <a>presentations</a> from them.
 A holder is usually, but not always, a <a>subject</a> of the <a>verifiable
 credentials</a> they are holding. Holders store their <a>credentials</a> in
 <a>credential repositories</a>.
+
   </dd>
-  <dt><dfn data-lt="identities|identity's">identity</dfn></dt>
+  <dt><dfn data-lt="identities|identity's|신원">신원 (identity)</dfn></dt>
   <dd>
 The means for keeping track of <a>entities</a> across contexts. Digital
 identities enable tracking and customization of <a>entity</a> interactions
@@ -80,7 +64,7 @@ distribution or use of identity information can compromise privacy. Collection
 and use of such information should follow the principle of
 <a>data minimization</a>.
   </dd>
-  <dt><dfn data-lt="identity providers|idp|신원 제공자">identity provider</dfn></dt>
+  <dt><dfn data-lt="identity providers|idp|신원 제공자">신원 제공자 (identity provider)</dfn></dt>
   <dd>
 An identity provider, sometimes abbreviated as <em>IdP</em>, is a system
 for creating, maintaining, and managing identity information for
@@ -94,45 +78,45 @@ unless comparing or mapping the concepts in this document to other
 specifications. This specification decouples the <a>identity provider</a>
 concept into two distinct concepts: the <a>issuer</a> and the <a>holder</a>.
   </dd>
-  <dt><dfn data-lt="issuers|issuer's|발급자">issuer</dfn></dt>
+  <dt><dfn data-lt="issuers|issuer's|발급자">발급자 (issuer)</dfn></dt>
   <dd>
 A role an <a>entity</a> can perform by asserting <a>claims</a> about one or
 more <a>subjects</a>, creating a <a>verifiable credential</a> from these
 <a>claims</a>, and transmitting the <a>verifiable credential</a> to a
 <a>holder</a>.
   </dd>
-  <dt><dfn data-lt="presentations|프레젠테이션">presentation</dfn></dt>
+  <dt><dfn data-lt="presentations|프레젠테이션">프레젠테이션 (presentation)</dfn></dt>
   <dd>
 Data derived from one or more <a>verifiable credentials</a>, issued by one or
 more <a>issuers</a>, that is shared with a specific <a>verifier</a>. A
-<dfn data-lt="verifiable presentations|검증가능한 프레젠테이션|검증가능 프레젠테이션">verifiable presentation</dfn>
+<dfn data-lt="verifiable presentations|검증가능한 프레젠테이션|검증가능 프레젠테이션">검증가능 프레젠테이션 (verifiable presentation)</dfn>
 is a tamper-evident presentation encoded in such a way that authorship of the
 data can be trusted after a process of cryptographic verification. Certain
 types of verifiable presentations might contain data that is synthesized from,
 but do not contain, the original <a>verifiable credentials</a> (for example,
 zero-knowledge proofs).
   </dd>
-  <dt><dfn data-lt="credential repository|credential repositories|repositories|저장소">repository</dfn></dt>
+  <dt><dfn data-lt="credential repository|credential repositories|repositories|저장소">저장소 (repository)</dfn></dt>
   <dd>
 A program, such as a storage vault or personal <a>verifiable credential</a>
 wallet, that stores and protects access to <a>holders'</a>
 <a>verifiable credentials</a>.
   </dd>
-  <dt><dfn>selective disclosure</dfn></dt>
+  <dt><dfn data-lt="selective disclosure|선택적 공개">선택적 공개 (selective disclosure)</dfn></dt>
   <dd>
 The ability of a <a>holder</a> to make fine-grained decisions about what 
 information to share.
   </dd>
-  <dt><dfn data-lt="subjects|subject's|주체">subject</dfn></dt>
+  <dt><dfn data-lt="subjects|subject's|주체|주체들">주체 (subject)</dfn></dt>
   <dd>
 A thing about which <a>claims</a> are made.
   </dd>
-  <dt><dfn>user agent</dfn></dt>
+  <dt><dfn data-lt="사용자 에이전트">사용자 에이전트 (user agent)</dfn></dt>
   <dd>
 A program, such as a browser or other Web client, that mediates the
 communication between <a>holders</a>, <a>issuers</a>, and <a>verifiers</a>.
   </dd>
-  <dt><dfn data-lt="credential validation">validation</dfn></dt>
+  <dt><dfn data-lt="credential validation|유효성 검사">유효성 검사 (validation)</dfn></dt>
   <dd>
 The assurance that a <a>verifiable credential</a> or a
 <a>verifiable presentation</a> meets the needs of a <a>verifier</a> and other
@@ -141,7 +125,7 @@ dependent stakeholders. This specification is constrained to <a>verifying</a>
 their usage. Validating <a>verifiable credentials</a> or
 <a>verifiable presentations</a> is outside the scope of this specification.
   </dd>
-  <dt><dfn data-lt="verifiable data registries|검증가능한 데이터 레지스트리">verifiable data registry</dfn></dt>
+  <dt><dfn data-lt="verifiable data registries|검증가능한 데이터 레지스트리">검증가능한 데이터 레지스트리 (verifiable data registry)</dfn></dt>
   <dd>
 A role a system might perform by mediating the creation and <a>verification</a>
 of identifiers, keys, and other relevant data, such as
@@ -151,7 +135,7 @@ configurations might require correlatable identifiers for <a>subjects</a>. Some
 registries, such as ones for UUIDs and public keys, might just act as namespaces
 for identifiers.
   </dd>
-  <dt><dfn data-lt="verify|verified|verifying|verifiable|verifiability|검증">verification</dfn></dt>
+  <dt><dfn data-lt="verification|verify|verified|verifying|verifiable|verifiability|검증|검증가능한|검증가능성">검증 (verification)</dfn></dt>
   <dd>
 The evaluation of whether a <a>verifiable credential</a> or <a>verifiable presentation</a> 
 is an authentic and timely statement of the issuer or presenter, respectively.  
@@ -159,7 +143,7 @@ is an authentic and timely statement of the issuer or presenter, respectively.
 satisfied; and, if present, the status check succeeds.
 
   </dd>
-  <dt><dfn data-lt="verifier|verifiers|verifier's|credential verifiers|credential verifier's|검증자">verifier</dfn></dt>
+  <dt><dfn data-lt="verifier|verifiers|verifier's|credential verifiers|credential verifier's|검증자">검증자 (verifier)</dfn></dt>
   <dd>
 A role an <a>entity</a> performs by receiving one or more
 <a>verifiable credentials</a>, optionally inside a
