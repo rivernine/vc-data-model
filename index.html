@@ -1889,22 +1889,20 @@ pre .comment {
     </section>
   </section>
 
-  <section id="advanced-concepts">
-    <h2>Advanced Concepts</h2>
-
-    <p>
-      Building on the concepts introduced in Section <a href="#basic-concepts"></a>,
-      this section explores more complex topics about <a>verifiable credentials</a>.
-    </p>
-
-    <section class="informative">
-      <h3>Lifecycle Details</h3>
+    <section id="advanced-concepts">
+      <h2>고급 개념</h2>
 
       <p>
-        Section <a href="#ecosystem-overview"></a> provided an overview of the
-        <a>verifiable credential</a> ecosystem. This section provides more detail about
-        how the ecosystem is envisaged to operate.
+<a href="#basic-concepts"></a>에서 소개된 개념들을 바탕으로 이 섹션에서는 <a>검증가능한 크리덴셜</a>의 더 복잡한 주제들을 다룬다.
       </p>
+
+      <section class="informative">
+        <h3>라이프사이클 상세</h3>
+
+        <p>
+<a href="#ecosystem-overview"></a>는 <a>검증가능한 크리덴셜</a> 생태계의 개요를 제공했다. 
+이 섹션에서는 생태계가 어떻게 작동할 것인지에 대한 자세한 정보를 제공한다.
+        </p>
 
       <figure id="life-cycle-details">
         <img style="margin: auto; display: block; width: 85%;" src="diagrams/ecosystemdetail.svg" alt="diagram showing how
@@ -1913,108 +1911,84 @@ pre .comment {
          presentations flow from holder to verifier, where
          all parties can use information from a logical
          verifiable data registry">
-        <figcaption style="text-align: center;">
-          The roles and information flows for this specification.
-        </figcaption>
-      </figure>
+          <figcaption style="text-align: center;">
+            이 사양의 역할과 정보의 흐름.
+          </figcaption>
+        </figure>
 
-      <p>
-        The roles and information flows in the <a>verifiable credential</a> ecosystem
-        are as follows:
-      </p>
+        <p>
+<a>검증가능한 크리덴셜</a> 생태계의 역할과 정보의 흐름은 다음과 같다:
+        </p>
 
-      <ul>
-        <li>
-          An <a>issuer</a> <dfn data-lt="issue">issues</dfn> a
-          <a>verifiable credential</a> to a <a>holder</a>. Issuance always occurs before
-          any other actions involving a <a>credential</a>.
-        </li>
-        <li>
-          A <a>holder</a> might <dfn data-lt="transfers">transfer</dfn> one or more of
-          its <a>verifiable credentials</a> to another <a>holder</a>.
-        </li>
-        <li>
-          A <a>holder</a> <dfn data-lt="present">presents</dfn> one or more of its
-          <a>verifiable credentials</a> to a <a>verifier</a>, optionally inside a
-          <a>verifiable presentation</a>.
-        </li>
-        <li>
-          A <a>verifier</a> <a>verifies</a> the authenticity of the presented
-          <a>verifiable presentation</a> and <a>verifiable credentials</a>. This should
-          include checking the <a href="#status">credential status</a> for revocation
-          of the <a>verifiable credentials</a>.
-        </li>
-        <li>
-          An <a>issuer</a> might <dfn data-lt="revoke">revoke</dfn> a
-          <a>verifiable credential</a>.
-        </li>
-        <li>
-          A <a>holder</a> might <dfn data-lt="delete">delete</dfn> a
-          <a>verifiable credential</a>.
-        </li>
-      </ul>
+        <ul>
+          <li>
+<a>발급자</a>는 <a>검증가능한 크리덴셜</a>을 <a>보유자</a>에게<dfn data-lt="issue">발급</dfn>한다. 
+발급은 항상 <a>크리덴셜</a>과 관련된 다른 작업보다 먼저 발생한다.
+          </li>
+          <li>
+<a>보유자</a>는 하나 이상의 <a>검증가능한 크리덴셜</a>을 다른 <a>보유자</a>에게 <dfn data-lt="transfers">양도</dfn>할 수 있다.
+          </li>
+          <li>
+<a>보유자</a>는 하나 이상의 <a>검증가능한 크리덴셜</a>을, 선택적으로 <a>검증가능한 프레젠테이션</a>에 포함하여, <a>검증자</a>에게 <dfn data-lt="present">제시</dfn>한다.
+          </li>
+          <li>
+<a>검증자</a>는 제시된 <a>검증가능한 프레젠테이션</a>과 <a>검증가능한 크리덴셜</a>의 진위를 <a>검증</a>한다. 여기에는 <a>검증가능한 크리덴셜</a>의 폐기 여부가 확인되어야 한다.
+          </li>
+         <li>
+<a>발급자</a>는 <a>검증가능한 크리덴셜</a>를 취소할 수 있다.
+          </li>
+          <li>
+<a>보유자</a>는 <a>검증가능한 크리덴셜</a>을 <dfn data-lt="delete">삭제</dfn>할 수 있다.
+          </li>
+        </ul>
 
-      <p class="note">
-        The order of the actions above is not fixed, and some actions might be taken
-        more than once. Such action-recurrence might be immediate or at any later
-        point.
-      </p>
+        <p class="note">
+위 내용들의 순서는 고정되어 있지 않으며 일부 동작들은 두 번 이상 수행될 수 있다. 이러한 재동작은 즉시 또는 나중에 발생할 수 있다.
+        </p>
 
-      <p>
-        The most comon sequence of actions is envisioned to be:
-      </p>
+        <p>
+가장 일반적인 동작 순서는 다음과 같다:
+        </p>
 
-      <ol>
-        <li>
-          An <a>issuer</a> <a href="#lifecycle-details">issues</a> to a <a>holder</a>.
-        </li>
-        <li>
-          The <a>holder</a> <a href="#lifecycle-details">presents</a> to a <a>verifier</a>.
-        </li>
-        <li>
-          The <a>verifier</a> <a href="#lifecycle-details">verifies</a>.
-        </li>
-      </ol>
+        <ol>
+          <li>
+<a>발급자</a>가 <a>보유자</a>에게 <a href="#lifecycle-details">발급한다</a>.
+          </li>
+          <li>
+<a>보유자</a>가 <a>검증자</a>에게 <a href="#lifecycle-details">제시한다</a>.
+          </li>
+          <li>
+<a>검증자</a>가 <a href="#lifecycle-details">검증한다</a>.
+          </li>
+        </ol>
 
-      <p>
-        This specification does not define any protocol for transfering
-        <a>verifiable credentials</a> or <a>verifiable presentations</a>, but assuming
-        other specifications do specify how they are transferred between entities, then
-        this Verifiable Credential Data Model is directly applicable.
-      </p>
+        <p>
+이 사양은 <a>검증가능한 크리덴셜</a> 또는 <a>검증가능한 프레젠테이션</a>을 전송하기 위한 프로토콜을 정의하지 않지만, 다른 사양에서 엔터티간 전송 방법을 지정한다고 가정하면 이 검증가능한 크리덴셜 데이터 모델을 바로 적용할 수 있다.
+        </p>
 
-      <p>
-        This specification also does not define an authorization framework nor the
-        decisions that a <a>verifier</a> might make after <a>verifying</a> a
-        <a>verifiable credential</a> or <a>verifiable presentation</a>,
-        taking into account the <a>holder</a>, the <a>issuers</a> of the
-        <a>verifiable credentials</a>, the contents of the
-        <a>verifiable credentials</a>, and its own policies.
-      </p>
+        <p>
+이 사양은 인증 프레임워크나 <a>검증자</a>가 <a>보유자</a>, <a>검증가능한 크리덴셜</a>의 <a>발행자</a>, <a>검증가능한 크리덴셜</a>의 내용, 그리고 자체 정책을 고려하여 <a>검증가능한 크리덴셜</a> 또는 <a>검증가능한 프레젠테이션</a>을 검증한 후 내리는 결정에 대해 정의하지 않는다.
+        </p>
 
-      <p>
-        In particular, Sections <a href="#terms-of-use"></a> and
-        <a href="#subject-holder-relationships"></a> specify how a <a>verifier</a> can
-        determine:
-      </p>
+        <p>
+특히 <a href="#terms-of-use"></a>와 <a href="#subject-holder-relationships"></a>는 <a>검증자</a>가 다음 사항들을 결정할 수 있는 방법을 지정한다:
+        </p>
 
-      <ul>
-        <li>
-          Whether the <a>holder</a> is a <a>subject</a> of a <a>verifiable credential</a>.
-        </li>
-        <li>
-          The relationship between the <a>subject</a> and the <a>holder</a>.
-        </li>
-        <li>
-          Whether the original <a>holder</a> passed a <a>verifiable credential</a> to a
-          subsequent <a>holder</a>.
-        </li>
-        <li>
-          Any restrictions using the <a>verifiable credentials</a> by the <a>holder</a>
-          or <a>verifier</a>.
-        </li>
-      </ul>
-    </section>
+        <ul>
+          <li>
+<a>보유자</a>가 해당 <a>검증가능한 크리덴셜</a>의 <a>주체</a>인지 여부.
+          </li>
+          <li>
+<a>주체</a>와 <a>보유자</a>의 관계.
+          </li>
+          <li>
+이전 <a>보유자</a>가 <a>검증가능한 크리덴셜</a>을 후속 <a>보유자</a>에게 전달했는지 여부.
+          </li>
+          <li>
+<a>보유자</a> 또는 <a>검증자</a>가 <a>검증가능한 크리덴셜</a>을 사용하는데 모든 제한 사항들.
+          </li>
+        </ul>
+      </section>
 
     <section class="informative" id="trust-model">
       <h2>신뢰 모델</h2>
