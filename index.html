@@ -4021,183 +4021,131 @@ BjYgP62KvhIvW8BbkGUelYMetA
       </p>
     </section>
 
-    <section class="informative">
-      <h3>Storage Providers and Data Mining</h3>
+    <section class="informative" id="storage-providers-and-data-mining">
+      <h3>저장소 제공자와 데이터 마이닝</h3>
 
       <p>
-        When a <a>holder</a> receives a <a>verifiable credential</a> from an
-        <a>issuer</a>, the <a>verifiable credential</a> needs to be stored somewhere
-        (for example, in a <a>credential</a> repository). <a>Holders</a> are warned that
-        the information in a <a>verifiable credential</a> is sensitive in nature and
-        highly individualized, making it a high value target for data mining. Services
-        that advertise free storage of <a>verifiable credentials</a> might in fact be
-        mining personal data and selling it to organizations wanting to build
-        individualized profiles on people and organizations.
+        <a>보유자</a>가 <a>발급자</a>로부터 <a>검증가능한 크리덴셜</a>을 받으면 <a>검증가능한 크리덴셜</a>은 어딘가에 저장되어야 한다 (예: <a>크리덴셜</a> 저장소). 
+        <a>보유자</a>는 <a>검증가능한 크리덴셜</a>의 정보가 본질적으로 민감하고, 고도로 개인화되어 데이터 마이닝의 가치 높은 대상이 된다는것을 경고받는다. 
+        <a>검증가능한 크리덴셜</a>의 무료 저장을 홍보하는 서비스는 실제로 개인 데이터를 마이닝하여 개인 및 조직에 대한 개인화된 프로필을 구축하려는 조직에 판매하는 것일 수 있다.
       </p>
       <p>
-        <a>Holders</a> need to be aware of the terms of service for their
-        <a>credential</a> repository, specifically the correlation and data mining
-        protections in place for those who store their <a>verifiable credentials</a>
-        with the service provider.
+        <a>보유자</a>들은 <a>크리덴셜</a> 저장소의 서비스 약관, 특히 서비스 제공 업체에 <a>검증가능한 크리덴셜</a>을 저장하는 사람들을 위한 
+        상관 관계 및 데이터 마이닝으로부터 보호에 대한 부분을 알고있어야 한다.
       </p>
       <p>
-        Some effective mitigations for data mining and profiling include using:
+        데이터 마이닝 및 프로파일링에 대한 몇가지 효과적인 방법은 다음과 같다:
       </p>
 
       <ul>
         <li>
-          Service providers that do not sell your information to third parties.
+          사용자의 정보를 제 3자에게 판매하지 않는 서비스 제공자.
         </li>
         <li>
-          Software that encrypts <a>verifiable credentials</a> such that a service
-          provider cannot view the contents of the <a>credential</a>.
+          서비스 제공 업체가 <a>크리덴셜</a>의 내용을 볼 수 없도록 <a>검증가능한 크리덴셜</a>을 암호화하는 소프트웨어.
         </li>
         <li>
-          Software that stores <a>verifiable credentials</a> locally on a device that you
-          control and that does not upload or analyze your information beyond your
-          expectations.
+          <a>검증가능한 크리덴셜</a>을 사용자가 제어하는 장치에 로컬로 저장하고 예상보다 많은 정보를 업로드하거나 분석하지 않는 소프트웨어
         </li>
       </ul>
     </section>
 
-    <section class="informative">
-      <h3>Aggregation of Credentials</h3>
+    <section class="informative" id="aggregation-of-credentials">
+      <h3>크리덴셜의 수집</h3>
 
       <p>
-        Holding two pieces of information about the same <a>subject</a> almost always
-        reveals more about the <a>subject</a> than just the sum of the two pieces, even
-        when the information is delivered through different channels. The aggregation of
-        <a>verifiable credentials</a> is a privacy risk and all participants in
-        the ecosystem need to be aware of the risks of data aggregation.
+        동일한 <a>주체</a>에 대해 두 개의 정보를 보유하면, 그 정보가 다른 채널을 통해 전달되는 경우에도 그 <a>주체</a>에 대해 두 개의 합계보다 더 많은 정보를 노출하게 된다. 
+        <a>검증가능한 크리덴셜</a>을 수집하는것은 프라이버시 위험이며 이 생태계의 모든 참가자들은 데이터 수집의 위험성을 알고있어야 한다.
       </p>
 
       <p>
-        For example, if two <a>bearer credentials</a>, one for an email address and then
-        one stating the <a>holder</a> is over the age of 21, are provided across
-        multiple sessions, the <a>verifier</a> of the information now has a unique
-        identifier as well as age-related information for that individual. It is now
-        easy to create and build a profile for the <a>holder</a> such that more and more
-        information is leaked over time. Aggregation of <a>credentials</a> can also be
-        performed across multiple sites in collusion with each other, leading to privacy
-        violations.
+        예를 들어, 이메일 주소에 대한 <a>크리덴셜</a>이 하나 있고 <a>보유자</a>가 21세 이상이라는 사실에 대한 크리덴셜이 하나 있는 상황에서 두개의 
+        크리덴셜이 다수의 세션에 걸쳐 공유되었다면, <a>검증자</a>는 이제 그 개인에 대한 고유한 식별자와 연령 관련 정보를 갖게 된다. 
+        이제 시간이 갈수록 그 <a>보유자</a>에 대한 프로필을 생성하기 점점 더 쉬워진다. 여러 사이트에서 <a>크리덴셜</a> 수집을 할수도 있고, 
+        이는 심각한 프라이버시 문제를 초래할 수도 있다.
       </p>
 
       <p>
-        From a technological perspective, preventing aggregation of information is a
-        very difficult privacy problem to address. While new cryptographic techniques,
-        such as zero-knowledge proofs, are being proposed as solutions to the problem
-        of aggregation and correlation, the existence of long-lived identifiers and
-        browser tracking techniques defeats even the most modern cryptographic
-        techniques.
+        기술적인 관점에서 볼 때 정보 수집을 방지하는것은 매우 어려운 프라이버시 문제이다. 
+        영지식증명과 같은 새로운 암호화 기술이 수집 및 상관관계 문제에 대한 솔루션으로 제안되고 있지만, 
+        오래 지속되는 식별자와 브라우저 추적 기술의 존재는 가장 현대적인 암호화 기술조차도 능가한다.
       </p>
 
       <p>
-        The solution to the privacy implications of correlation or aggregation tends not
-        to be technological in nature, but policy driven instead. Therefore, if a
-        <a>holder</a> does not want information about them to be aggregated, they must
-        express this in the <a>verifiable presentations</a> they transmit.
+        상관관계 또는 수집의 프라이버시 영향에 대한 해결책은 본질적으로 기술적인것이 아니라 정책 중심이다. 
+        따라서 <a>보유자</a>가 자신에 대한 정보가 수집되길 바라지않는 경우, 그들이 보내는 <a>검증가능한 프레젠테이션</a>에 표시해야 한다.
       </p>
     </section>
 
-    <section class="informative">
-      <h3>Usage Patterns</h3>
+    <section class="informative" id="usage-patterns">
+      <h3>사용 패턴들</h3>
 
       <p>
-        Despite the best efforts to assure privacy, actually using
-        <a>verifiable credentials</a> can potentially lead to de-anonymization and a
-        loss of privacy. This correlation can occur when:
+        개인정보보호를 위한 최선의 노력에도 불구하고 실제로 <a>검증가능한 크리덴셜</a>을 사용하면 익명성이 해제되고 프라이버시가 손실될 수 있다. 
+        이 상관관계는 다음과 같은 경우에 발생할 수 있다:
       </p>
 
       <ul>
         <li>
-          The same <a>verifiable credential</a> is presented to the same <a>verifier</a>
-          more than once. The <a>verifier</a> could infer that the <a>holder</a> is the
-          same individual.
+          동일한 <a>검증가능한 크리덴셜</a>이 동일한 <a>검증자</a>에게 두 번 이상 제공되었을 경우. <a>검증자</a>는 <a>보유자</a>가 동일한 인물임을 유추할 수 있다.
         </li>
         <li>
-          The same <a>verifiable credential</a> is presented to different
-          <a>verifiers</a>, and either those <a>verifiers</a> collude or a third party
-          has access to transaction records from both <a>verifiers</a>. An observant
-          party could infer that the individual presenting the
-          <a>verifiable credential</a> is the same person at both services. That is, the
-          accounts are controlled by the same person.
+          동일한 <a>검증가능한 크리덴셜</a>이 다른 <a>검증자들</a>에게 제공되며, 해당 <a>검증자들</a>들이 공모하거나 제 3자가 두 <a>검증자</a> 모두의 거래기록에 접근가능할 경우. 
+          관찰자는 두 서비스에서 <a>검증가능한 크리덴셜</a>을 제출한 사람이 동일한 사람임을 유추할 수 있다. 즉, 계정들은 같은 사람에 의해 제어되고 있다는 사실을 알 수 있다.
         </li>
         <li>
-          A <a>subject</a> identifier of a <a>credential</a> refers to the same
-          <a>subject</a> across multiple <a>presentations</a> or <a>verifiers</a>. Even
-          when different <a>credentials</a> are presented, if the <a>subject</a>
-          identifier is the same, <a>verifiers</a> (and those with access to
-          <a>verifier</a> logs) could infer that the <a>holder</a> of the
-          <a>credential</a> is the same person.
+          <a>크리덴셜</a>의 <a>주체</a> 식별자가 여러 <a>프레젠테이션들</a> 또는 <a>검증자들</a>에게 동일한 경우. 
+          서로 다른 <a>크리덴셜</a>이 제출되었어도 <a>주체</a> 식별자가 같다면 <a>검증자들</a>(그리고 검증 기록을 조회할 수 있는 사람들)은 <a>크리덴셜</a>의 <a>보유자</a>가 동일인물임을 유추할 수 있다.
         </li>
         <li>
-          The underlying information in a <a>credential</a> can be used to identify an
-          individual across services. In this case, using information from other sources
-          (including information provided directly by the <a>holder</a>), <a>verifiers</a>
-          can use information inside the <a>credential</a> to correlate the individual
-          with an existing profile. For example, if a <a>holder</a> presents
-          <a>credentials</a> that include postal code, age, and gender, a <a>verifier</a>
-          can potentially correlate the <a>subject</a> of that <a>credential</a> with an
-          established profile. For more information, see [[DEMOGRAPHICS]].
+          <a>크리덴셜</a>의 기본 정보는 서비스들 전체에서 개인을 식별하는데 사용될 수 있다. 이 경우, 
+          <a>검증자들</a>은 다른 출처의 정보(<a>보유자</a>가 직접 제공한 정보 포함)를 사용하여 <a>크리덴셜</a>의 내용으로 개인을 기존 프로필과 연관시킬 수 있다. 
+          예를 들어, <a>보유자</a>가 우편번호, 나이, 성별을 포함한 <a>크리덴셜</a>을 제시하면 <a>검증자</a>가 해당 <a>크리덴셜</a>의 <a>주체</a>를 설정된 프로필과 연관시킬 수 있다. 
+          자세한 내용은 [[DEMOGRAPHICS]]를 참조.
         </li>
         <li>
-          Passing the identifier of a <a>credential</a> to a centralized revocation
-          server. The centralized server can correlate the <a>credential</a> usage across
-          interactions. For example, if a <a>credential</a> is used for proof of age in
-          this manner, the centralized service could know everywhere that
-          <a>credential</a> was presented (all liquor stores, bars, adult stores, lottery
-          purchases, and so on).
+          <a>크리덴셜</a>의 식별자를 중앙화된 폐기 서버에 전달할 경우. 중앙 서버는 상호 작용에서 <a>크리덴셜</a>을 연관시킬 수 있다. 
+          예를 들어 <a>크리덴셜</a>이 이러한 방식으로 나이를 증명하는데 사용되는 경우 중앙 서비스는 <a>크리덴셜</a>이 제공된 모든곳 
+          (모든 주류 상점, 술집, 성인 상점, 복권 구매 등)을 알 수 있다. 
         </li>
       </ul>
 
       <p>
-        In part, it is possible to mitigate this de-anonymization and loss of privacy
-        by:
+        어떤 부분들은 다음과 같은 방법으로 비익명화 및 프라이버시 손실을 완화 할 수 있다:
       </p>
 
       <ul>
         <li>
-          Using a globally-unique identifier as the <a>subject</a> for any given
-          <a>credential</a> and never re-use that <a>credential</a>.
+          <a>크리덴셜</a>의 <a>주체</a>로 전역 고유 식별자를 사용하고 해당 <a>크리덴셜</a>을 재사용 하지 않을것.
         </li>
         <li>
-          If the <a>credential</a> supports revocation, using a globally-distributed
-          service for revocation.
+          <a>크리덴셜</a>이 폐기를 지원하는 경우 전세계에 분산된 서비스를 사용하여 폐기할것.
         </li>
         <li>
-          Designing revocation APIs that do not depend on submitting the ID of the
-          <a>credential</a>. For example, use a revocation list instead of a query.
+          <a>크리덴셜</a>의 ID 제출에 의존하지 않는 크리덴셜 폐기 API 설계. 예를 들어, 쿼리 대신 폐기 목록을 사용할 것.
         </li>
         <li>
-          Avoiding the association of personally identifiable information with any
-          specific long-lived <a>subject</a> identifier.
+          개인 식별 정보와 특정 장수식별자와의 연관성을 피할것
         </li>
       </ul>
 
       <p>
-        It is understood that these mitigation techniques are not always practical
-        or even compatible with necessary usage. Sometimes correlation is a
-        requirement.
+        이러한 완화 기술이 항상 실용적이거나 필요한 사용법과 호환되는 것은 아님을 이해해야 한다. 때로는 상관관계가 필요하기도 하다.
       </p>
       <p>
-        For example, in some prescription drug monitoring programs, usage monitoring is
-        a requirement. Enforcement entities need to be able to confirm that individuals
-        are not cheating the system to get multiple prescriptions for controlled
-        substances. This statutory or regulatory need to correlate usage overrides
-        individual privacy concerns.
+        예를 들어, 일부 처방약 모니터링 프로그램에서는 사용량 모니터링이 필요하다. 
+        집행 주체는 개인이 통제 약품에 대해 복수의 처방을 받기 위해 시스템을 속이는 것이 아님을 확인할 수 있어야 한다. 
+        사용량의 상관관계를 위한 법규나 규정은 개인의 프라이버시 문제보다 중요하다.
       </p>
 
       <p>
-        <a>Verifiable credentials</a> will also be used to intentionally correlate
-        individuals across services, for example, when using a common persona to log in
-        to multiple services, so all activity on each of those services is
-        intentionally linked to the same individual. This is not a privacy issue as
-        long as each of those services uses the correlation in the expected manner.
+        <a>검증가능한 크리덴셜</a>은 서비스들 사이에서 의도적으로 연관시키는 경우가 있다. 
+        예를 들어, 동일 페르소나가 다수의 서비스에 로그인 할 때, 각각의 서비스에서 활동들이 의도적으로 동일 인물에게 연결된다. 
+        이러한 각 서비스들이 예상한 방식으로 상관관계를 사용하는 한 프라이버시 문제는 아니다.
       </p>
 
       <p>
-        Privacy risks of <a>credential</a> usage occur when unintended or unexpected
-        correlation arises from the presentation of <a>credentials</a>.
+        <a>크리덴셜</a>을 사용하여 의도하지 않거나 예기치 않은 상관관계가 발생하면 <a>크리덴셜</a>의 프라이버시 위험이 발생한다.
       </p>
     </section>
 
