@@ -2,7 +2,7 @@
 <html lang=ko>
 
 <head>
-  <title>Verifiable Credentials Data Model 1.0</title>
+  <title>검증가능한 크리덴셜 데이터 모델 1.0</title>
   <meta http-equiv='Content-Type' content='text/html;charset=utf-8' />
   <!--
       === NOTA BENE ===
@@ -90,97 +90,104 @@
             company: "University of Kent", companyURL: "https://www.kent.ac.uk/"
           }
         ],
-        // name of the WG
-        wg:           "Verifiable Claims Working Group",
+      // name of the WG
+      wg: "Verifiable Claims Working Group",
 
-        // URI of the public WG page
-        wgURI:        "https://www.w3.org/2017/vc/",
+      // URI of the public WG page
+      wgURI: "https://www.w3.org/2017/vc/",
 
-        // name (with the @w3c.org) of the public mailing to which comments are due
-        wgPublicList: "public-vc-comments",
+      // name (with the @w3c.org) of the public mailing to which comments are due
+      wgPublicList: "public-vc-comments",
 
-        // URI of the patent status for this WG, for Rec-track documents
-        // !!!! IMPORTANT !!!!
-        // This is important for Rec-track documents, do not copy a patent URI from a random
-        // document unless you know what you're doing. If in doubt ask your friendly neighborhood
-        // Team Contact.
-        wgPatentURI:  "https://www.w3.org/2004/01/pp-impl/98922/status",
-        maxTocLevel: 2,
-        inlineCSS: true,
-        errata: "https://w3c.github.io/vc-data-model/errata.html"
-      };
-    </script>
-    <style>
-pre .highlight {
-  font-weight: bold;
-  color: Green;
-}
-pre .subject {
-  font-weight: bold;
-  color: RoyalBlue;
-}
-pre .property {
-  font-weight: bold;
-  color: DarkGoldenrod;
-}
-pre .comment {
-  font-weight: bold;
-  color: SteelBlue;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.color-text {
-  font-weight: bold;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-    </style>
-  </head>
-  <body>
-    <div class="advisement" style="font-size:small">
-      <p>
-        이 문서는 <a href="https://www.w3.org/TR/vc-data-model/">W3C Verifiable Credentials Data Model v1.0</a>의 한국어
-        번역본입니다.
-      </p>
-      <p>
-        이 문서에 오역 및 오타를 포함할 수 있습니다. <b>영어 원문만이 공식적이고 규범적인 효력을 가지고 있습니다.</b><br />
-        문의나 개선사항은 <a href="https://github.com/ssimeetupkorea/ssimeetupkorea.github.io">깃헙 링크</a>나 <a
-          href="mailto:jshim10@illinois.edu">jshim10@illinois.edu</a>로 연락주시기 바랍니다.<br />
-      </p>
-  
-      <p>
-        원문작성일: 2019-11-19<br />
-        최초번역일: 2020-01-11<br />
-        최종수정일: 2020-01-11<br />
-      </p>
-      <dt><span style="font-weight: 500;">에디터 (가나다순)</span>: </dt>
-      <dd><a href="mailto:jshim10@illinois.edu" ]>심재훈</a></dd>
-      <dd><a href="https://www.linkedin.com/in/minho-yoo-1b968837/" ]>유민호</a> (<a href="https://iotrust.kr/">IoTrust Co.,Ltd.</a>)</dd>
-      <dd><a href="mailto:projector301@gmail.com" ]>윤희태</a> (<a href="https://http://blockcrafters.com/">Block Crafters Co.,Ltd.</a>)</dd>
-      <dd><a href="mailto:daoauth@gmail.com" ]>임도형</a></dd>
-      <dd>&nbsp;</dd>
-      <dt><span style="font-weight: 500;">번역자 (가나다순)</span>: </dt>
-      <dd><a href="mailto:anh1026@kaist.ac.kr" ]>안형철</a></dd>
-  
-      <dd><a href="mailto:magnified02@gmail.com" ]>유수웅</a></dd>
-  
-      <dd><a href="mailto:hyunsy822@gmail.com" ]>현수영</a></dd>
-      <dd><a href="mailto:bentconomy@gmail.com" ]>Benny Jung</a></dd>
-    </div>
-    <section id='abstract'>
-      <p>
+      // URI of the patent status for this WG, for Rec-track documents
+      // !!!! IMPORTANT !!!!
+      // This is important for Rec-track documents, do not copy a patent URI from a random
+      // document unless you know what you're doing. If in doubt ask your friendly neighborhood
+      // Team Contact.
+      wgPatentURI: "https://www.w3.org/2004/01/pp-impl/98922/status",
+      maxTocLevel: 2,
+      inlineCSS: true,
+      errata: "https://w3c.github.io/vc-data-model/errata.html"
+    };
+  </script>
+  <style>
+    pre .highlight {
+      font-weight: bold;
+      color: Green;
+    }
 
-<a>크리덴셜</a>(자격)은 우리 일상 생활의 일부이다. 운전면허증은 우리가 자동차를 
-운전할 수 있음을 주장하는데 사용하고, 대학 학위는 교육 수준을 주장하는데 사용하며, 
-정부가 발급한 여권은 국가 간 여행을 가능하게 한다. 본 사양에서는 웹 상에서 이러한 
-종류의 <a>크리덴셜</a>을 암호학적으로 안전하고, 프라이버시를 존중하며, 기계가 읽을 수 있는 
-방식으로 표현하는 메커니즘을 제공한다.
-      </p>
-    </section>
+    pre .subject {
+      font-weight: bold;
+      color: RoyalBlue;
+    }
 
-  <section id='sotd'>
+    pre .property {
+      font-weight: bold;
+      color: DarkGoldenrod;
+    }
 
+    pre .comment {
+      font-weight: bold;
+      color: SteelBlue;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .color-text {
+      font-weight: bold;
+      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="advisement" style="font-size:small">
+    <p>
+      이 문서는 <a href="https://www.w3.org/TR/vc-data-model/">W3C Verifiable Credentials Data Model v1.0</a>의 한국어
+      번역본입니다.
+    </p>
+    <p>
+      이 문서에 오역 및 오타를 포함할 수 있습니다. <b>영어 원문만이 공식적이고 규범적인 효력을 가지고 있습니다.</b><br />
+      문의나 개선사항은 <a href="https://github.com/ssimeetupkorea/ssimeetupkorea.github.io">깃헙 링크</a>나 <a
+        href="mailto:jshim10@illinois.edu">jshim10@illinois.edu</a>로 연락주시기 바랍니다.<br />
+    </p>
+
+    <p>
+      원문작성일: 2019-11-19<br />
+      최초번역일: 2020-01-11<br />
+      최종수정일: 2020-01-11<br />
+    </p>
+    <dt><span style="font-weight: 500;">에디터 (가나다순)</span>: </dt>
+    <dd><a href="mailto:jshim10@illinois.edu" ]>심재훈</a></dd>
+    <dd><a href="https://www.linkedin.com/in/minho-yoo-1b968837/" ]>유민호</a> (<a href="https://iotrust.kr/">IoTrust
+        Co.,Ltd.</a>)</dd>
+    <dd><a href="mailto:projector301@gmail.com" ]>윤희태</a> (<a href="https://http://blockcrafters.com/">Block Crafters
+        Co.,Ltd.</a>)</dd>
+    <dd><a href="mailto:daoauth@gmail.com" ]>임도형</a></dd>
+    <dd>&nbsp;</dd>
+    <dt><span style="font-weight: 500;">번역자 (가나다순)</span>: </dt>
+    <dd><a href="mailto:anh1026@kaist.ac.kr" ]>안형철</a></dd>
+
+    <dd><a href="mailto:magnified02@gmail.com" ]>유수웅</a></dd>
+
+    <dd><a href="mailto:hyunsy822@gmail.com" ]>현수영</a></dd>
+    <dd><a href="mailto:bentconomy@gmail.com" ]>Benny Jung</a></dd>
+  </div>
+  <section id='abstract'>
+    <p>
+
+      <a>크리덴셜</a>(자격)은 우리 일상 생활의 일부이다. 운전면허증은 우리가 자동차를
+      운전할 수 있음을 주장하는데 사용하고, 대학 학위는 교육 수준을 주장하는데 사용하며,
+      정부가 발급한 여권은 국가 간 여행을 가능하게 한다. 본 사양에서는 웹 상에서 이러한
+      종류의 <a>크리덴셜</a>을 암호학적으로 안전하고, 프라이버시를 존중하며, 기계가 읽을 수 있는
+      방식으로 표현하는 메커니즘을 제공한다.
+    </p>
+  </section>
+
+  <!-- <section id='sotd'>
+    이 부분은 영어 부분을 대채할 수 없기 때문에 삭제
     <p>
       The Working Group thanks the following individuals not only for their
       contributions toward the content of this document, but also for yeoman's work
@@ -206,363 +213,362 @@ pre .comment {
       management and steady guidance of the group through the W3C standardization
       process.
     </p>
-  </section>
-    <section class="informative">
-      <h2>소개</h2>
+  </section> -->
+  <section class="informative">
+    <h2>소개</h2>
+
+    <p>
+      <a>크리덴셜</a>(자격)은 우리 일상 생활의 일부이다. 운전면허증은 우리가 자동차를
+      운전할 수 있음을 주장하는데 사용하고, 대학 학위는 교육 수준을 주장하는데 사용하며,
+      정부가 발급한 여권은 국가 간 여행을 가능하게 한다. 이러한 <a>크리덴셜</a>은
+      물리적 환경에서 사용할 때는 우리에게 이점을 제공하지만, 웹에서 사용하기는 어렵다.
+    </p>
+
+    <p>
+      현재 웹에서 교육 자격, 의료 데이터, 금융 계정 정보 및 기타 제 3 자의 기계적
+      <a>검증</a>(판독)이 가능한 개인 정보를 표현하기는 어렵다.
+      웹에서 디지털 <a>크리덴셜</a>을 표현하는 것이 어렵기 때문에 실제 세계에서
+      물리적 <a>크리덴셜</a>이 제공하는 것과 동일한 인정을 받기가 어렵다.
+    </p>
+
+    <p>
+      본 사양에서는 웹 상에서 이러한 종류의 <a>크리덴셜</a>을 암호학적으로 안전하고,
+      프라이버시를 존중하며, 기계가 읽을 수 있는 방식으로 표현하는 메커니즘을 제공한다.
+    </p>
+
+    <p>
+      <a>검증가능한 크리덴셜</a>과 관련된 개념에 익숙치 않은 분들을 위해,
+      다음 섹션에서는 다음과 같은 개요를 제공한다.
+    </p>
+
+    <ul>
+      <li>
+        <a>검증가능한 크리덴셜</a>을 구성하는 요소
+      </li>
+      <li>
+        <a>검증가능한 프레젠테이션</a>을 구성하는 요소
+      </li>
+      <li>
+        <a>검증가능한 크리덴셜</a>과 <a>검증가능한 프레젠테이션</a>이 유용할 것으로 기대되는 생태계
+      </li>
+      <li>
+        본 사양에 영향을 미치는 요구사항과 활용 사례
+      </li>
+    </ul>
+
+    <section class="informative" id="what-is-a-verifiable-credential">
+      <h3>검증가능한 크리덴셜은 무엇인가?</h3>
 
       <p>
-<a>크리덴셜</a>(자격)은 우리 일상 생활의 일부이다. 운전면허증은 우리가 자동차를 
-운전할 수 있음을 주장하는데 사용하고, 대학 학위는 교육 수준을 주장하는데 사용하며, 
-정부가 발급한 여권은 국가 간 여행을 가능하게 한다. 이러한 <a>크리덴셜</a>은 
-물리적 환경에서 사용할 때는 우리에게 이점을 제공하지만, 웹에서 사용하기는 어렵다.
-      </p>
-
-      <p>
-현재 웹에서 교육 자격, 의료 데이터, 금융 계정 정보 및 기타 제 3 자의 기계적 
-<a>검증</a>(판독)이 가능한 개인 정보를 표현하기는 어렵다. 
-웹에서 디지털 <a>크리덴셜</a>을 표현하는 것이 어렵기 때문에 실제 세계에서 
-물리적 <a>크리덴셜</a>이 제공하는 것과 동일한 인정을 받기가 어렵다. 
-      </p>
-
-      <p>
-본 사양에서는 웹 상에서 이러한 종류의 <a>크리덴셜</a>을 암호학적으로 안전하고, 
-프라이버시를 존중하며, 기계가 읽을 수 있는 방식으로 표현하는 메커니즘을 제공한다.
-      </p>
-
-      <p>
-<a>검증가능한 크리덴셜</a>과 관련된 개념에 익숙치 않은 분들을 위해, 
-다음 섹션에서는 다음과 같은 개요를 제공한다.
+        물리적 환경에서 <a>크리덴셜</a>은 다음과 같은 구성으로 구성될 수 있다.
       </p>
 
       <ul>
         <li>
-<a>검증가능한 크리덴셜</a>을 구성하는 요소
+          <a>크리덴셜</a> <a>주체</a>의 식별과 관련된 정보(예: 사진, 이름 또는 식별 번호)
         </li>
         <li>
-<a>검증가능한 프레젠테이션</a>을 구성하는 요소
+          발행 기관과 관련된 정보(예: 시 정부, 국가 기관 또는 인증 기관)
         </li>
         <li>
-<a>검증가능한 크리덴셜</a>과 <a>검증가능한 프레젠테이션</a>이 유용할 것으로 기대되는 생태계
+          <a>크리덴셜</a> 유형과 관련된 정보
+          (예: 네덜란드 여권, 미국 운전 면허증 또는 건강 보험증)
         </li>
         <li>
-본 사양에 영향을 미치는 요구사항과 활용 사례
+          발행 기관이 <a>주체</a>에 대해 주장하는 특정 속성과 관련된 정보
+          (예: 국적, 운전 할 자격이 있는 차량의 클래스 또는 생년월일)
+        </li>
+        <li>
+          <a>크리덴셜</a>이 파생된 방법에 대한 증거
+        </li>
+        <li>
+          크리덴셜의 제약 조건과 관련된 정보(예: 만료 날짜 또는 사용 약관).
         </li>
       </ul>
 
-      <section class="informative" id="what-is-a-verifiable-credential">
-        <h3>검증가능한 크리덴셜은 무엇인가?</h3>
+      <p>
+        <a>검증가능한 크리덴셜</a>은 물리적 <a>크리덴셜</a>이 나타내는 것과 동일한
+        모든 정보를 나타낼 수 있다. <a>검증가능한 크리덴셜</a>은 디지털 서명과 같은
+        기술이 추가를 통해 물리적 <a>크리덴셜</a>보다 신뢰할 수 있고 변조확인이
+        가능하도록(Tamper-evident) 만들 수 있다.
+      </p>
 
-        <p>
-물리적 환경에서 <a>크리덴셜</a>은 다음과 같은 구성으로 구성될 수 있다.
-        </p>
+      <p>
+        <a>검증가능한 크리덴셜</a>의 <a>보유자</a>는 <a>검증가능한 프레젠테이션</a>을
+        생성한 다음 <a>검증가능한 프레젠테이션</a>을 <a>검증자</a>와 공유하여 특정 특성을
+        가진 <a>검증가능한 크리덴셜</a>을 보유하고 있음을 증명할 수 있다.
+      </p>
 
-        <ul>
-          <li>
-<a>크리덴셜</a> <a>주체</a>의 식별과 관련된 정보(예: 사진, 이름 또는 식별 번호)
-          </li>
-          <li>
-발행 기관과 관련된 정보(예: 시 정부, 국가 기관 또는 인증 기관) 
-          </li>
-          <li>
-<a>크리덴셜</a> 유형과 관련된 정보
-(예: 네덜란드 여권, 미국 운전 면허증 또는 건강 보험증) 
-          </li>
-          <li>
-발행 기관이 <a>주체</a>에 대해 주장하는 특정 속성과 관련된 정보
-(예: 국적, 운전 할 자격이 있는 차량의 클래스 또는 생년월일)
-          </li>
-          <li>
-<a>크리덴셜</a>이 파생된 방법에 대한 증거 
-          </li>
-          <li>
-크리덴셜의 제약 조건과 관련된 정보(예: 만료 날짜 또는 사용 약관).
-          </li>
-        </ul>
+      <p>
+        <a>검증가능한 크리덴셜</a>과 <a>검증가능한 프레젠테이션</a>은 신속하게
+        전송 가능하므로, 먼 거리에서의 신뢰를 구축하려고 할 때 물리적 크리덴셜보다 더 편리하다.
+      </p>
 
-        <p>
-<a>검증가능한 크리덴셜</a>은 물리적 <a>크리덴셜</a>이 나타내는 것과 동일한 
-모든 정보를 나타낼 수 있다. <a>검증가능한 크리덴셜</a>은 디지털 서명과 같은 
-기술이 추가를 통해 물리적 <a>크리덴셜</a>보다 신뢰할 수 있고 변조확인이 
-가능하도록(Tamper-evident) 만들 수 있다. 
-        </p>
+      <p>
+        본 사양의 목표는 디지털 <a>크리덴셜</a> 표현의 용이성을 향상시키려는 것이지만,
+        그와 더불어 개인 정보 보호 목표와의 균형을 맞추고자 한다.
+        디지털 정보의 지속성과 이질적인 디지털 데이터 소스를 수집하고 상호 연관시킬 수 있는
+        용이성은 검증 가능하고 쉽게 기계적 <a>검증가능한</a> <a>크리덴셜</a>의 사용이
+        악화될 수 있다는 개인 정보 보호 우려를 포함한다.
+        본 문서의 섹션 <a href="#privacy-considerations"></a>에서 개인 프라이버시
+        고려사항에서 이러한 여러 문제를 간략하게 다룬다. 또한 문서 전체적으로
+        영지식증명(Zero-knowledge Proof)와 같은 프라이버시 향상 기술이 사용된
+        데이터 모델을 어떻게 활용할 수 있는지 예제도 제공한다.
+      </p>
+    </section>
 
-        <p>
-<a>검증가능한 크리덴셜</a>의 <a>보유자</a>는 <a>검증가능한 프레젠테이션</a>을 
-생성한 다음 <a>검증가능한 프레젠테이션</a>을 <a>검증자</a>와 공유하여 특정 특성을 
-가진 <a>검증가능한 크리덴셜</a>을 보유하고 있음을 증명할 수 있다.
-        </p>
+    <section class="informative" id="ecosystem-overview">
+      <h3>생태계 개요</h3>
 
-        <p>
-<a>검증가능한 크리덴셜</a>과 <a>검증가능한 프레젠테이션</a>은 신속하게 
-전송 가능하므로, 먼 거리에서의 신뢰를 구축하려고 할 때 물리적 크리덴셜보다 더 편리하다.
-        </p>
+      <p>
+        본 섹션에서는 <a>검증가능한 크리덴셜</a>이 유용할 것으로 예상되는 생태계에서
+        핵심 행위자들의 역할과 그들 간의 관계에 대해 설명한다. 역할은 여러 가지 방법으로
+        구현될 수 있는 추상화이다. 역할의 분리는 표준화를 위한 인터페이스와 프로토콜을
+        암시한다. 이 사양에서는 다음과 같은 역할이 등장한다:
+      </p>
 
-        <p>
-본 사양의 목표는 디지털 <a>크리덴셜</a> 표현의 용이성을 향상시키려는 것이지만, 
-그와 더불어 개인 정보 보호 목표와의 균형을 맞추고자 한다. 
-디지털 정보의 지속성과 이질적인 디지털 데이터 소스를 수집하고 상호 연관시킬 수 있는 
-용이성은 검증 가능하고 쉽게 기계적 <a>검증가능한</a> <a>크리덴셜</a>의 사용이 
-악화될 수 있다는 개인 정보 보호 우려를 포함한다. 
-본 문서의 섹션 <a href="#privacy-considerations"></a>에서 개인 프라이버시 
-고려사항에서 이러한 여러 문제를 간략하게 다룬다. 또한 문서 전체적으로 
-영지식증명(Zero-knowledge Proof)와 같은 프라이버시 향상 기술이 사용된 
-데이터 모델을 어떻게 활용할 수 있는지 예제도 제공한다.
-        </p>
-      </section>
+      <dl>
+        <dt><a>보유자</a> holder </dt>
+        <dd>
+          하나 이상의 <a>검증가능한 크리덴셜</a>을 보유하고 그것으로부터
+          <a>검증가능한 프레젠테이션</a>을 생성하는 역할.
+          <a>보유자</a>의 사례로는 학생, 직원 및 고객 등이 있다.
+        </dd>
+        <dt><a>발급자</a> issuer</dt>
+        <dd>
+          하나 이상의 <a>주체</a>에 대한 <a>클레임</a>을 확증하고,
+          이러한 <a>클레임</a>으로부터 <a>검증가능한 크리덴셜</a>을 생성하며,
+          <a>보유자</a>에게 <a>검증가능한 크리덴셜</a>을 전달하는 역할. <a>발급자</a>의
+          사례로는 회사, 비영리 단체, 무역 협회, 정부, 개인 등이 있다.
+        </dd>
+        <dt><a>주체</a> subject</dt>
+        <dd>
+          <a>클레임</a>의 대상이 되는 <a>엔터티</a>.
+          주체의 사례로는 인간, 동물 그리고 사물이있다. 대부분의 경우 <a>검증가능한 크리덴셜</a>의
+          <a>보유자</a>가 주체이지만 경우에 따라서는 그렇지 않다.
+          예를 들면, 부모(<a>보유자</a>)는 자녀(<a>주체</a>)의 <a>검증가능한 크리덴셜</a>을
+          보유하거나 애완동물 소유자(<a>보유자</a>)가 애완동물의
+          <a>검증가능한 크리덴셜</a>(<a>주체</a>)을 보유할 수 있다.
+          이러한 특수한 경우에 대한 자세한 내용은
+          부록 <a href="#subject-holder-relationships"></a>참조.
+        </dd>
+        <dt><a>검증자</a> verifier</dt>
+        <dd>
+          검증 절차를 위해 하나 이상의 <a>검증가능한 크리덴셜</a>, 혹은
+          <a>검증가능한 프레젠테이션</a>을 받는 역할. <a>검증자</a>의
+          사례로는 직원, 보안 담당자, 웹사이트 등이 있다.
+        </dd>
+        <dt><a>검증가능한 데이터 레지스트리</a> verifiable data registry</dt>
+        <dd>
+          <a>검증가능한 크리덴셜</a> 스키마, 폐기 레지스트리, 발급자 공개 키 등과 같은 식별자,
+          키 및 기타 관련 데이터의 생성 및 확인을 중재하는 역할.
+          검증가능한 데이터 레지스트리에는 신뢰할 수 있는 데이터베이스, 분산된 데이터베이스,
+          정부 ID 데이터베이스 및 분산 원장이 포함된다. 종종 생태계에 사용되는
+          검증가능한 데이터 레지스트리 유형이 두 개 이상 있다.
+        </dd>
+      </dl>
 
-      <section class="informative" id="ecosystem-overview">
-        <h3>생태계 개요</h3>
-
-        <p>
-본 섹션에서는 <a>검증가능한 크리덴셜</a>이 유용할 것으로 예상되는 생태계에서 
-핵심 행위자들의 역할과 그들 간의 관계에 대해 설명한다. 역할은 여러 가지 방법으로 
-구현될 수 있는 추상화이다. 역할의 분리는 표준화를 위한 인터페이스와 프로토콜을 
-암시한다. 이 사양에서는 다음과 같은 역할이 등장한다:
-        </p>
-
-        <dl>
-          <dt><a>보유자</a> holder </dt>
-          <dd>
-하나 이상의 <a>검증가능한 크리덴셜</a>을 보유하고 그것으로부터 
-<a>검증가능한 프레젠테이션</a>을 생성하는 역할. 
-<a>보유자</a>의 사례로는 학생, 직원 및 고객 등이 있다. 
-          </dd>
-          <dt><a>발급자</a> issuer</dt>
-          <dd>
-하나 이상의 <a>주체</a>에 대한 <a>클레임</a>을 확증하고, 
-이러한 <a>클레임</a>으로부터 <a>검증가능한 크리덴셜</a>을 생성하며, 
-<a>보유자</a>에게 <a>검증가능한 크리덴셜</a>을 전달하는 역할. <a>발급자</a>의 
-사례로는 회사, 비영리 단체, 무역 협회, 정부, 개인 등이 있다. 
-          </dd>
-          <dt><a>주체</a> subject</dt>
-          <dd>
-<a>클레임</a>의 대상이 되는 <a>엔터티</a>. 
-주체의 사례로는 인간, 동물 그리고 사물이있다. 대부분의 경우 <a>검증가능한 크리덴셜</a>의
- <a>보유자</a>가 주체이지만 경우에 따라서는 그렇지 않다. 
- 예를 들면, 부모(<a>보유자</a>)는 자녀(<a>주체</a>)의 <a>검증가능한 크리덴셜</a>을 
- 보유하거나 애완동물 소유자(<a>보유자</a>)가 애완동물의 
- <a>검증가능한 크리덴셜</a>(<a>주체</a>)을 보유할 수 있다. 
- 이러한 특수한 경우에 대한 자세한 내용은 
- 부록 <a href="#subject-holder-relationships"></a>참조.
-          </dd>
-          <dt><a>검증자</a> verifier</dt>
-          <dd>
-검증 절차를 위해 하나 이상의 <a>검증가능한 크리덴셜</a>, 혹은 
-<a>검증가능한 프레젠테이션</a>을 받는 역할. <a>검증자</a>의 
-사례로는 직원, 보안 담당자, 웹사이트 등이 있다.
-          </dd>
-          <dt><a>검증가능한 데이터 레지스트리</a> verifiable data registry</dt>
-          <dd>
-<a>검증가능한 크리덴셜</a> 스키마, 폐기 레지스트리, 발급자 공개 키 등과 같은 식별자, 
-키 및 기타 관련 데이터의 생성 및 확인을 중재하는 역할. 
-검증가능한 데이터 레지스트리에는 신뢰할 수 있는 데이터베이스, 분산된 데이터베이스, 
-정부 ID 데이터베이스 및 분산 원장이 포함된다. 종종 생태계에 사용되는 
-검증가능한 데이터 레지스트리 유형이 두 개 이상 있다. 
-          </dd>
-        </dl>
-
-        <figure id="roles">
-          <img style="margin: auto; display: block; width: 75%;"
-	       src="diagrams/ecosystem.svg" alt="diagram showing how
+      <figure id="roles">
+        <img style="margin: auto; display: block; width: 75%;" src="diagrams/ecosystem.svg" alt="diagram showing how
 	       credentials flow from issuer to holder and
 	       presentations flow from holder to verifier where all
 	       three parties can use information from a logical
 	       verifiable data registry">
-          <figcaption style="text-align: center;">
-            본 사양의 기초를 형성하는 역할과 정보 흐름도.
-          </figcaption>
-        </figure>
+        <figcaption style="text-align: center;">
+          본 사양의 기초를 형성하는 역할과 정보 흐름도.
+        </figcaption>
+      </figure>
 
-        <p class="note">
-위의 그림 <a href="#roles"></a> 은 본 명세서의 나머지 개념을 접목하는 
-예제 생태계를 제공한다. 보호된 환경이나 독점 시스템과 같은 다른 생태계도 존재하며,
- 여기서도 <a>검증가능한 크리덴셜</a>는 이점을 제공한다. 
-        </p>
-      </section>
-
-      <section class="informative" id="use-cases-and-requirements">
-        <h3>유스케이스와 요구 사항</h3>
-
-        <p>
-검증가능한 크리덴셜 유스케이스 문서 [[VC-USECASES]]는 독자가 유용하게 사용할 수 있는 여러 가지 주요 주제를 간략하게 설명한다:
-
-        </p>
-
-        <ul>
-          <li>
-위에서 소개한 <a href="https://www.w3.org/TR/vc-use-cases/#user-roles">역할</a>에 대한 보다 자세한 설명
-          </li>
-          <li>
-교육, 금융, 의료, 소매, 전문 라이센스 및 정부와 같은 시장에서 확인된 
-<a href="https://www.w3.org/TR/vc-use-cases/#user-needs">요구 사항</a>
-          </li>
-          <li>
-생태계의 역할에 의해 수행되는 일반적인 
-<a href="https://www.w3.org/TR/vc-use-cases/#user-tasks">작업</a>과 
-관련된 요구 사항
-          </li>
-          <li>
-워킹 그룹에서 식별한 공통 
-<a href="https://www.w3.org/TR/vc-use-cases/#user-sequences">시퀀스 및 흐름</a>
-          </li>
-        </ul>
-
-        <p>
-유스케이스 문서를 문서화하고 분석한 결과, 
-이 사양에 대해 다음과 같은 바람직한 생태계 특성이 확인되었다:
-        </p>
-<!-- requirement list start -->
-        <ul>
-          <li>
-<a>검증가능한 크리덴셜</a>은 변조 검증이 가능하고 개인 정보 보호에 중요한 방식으로 <a>발급자</a>가 작성한 진술을 나타낸다.
-          </li>
-          <li>
-<a>보유자</a>는 다른 <a>발급자</a>의 <a>검증가능한 크리덴셜</a> 컬렉션을 단일 아티팩트, 
-<a>검증가능한 프레젠테이션</a>으로 수집한다.
-          </li>
-          <li>
-<a>발급자</a>는 모든 <a>주체</a>에 대해 <a>검증가능한 크리덴셜</a>을 발급할 수 있다.
-          </li>
-          <li>
-<a>발급자</a>, <a>보유자</a> 또는 <a>검증자</a>로서 행동하는 것은 당사자 간에 
-신뢰 관계이기 때문에 어떤 당국의 등록이나 승인이 필요하지 않다.
-          </li>
-          <li>
-<a>검증가능한 프레젠테이션</a>을 통해 모든 <a>검증자</a>가 <a>발급자</a>로부터 
-<a>검증가능한 크리덴셜</a>의 신뢰성을 확인할 수 있다.
-          </li>
-          <li>
-<a>보유자</a>는 누구에게나 <a>검증가능한 크리덴셜</a>을 받을 수 있다.
-          </li>
-          <li>
-
-<a>보유자</a>는 아무 사용자 에이전트를 통해 모든 <a>발급자</a> 및 
-<a>검증자</a>와 상호 작용할 수 있다.
-          </li>
-          <li>
-<a>보유자</a>는 <a>검증가능한 프레젠테이션</a>을 공유할 수 있으며, 
-이 <a>검증가능한 프레젠테이션</a>은 <a>발급자</a>에게 <a>검증자</a>의 신원을 
-공개하지 않고 <a>검증</a>할 수 있다.
-          </li>
-          <li>
-<a>보유자</a>는 <a>검증가능성</a>에 영향을 미치지 않고 <a>발급자</a>가 저장위치 또는 
-액세스 시기에 대해 전혀 알지 못하면서도 <a>검증가능한 크리덴셜</a>을 저장할 수 있다.
-          </li>
-          <li>
-<a>보유자</a>는 클레임의 신뢰성에 영향을 미치지 않고 <a>발급자</a>에 해당 조치를 
-공개하지 않고 <a>검증가능한 프레젠테이션</a>을 모든 <a>검증자</a>에게 제출할 수 있다.
-          </li>
-          <li>
-<a>검증자</a>는 모든 <a>발급자</a>의 <a>클레임</a> 증명을 포함하는 모든 
-<a>보유자</a>의 <a>검증가능한 프레젠테이션</a>을 <a>검증</a>할 수 있다.
-          </li>
-          <li>
-<a>검증</a>은 <a>발급자</a>와 <a>검증자</a> 간의 직접적인 상호 작용에 의존하지 않는다.
-          </li>
-          <li>
-<a>검증</a>은 어떤 <a>발급자</a>에게도 <a>검증자</a>의 신원을 공개하지 않아야한다.
-          </li>
-          <li>
-이 사양은 <a>발급자</a>가 해당 기능을 지원하기 위해 모든 준수한 소프트웨어가 필요 없이 
-선택적 공개를 지원하는 <a>검증가능한 크리덴셜</a>을 발급할 수 있는 수단을 제공해야 한다.
-          </li>
-          <li>
-<a>발급자</a>는 선택적 공개를 지원하는 <a>검증가능한 크리덴셜</a>을 발급할 수 있다.
-          </li>
-          <li>
-단일 <a>검증가능한 크리덴셜</a>이 선택적 공개를 지원하는 경우 <a>보유자</a>는 
-전체 <a>검증가능한 크리덴셜</a>을 공개하지 않고 <a>클레임</a>을 제시할 수 있다.
-          </li>
-          <li>
-<a>검증가능한 프레젠테이션</a>은 <a>검증가능한 크리덴셜</a>의 특성을 공개하거나 
-<a>검증자</a>가 요청한 <a>파생된 조건자</a>를 충족할 수 있다. <a>파생된 조건자</a>는 
-보다 큰, 보다 적은, 같음, 집합 등 부울 조건이다.
-          </li>
-          <li>
-<a>발급자</a>는 취소할 수 있는 <a>검증가능한 크리덴셜</a>을 발급할 수 있다.
-          </li>
-          <li>
-<a>검증가능한 크리덴셜</a> 및 <a>검증가능한 프레젠테이션</a>은 하나 이상의 기계 판독 
-가능한 데이터 형식으로 직렬화할 수 있어야 한다. 직렬화 및/또는 직렬화 해제 
-프로세스는 결정적이고 양방향이며 무손실이어야 한다. <a>검증가능한 크리덴셜</a> 또는 
-<a>검증가능한 프레젠테이션</a>의 모든 직렬화는 최종 프로세스에서 이 문서에 정의된 
-일반 데이터 모델로 변환할 수 있어야 하며, 따라서 <a>검증가능한 크리덴셜</a>을 
-상호 운용 가능한 방식으로 처리할 수 있다. 또한 직렬화된 양식은 데이터 또는 
-콘텐츠의 손실 없이 데이터 모델에서 생성될 수 있어야 한다. 
-          </li>
-          <li>
-데이터 모델과 직렬화는 최소한의 조정으로 확장할 수 있어야 한다.
-          </li>
-          <li>
-<a>발급자</a>에 의한 폐기는 <a>주체</a>, <a>보유자</a>, 
-특정 <a>검증가능한 크리덴셜</a> 또는 검증에 대한 식별 정보를 공개하지 않아야한다.
-          </li>
-          <li>
-<a>발급자</a>는 폐기 사유를 공개할 수 있다.
-          </li>
-          <li>
-<a>검증가능한 크리덴셜</a>을 해지하는 <a>발급자</a>는 암호화 무결성에 대한 
-폐기(예: 서명 키가 손상된 경우)와 상태 변경에 대한 
-폐기(예: 운전 면허증이 일시 중단됨)를 구분해야 한다.
-          </li>
-          <li>
-<a>발급자</a>는 <a>검증가능한 크리덴셜</a>을 갱신하는 서비스를 제공할 수 있다.
-          </li>
-        </ul>
-      </section>
-
-      <section id="conformance">Conformance</section>
-      <p>
-        This specification makes no normative statements with regard to the
-        conformance of roles in the ecosystem, such as <a>issuers</a>, <a>holders</a>,
-        or <a>verifiers</a>, because the conformance of ecosystem roles are highly
-        application, use case, and market vertical specific.
+      <p class="note">
+        위의 그림 <a href="#roles"></a> 은 본 명세서의 나머지 개념을 접목하는
+        예제 생태계를 제공한다. 보호된 환경이나 독점 시스템과 같은 다른 생태계도 존재하며,
+        여기서도 <a>검증가능한 크리덴셜</a>는 이점을 제공한다.
       </p>
+    </section>
+
+    <section class="informative" id="use-cases-and-requirements">
+      <h3>유스케이스와 요구 사항</h3>
 
       <p>
-        Digital proof mechanisms, a subset of which are digital signatures, are required
-        to ensure the protection of a <a>verifiable credential</a>. Having and
-        validating proofs, which may be dependent on the syntax of the proof
-        (for example, using the JSON Web Signature of a JSON Web Token for proofing a
-        key holder), are an essential part of processing a <a>verifiable credential</a>.
-        At the time of publication, Working Group members had implemented
-        <a>verifiable credentials</a> using at least three proof mechanisms:
+        검증가능한 크리덴셜 유스케이스 문서 [[VC-USECASES]]는 독자가 유용하게 사용할 수 있는 여러 가지 주요 주제를 간략하게 설명한다:
+
       </p>
 
       <ul>
         <li>
-          JSON Web Tokens [[RFC7519]] secured using JSON Web Signatures [[RFC7515]]
+          위에서 소개한 <a href="https://www.w3.org/TR/vc-use-cases/#user-roles">역할</a>에 대한 보다 자세한 설명
         </li>
         <li>
-          Linked Data Signatures [[?LD-SIGNATURES]]
+          교육, 금융, 의료, 소매, 전문 라이센스 및 정부와 같은 시장에서 확인된
+          <a href="https://www.w3.org/TR/vc-use-cases/#user-needs">요구 사항</a>
         </li>
         <li>
-          Camenisch-Lysyanskaya Zero-Knowledge Proofs [[?CL-SIGNATURES]].
+          생태계의 역할에 의해 수행되는 일반적인
+          <a href="https://www.w3.org/TR/vc-use-cases/#user-tasks">작업</a>과
+          관련된 요구 사항
+        </li>
+        <li>
+          워킹 그룹에서 식별한 공통
+          <a href="https://www.w3.org/TR/vc-use-cases/#user-sequences">시퀀스 및 흐름</a>
         </li>
       </ul>
 
       <p>
-        Implementers are advised to note that not all proof mechanisms are standardized
-        as of the publication date of this specification. The group expects some of
-        these mechanisms, as well as new ones, to mature independently and become
-        standardized in time. Given there are multiple valid proof mechanisms, this
-        specification does not standardize on any single digital signature mechanism.
-        One of the goals of this specification is to provide a data model that can be
-        protected by a variety of current and future digital proof mechanisms.
-        Conformance to this specification does not depend on the details of a particular
-        proof mechanism; it requires clearly identifying the mechanism a
-        <a>verifiable credential</a> uses.
+        유스케이스 문서를 문서화하고 분석한 결과,
+        이 사양에 대해 다음과 같은 바람직한 생태계 특성이 확인되었다:
       </p>
+      <!-- requirement list start -->
+      <ul>
+        <li>
+          <a>검증가능한 크리덴셜</a>은 변조 검증이 가능하고 개인 정보 보호에 중요한 방식으로 <a>발급자</a>가 작성한 진술을 나타낸다.
+        </li>
+        <li>
+          <a>보유자</a>는 다른 <a>발급자</a>의 <a>검증가능한 크리덴셜</a> 컬렉션을 단일 아티팩트,
+          <a>검증가능한 프레젠테이션</a>으로 수집한다.
+        </li>
+        <li>
+          <a>발급자</a>는 모든 <a>주체</a>에 대해 <a>검증가능한 크리덴셜</a>을 발급할 수 있다.
+        </li>
+        <li>
+          <a>발급자</a>, <a>보유자</a> 또는 <a>검증자</a>로서 행동하는 것은 당사자 간에
+          신뢰 관계이기 때문에 어떤 당국의 등록이나 승인이 필요하지 않다.
+        </li>
+        <li>
+          <a>검증가능한 프레젠테이션</a>을 통해 모든 <a>검증자</a>가 <a>발급자</a>로부터
+          <a>검증가능한 크리덴셜</a>의 신뢰성을 확인할 수 있다.
+        </li>
+        <li>
+          <a>보유자</a>는 누구에게나 <a>검증가능한 크리덴셜</a>을 받을 수 있다.
+        </li>
+        <li>
 
-      <p>
-        This document also contains examples that contain JSON and JSON-LD content.
-        Some of these examples contain characters that are invalid JSON, such as
-        inline comments (<code>//</code>) and the use of ellipsis (<code>...</code>)
-        to denote information that adds little value to the example. Implementers are
-        cautioned to remove this content if they desire to use the information as
-        valid JSON or JSON-LD.
-      </p>
+          <a>보유자</a>는 아무 사용자 에이전트를 통해 모든 <a>발급자</a> 및
+          <a>검증자</a>와 상호 작용할 수 있다.
+        </li>
+        <li>
+          <a>보유자</a>는 <a>검증가능한 프레젠테이션</a>을 공유할 수 있으며,
+          이 <a>검증가능한 프레젠테이션</a>은 <a>발급자</a>에게 <a>검증자</a>의 신원을
+          공개하지 않고 <a>검증</a>할 수 있다.
+        </li>
+        <li>
+          <a>보유자</a>는 <a>검증가능성</a>에 영향을 미치지 않고 <a>발급자</a>가 저장위치 또는
+          액세스 시기에 대해 전혀 알지 못하면서도 <a>검증가능한 크리덴셜</a>을 저장할 수 있다.
+        </li>
+        <li>
+          <a>보유자</a>는 클레임의 신뢰성에 영향을 미치지 않고 <a>발급자</a>에 해당 조치를
+          공개하지 않고 <a>검증가능한 프레젠테이션</a>을 모든 <a>검증자</a>에게 제출할 수 있다.
+        </li>
+        <li>
+          <a>검증자</a>는 모든 <a>발급자</a>의 <a>클레임</a> 증명을 포함하는 모든
+          <a>보유자</a>의 <a>검증가능한 프레젠테이션</a>을 <a>검증</a>할 수 있다.
+        </li>
+        <li>
+          <a>검증</a>은 <a>발급자</a>와 <a>검증자</a> 간의 직접적인 상호 작용에 의존하지 않는다.
+        </li>
+        <li>
+          <a>검증</a>은 어떤 <a>발급자</a>에게도 <a>검증자</a>의 신원을 공개하지 않아야한다.
+        </li>
+        <li>
+          이 사양은 <a>발급자</a>가 해당 기능을 지원하기 위해 모든 준수한 소프트웨어가 필요 없이
+          선택적 공개를 지원하는 <a>검증가능한 크리덴셜</a>을 발급할 수 있는 수단을 제공해야 한다.
+        </li>
+        <li>
+          <a>발급자</a>는 선택적 공개를 지원하는 <a>검증가능한 크리덴셜</a>을 발급할 수 있다.
+        </li>
+        <li>
+          단일 <a>검증가능한 크리덴셜</a>이 선택적 공개를 지원하는 경우 <a>보유자</a>는
+          전체 <a>검증가능한 크리덴셜</a>을 공개하지 않고 <a>클레임</a>을 제시할 수 있다.
+        </li>
+        <li>
+          <a>검증가능한 프레젠테이션</a>은 <a>검증가능한 크리덴셜</a>의 특성을 공개하거나
+          <a>검증자</a>가 요청한 <a>파생된 조건자</a>를 충족할 수 있다. <a>파생된 조건자</a>는
+          보다 큰, 보다 적은, 같음, 집합 등 부울 조건이다.
+        </li>
+        <li>
+          <a>발급자</a>는 취소할 수 있는 <a>검증가능한 크리덴셜</a>을 발급할 수 있다.
+        </li>
+        <li>
+          <a>검증가능한 크리덴셜</a> 및 <a>검증가능한 프레젠테이션</a>은 하나 이상의 기계 판독
+          가능한 데이터 형식으로 직렬화할 수 있어야 한다. 직렬화 및/또는 직렬화 해제
+          프로세스는 결정적이고 양방향이며 무손실이어야 한다. <a>검증가능한 크리덴셜</a> 또는
+          <a>검증가능한 프레젠테이션</a>의 모든 직렬화는 최종 프로세스에서 이 문서에 정의된
+          일반 데이터 모델로 변환할 수 있어야 하며, 따라서 <a>검증가능한 크리덴셜</a>을
+          상호 운용 가능한 방식으로 처리할 수 있다. 또한 직렬화된 양식은 데이터 또는
+          콘텐츠의 손실 없이 데이터 모델에서 생성될 수 있어야 한다.
+        </li>
+        <li>
+          데이터 모델과 직렬화는 최소한의 조정으로 확장할 수 있어야 한다.
+        </li>
+        <li>
+          <a>발급자</a>에 의한 폐기는 <a>주체</a>, <a>보유자</a>,
+          특정 <a>검증가능한 크리덴셜</a> 또는 검증에 대한 식별 정보를 공개하지 않아야한다.
+        </li>
+        <li>
+          <a>발급자</a>는 폐기 사유를 공개할 수 있다.
+        </li>
+        <li>
+          <a>검증가능한 크리덴셜</a>을 해지하는 <a>발급자</a>는 암호화 무결성에 대한
+          폐기(예: 서명 키가 손상된 경우)와 상태 변경에 대한
+          폐기(예: 운전 면허증이 일시 중단됨)를 구분해야 한다.
+        </li>
+        <li>
+          <a>발급자</a>는 <a>검증가능한 크리덴셜</a>을 갱신하는 서비스를 제공할 수 있다.
+        </li>
+      </ul>
     </section>
+
+    <section id="conformance">Conformance</section>
+    <p>
+      This specification makes no normative statements with regard to the
+      conformance of roles in the ecosystem, such as <a>issuers</a>, <a>holders</a>,
+      or <a>verifiers</a>, because the conformance of ecosystem roles are highly
+      application, use case, and market vertical specific.
+    </p>
+
+    <p>
+      Digital proof mechanisms, a subset of which are digital signatures, are required
+      to ensure the protection of a <a>verifiable credential</a>. Having and
+      validating proofs, which may be dependent on the syntax of the proof
+      (for example, using the JSON Web Signature of a JSON Web Token for proofing a
+      key holder), are an essential part of processing a <a>verifiable credential</a>.
+      At the time of publication, Working Group members had implemented
+      <a>verifiable credentials</a> using at least three proof mechanisms:
+    </p>
+
+    <ul>
+      <li>
+        JSON Web Tokens [[RFC7519]] secured using JSON Web Signatures [[RFC7515]]
+      </li>
+      <li>
+        Linked Data Signatures [[?LD-SIGNATURES]]
+      </li>
+      <li>
+        Camenisch-Lysyanskaya Zero-Knowledge Proofs [[?CL-SIGNATURES]].
+      </li>
+    </ul>
+
+    <p>
+      Implementers are advised to note that not all proof mechanisms are standardized
+      as of the publication date of this specification. The group expects some of
+      these mechanisms, as well as new ones, to mature independently and become
+      standardized in time. Given there are multiple valid proof mechanisms, this
+      specification does not standardize on any single digital signature mechanism.
+      One of the goals of this specification is to provide a data model that can be
+      protected by a variety of current and future digital proof mechanisms.
+      Conformance to this specification does not depend on the details of a particular
+      proof mechanism; it requires clearly identifying the mechanism a
+      <a>verifiable credential</a> uses.
+    </p>
+
+    <p>
+      This document also contains examples that contain JSON and JSON-LD content.
+      Some of these examples contain characters that are invalid JSON, such as
+      inline comments (<code>//</code>) and the use of ellipsis (<code>...</code>)
+      to denote information that adds little value to the example. Implementers are
+      cautioned to remove this content if they desire to use the information as
+      valid JSON or JSON-LD.
+    </p>
+  </section>
 
   </section>
 
@@ -1889,20 +1895,20 @@ pre .comment {
     </section>
   </section>
 
-    <section id="advanced-concepts">
-      <h2>고급 개념</h2>
+  <section id="advanced-concepts">
+    <h2>고급 개념</h2>
+
+    <p>
+      <a href="#basic-concepts"></a>에서 소개된 개념들을 바탕으로 이 섹션에서는 <a>검증가능한 크리덴셜</a>의 더 복잡한 주제들을 다룬다.
+    </p>
+
+    <section class="informative">
+      <h3>라이프사이클 상세</h3>
 
       <p>
-<a href="#basic-concepts"></a>에서 소개된 개념들을 바탕으로 이 섹션에서는 <a>검증가능한 크리덴셜</a>의 더 복잡한 주제들을 다룬다.
+        <a href="#ecosystem-overview"></a>는 <a>검증가능한 크리덴셜</a> 생태계의 개요를 제공했다.
+        이 섹션에서는 생태계가 어떻게 작동할 것인지에 대한 자세한 정보를 제공한다.
       </p>
-
-      <section class="informative">
-        <h3>라이프사이클 상세</h3>
-
-        <p>
-<a href="#ecosystem-overview"></a>는 <a>검증가능한 크리덴셜</a> 생태계의 개요를 제공했다. 
-이 섹션에서는 생태계가 어떻게 작동할 것인지에 대한 자세한 정보를 제공한다.
-        </p>
 
       <figure id="life-cycle-details">
         <img style="margin: auto; display: block; width: 85%;" src="diagrams/ecosystemdetail.svg" alt="diagram showing how
@@ -1911,84 +1917,89 @@ pre .comment {
          presentations flow from holder to verifier, where
          all parties can use information from a logical
          verifiable data registry">
-          <figcaption style="text-align: center;">
-            이 사양의 역할과 정보의 흐름.
-          </figcaption>
-        </figure>
+        <figcaption style="text-align: center;">
+          이 사양의 역할과 정보의 흐름.
+        </figcaption>
+      </figure>
 
-        <p>
-<a>검증가능한 크리덴셜</a> 생태계의 역할과 정보의 흐름은 다음과 같다:
-        </p>
+      <p>
+        <a>검증가능한 크리덴셜</a> 생태계의 역할과 정보의 흐름은 다음과 같다:
+      </p>
 
-        <ul>
-          <li>
-<a>발급자</a>는 <a>검증가능한 크리덴셜</a>을 <a>보유자</a>에게<dfn data-lt="issue">발급</dfn>한다. 
-발급은 항상 <a>크리덴셜</a>과 관련된 다른 작업보다 먼저 발생한다.
-          </li>
-          <li>
-<a>보유자</a>는 하나 이상의 <a>검증가능한 크리덴셜</a>을 다른 <a>보유자</a>에게 <dfn data-lt="transfers">양도</dfn>할 수 있다.
-          </li>
-          <li>
-<a>보유자</a>는 하나 이상의 <a>검증가능한 크리덴셜</a>을, 선택적으로 <a>검증가능한 프레젠테이션</a>에 포함하여, <a>검증자</a>에게 <dfn data-lt="present">제시</dfn>한다.
-          </li>
-          <li>
-<a>검증자</a>는 제시된 <a>검증가능한 프레젠테이션</a>과 <a>검증가능한 크리덴셜</a>의 진위를 <a>검증</a>한다. 여기에는 <a>검증가능한 크리덴셜</a>의 폐기 여부가 확인되어야 한다.
-          </li>
-         <li>
-<a>발급자</a>는 <a>검증가능한 크리덴셜</a>를 취소할 수 있다.
-          </li>
-          <li>
-<a>보유자</a>는 <a>검증가능한 크리덴셜</a>을 <dfn data-lt="delete">삭제</dfn>할 수 있다.
-          </li>
-        </ul>
+      <ul>
+        <li>
+          <a>발급자</a>는 <a>검증가능한 크리덴셜</a>을 <a>보유자</a>에게<dfn data-lt="issue">발급</dfn>한다.
+          발급은 항상 <a>크리덴셜</a>과 관련된 다른 작업보다 먼저 발생한다.
+        </li>
+        <li>
+          <a>보유자</a>는 하나 이상의 <a>검증가능한 크리덴셜</a>을 다른 <a>보유자</a>에게 <dfn data-lt="transfers">양도</dfn>할 수 있다.
+        </li>
+        <li>
+          <a>보유자</a>는 하나 이상의 <a>검증가능한 크리덴셜</a>을, 선택적으로 <a>검증가능한 프레젠테이션</a>에 포함하여, <a>검증자</a>에게 <dfn
+            data-lt="present">제시</dfn>한다.
+        </li>
+        <li>
+          <a>검증자</a>는 제시된 <a>검증가능한 프레젠테이션</a>과 <a>검증가능한 크리덴셜</a>의 진위를 <a>검증</a>한다. 여기에는 <a>검증가능한 크리덴셜</a>의 폐기 여부가 확인되어야
+          한다.
+        </li>
+        <li>
+          <a>발급자</a>는 <a>검증가능한 크리덴셜</a>를 취소할 수 있다.
+        </li>
+        <li>
+          <a>보유자</a>는 <a>검증가능한 크리덴셜</a>을 <dfn data-lt="delete">삭제</dfn>할 수 있다.
+        </li>
+      </ul>
 
-        <p class="note">
-위 내용들의 순서는 고정되어 있지 않으며 일부 동작들은 두 번 이상 수행될 수 있다. 이러한 재동작은 즉시 또는 나중에 발생할 수 있다.
-        </p>
+      <p class="note">
+        위 내용들의 순서는 고정되어 있지 않으며 일부 동작들은 두 번 이상 수행될 수 있다. 이러한 재동작은 즉시 또는 나중에 발생할 수 있다.
+      </p>
 
-        <p>
-가장 일반적인 동작 순서는 다음과 같다:
-        </p>
+      <p>
+        가장 일반적인 동작 순서는 다음과 같다:
+      </p>
 
-        <ol>
-          <li>
-<a>발급자</a>가 <a>보유자</a>에게 <a href="#lifecycle-details">발급한다</a>.
-          </li>
-          <li>
-<a>보유자</a>가 <a>검증자</a>에게 <a href="#lifecycle-details">제시한다</a>.
-          </li>
-          <li>
-<a>검증자</a>가 <a href="#lifecycle-details">검증한다</a>.
-          </li>
-        </ol>
+      <ol>
+        <li>
+          <a>발급자</a>가 <a>보유자</a>에게 <a href="#lifecycle-details">발급한다</a>.
+        </li>
+        <li>
+          <a>보유자</a>가 <a>검증자</a>에게 <a href="#lifecycle-details">제시한다</a>.
+        </li>
+        <li>
+          <a>검증자</a>가 <a href="#lifecycle-details">검증한다</a>.
+        </li>
+      </ol>
 
-        <p>
-이 사양은 <a>검증가능한 크리덴셜</a> 또는 <a>검증가능한 프레젠테이션</a>을 전송하기 위한 프로토콜을 정의하지 않지만, 다른 사양에서 엔터티간 전송 방법을 지정한다고 가정하면 이 검증가능한 크리덴셜 데이터 모델을 바로 적용할 수 있다.
-        </p>
+      <p>
+        이 사양은 <a>검증가능한 크리덴셜</a> 또는 <a>검증가능한 프레젠테이션</a>을 전송하기 위한 프로토콜을 정의하지 않지만, 다른 사양에서 엔터티간 전송 방법을 지정한다고 가정하면 이 검증가능한
+        크리덴셜 데이터 모델을 바로 적용할 수 있다.
+      </p>
 
-        <p>
-이 사양은 인증 프레임워크나 <a>검증자</a>가 <a>보유자</a>, <a>검증가능한 크리덴셜</a>의 <a>발행자</a>, <a>검증가능한 크리덴셜</a>의 내용, 그리고 자체 정책을 고려하여 <a>검증가능한 크리덴셜</a> 또는 <a>검증가능한 프레젠테이션</a>을 검증한 후 내리는 결정에 대해 정의하지 않는다.
-        </p>
+      <p>
+        이 사양은 인증 프레임워크나 <a>검증자</a>가 <a>보유자</a>, <a>검증가능한 크리덴셜</a>의 <a>발행자</a>, <a>검증가능한 크리덴셜</a>의 내용, 그리고 자체 정책을 고려하여
+        <a>검증가능한 크리덴셜</a> 또는 <a>검증가능한 프레젠테이션</a>을 검증한 후 내리는 결정에 대해 정의하지 않는다.
+      </p>
 
-        <p>
-특히 <a href="#terms-of-use"></a>와 <a href="#subject-holder-relationships"></a>는 <a>검증자</a>가 다음 사항들을 결정할 수 있는 방법을 지정한다:
-        </p>
+      <p>
+        특히 <a href="#terms-of-use"></a>와 <a href="#subject-holder-relationships"></a>는 <a>검증자</a>가 다음 사항들을 결정할 수 있는 방법을
+        지정한다:
+      </p>
 
-        <ul>
-          <li>
-<a>보유자</a>가 해당 <a>검증가능한 크리덴셜</a>의 <a>주체</a>인지 여부.
-          </li>
-          <li>
-<a>주체</a>와 <a>보유자</a>의 관계.
-          </li>
-          <li>
-이전 <a>보유자</a>가 <a>검증가능한 크리덴셜</a>을 후속 <a>보유자</a>에게 전달했는지 여부.
-          </li>
-          <li>
-<a>보유자</a> 또는 <a>검증자</a>가 <a>검증가능한 크리덴셜</a>을 사용하는데 모든 제한 사항들.
-          </li>
-        </ul>
-      </section>
+      <ul>
+        <li>
+          <a>보유자</a>가 해당 <a>검증가능한 크리덴셜</a>의 <a>주체</a>인지 여부.
+        </li>
+        <li>
+          <a>주체</a>와 <a>보유자</a>의 관계.
+        </li>
+        <li>
+          이전 <a>보유자</a>가 <a>검증가능한 크리덴셜</a>을 후속 <a>보유자</a>에게 전달했는지 여부.
+        </li>
+        <li>
+          <a>보유자</a> 또는 <a>검증자</a>가 <a>검증가능한 크리덴셜</a>을 사용하는데 모든 제한 사항들.
+        </li>
+      </ul>
+    </section>
 
     <section class="informative" id="trust-model">
       <h2>신뢰 모델</h2>
@@ -4570,19 +4581,19 @@ BjYgP62KvhIvW8BbkGUelYMetA
       <p class="note">
         많은 시스템에서 텍스트 문자열의 첫 번째 문자를 사용하여 텍스트 방향을 결정하므로
         위의 텍스트는 언어와 방향을 명시적으로 표현하지 않고 왼쪽에서 오른쪽으로 잘못 표시된다.
-        <p>
+      <p>
 
-          <p>
-            JSON-LD를 사용하는 구현자는
-            국제화 된 <a>속성</a>을 정의하는 JSON-LD 컨텍스트를 <a href="#extensibility">extend</a>하고
-            JSON-LD의 범위
-            지정된 컨텍스트 기능을 사용하여
-            <code>@value</code>, <code>@language</code> 및 <code>@direction</code> 키워드를
-            <code>value</code>, <code>lang</code> 및 <code>dir</code>로 별명
-            지정해야한다. 각기. 이를 수행하는 JSON-LD 컨텍스트 스니펫의 예는 다음과 같다.
-          </p>
+      <p>
+        JSON-LD를 사용하는 구현자는
+        국제화 된 <a>속성</a>을 정의하는 JSON-LD 컨텍스트를 <a href="#extensibility">extend</a>하고
+        JSON-LD의 범위
+        지정된 컨텍스트 기능을 사용하여
+        <code>@value</code>, <code>@language</code> 및 <code>@direction</code> 키워드를
+        <code>value</code>, <code>lang</code> 및 <code>dir</code>로 별명
+        지정해야한다. 각기. 이를 수행하는 JSON-LD 컨텍스트 스니펫의 예는 다음과 같다.
+      </p>
 
-          <pre class="example nohighlight" title="언어 정보에 대한 범위 별명 지정">
+      <pre class="example nohighlight" title="언어 정보에 대한 범위 별명 지정">
 "title": {
   <span class="highlight">"@context": {"value": "@value", "lang": "@language", "dir": "@direction"}</span>,
   "@id": "https://www.w3.org/2018/credentials/examples#title"
@@ -4677,367 +4688,110 @@ BjYgP62KvhIvW8BbkGUelYMetA
         예를 들어, <a>검증자</a>는 <a>검증가능한 크리덴셜</a>의 발급 날짜가 미래에 있지 않은지 확인할 수 있다.
       </p>
     </section>
-
-    <section class="informative">
-      <h3>Proofs (Signatures)</h3>
-
-      <p>
-        The cryptographic mechanism used to prove that the information in a
-        <a>verifiable credential</a> or <a>verifiable presentation</a> was not
-        tampered with is called a <em>proof</em>. There are many types of cryptographic
-        proofs including, but not limited to, digital signatures, zero-knowledge proofs,
-        Proofs of Work, and Proofs of Stake. In general, when verifying proofs,
-        implementations are expected to ensure:
-      </p>
-
-      <ul>
-        <li>
-          The proof is available in the form of a known proof suite.
-        </li>
-        <li>
-          All required proof suite <a>properties</a> are present.
-        </li>
-        <li>
-          The proof suite <a>verification</a> algorithm, when applied to the data, results
-          in an acceptable proof.
-        </li>
-      </ul>
-
-      <p>
-        Some proofs are digital signatures. In general, when verifying digital
-        signatures, implementations are expected to ensure:
-      </p>
-
-      <ul>
-        <li>
-          Acceptably recent metadata regarding the public key associated with the
-          signature is available. For example, the metadata might include
-          <a>properties</a> related to expiration, key owner, or key purpose.
-        </li>
-        <li>
-          The key is not suspended, revoked, or expired.
-        </li>
-        <li>
-          The cryptographic signature is expected to verify.
-        </li>
-        <li>
-          If the cryptographic suite expects a <code>proofPurpose</code> <a>property</a>,
-          it is expected to exist and be a valid value, such as
-          <code>assertionMethod</code>.
-        </li>
-      </ul>
-
-      <p class="note">
-        The digital signature provides a number of protections, other than tamper
-        resistance, which are not immediately obvious. For example, a Linked Data
-        Signature <code>created</code> <a>property</a> establishes a date and time
-        before which the <a>credential</a> should not be considered <a>verified</a>. The
-        <code>verificationMethod</code> <a>property</a> specifies, for example, the
-        public key that can be used to verify the digital signature. Dereferencing a
-        public key URL reveals information about the controller of the key, which can
-        be checked against the issuer of the <a>credential</a>. The
-        <code>proofPurpose</code> <a>property</a> clearly expresses the purpose for
-        the proof and ensures this information is protected by the signature. A proof is
-        typically attached to a <a>verifiable presentation</a> for authentication
-        purposes and to a <a>verifiable credential</a> as a method of assertion.
-      </p>
-    </section>
-
-    <section class="informative">
-      <h3>Expiration</h3>
-
-      <p>
-        The <code>expirationDate</code> is expected to be within an expected range
-        for the <a>verifier</a>. For example, a <a>verifier</a> can check that the
-        expiration date of a <a>verifiable credential</a> is not in the past.
-      </p>
-    </section>
-
-    <section class="informative" id="status">
-      <h3>상태</h3>
-
-      <p>
-        If the <code>credentialStatus</code> property is available, the status of a
-        <a>verifiable credential</a> is expected to be evaluated by the <a>verifier</a>
-        according to the <code>credentialStatus</code> <a>type</a> definition for the
-        <a>verifiable credential</a> and the <a>verifier's</a> own status evaluation
-        criteria. For example, a <a>verifier</a> can ensure the status of the
-        <a>verifiable credential</a> is not "withdrawn for cause by the <a>issuer</a>".
-      </p>
-    </section>
-
-    <section class="informative">
-      <h3>Fitness for Purpose</h3>
-
-      <p>
-        Fitness for purpose is about whether the custom <a>properties</a> in the
-        <a>verifiable credential</a> are appropriate for the <a>verifier's</a> purpose.
-        For example, if a <a>verifier</a> needs to determine whether a <a>subject</a> is
-        older than 21 years of age, they might rely on a specific <code>birthdate</code>
-        <a>property</a>, or on more abstract <a>properties</a>, such as
-        <code>ageOver</code>.
-      </p>
-
-      <p>
-        The <a>issuer</a> is trusted by the <a>verifier</a> to make the <a>claims</a> at
-        hand. For example, a franchised fast food restaurant location trusts the
-        discount coupon <a>claims</a> made by the corporate headquarters of the
-        franchise. Policy information expressed by the <a>issuer</a> in the
-        <a>verifiable credential</a> should be respected by <a>holders</a> and
-        <a>verifiers</a> unless they accept the liability of ignoring the policy.
-      </p>
-    </section>
-  </section>
-
-  </section>
-
-  <section class="appendix informative" id="validation">
-    <h2 id="a-validation"><bdi class="secno">A.</bdi>
-    Validation<a class="self-link" aria-label="§" href=
-    "#validation"></a></h2>
-    <p><em>This section is non-normative.</em></p>
-    <p>While this specification does not provide conformance
-    criteria for the process of the <a href=
-    "#dfn-credential-validation" class="internalDFN"
-    data-link-type="dfn">validation</a> of <a href=
-    "#dfn-verifiable-credentials" class="internalDFN"
-    data-link-type="dfn">verifiable credentials</a> or <a href=
-    "#dfn-verifiable-presentations" class="internalDFN"
-    data-link-type="dfn">verifiable presentations</a>, readers
-    might be curious about how the information in this data model
-    is expected to be utilized by <a href="#dfn-verifier" class=
-    "internalDFN" data-link-type="dfn">verifiers</a> during the
-    process of <a href="#dfn-credential-validation" class=
-    "internalDFN" data-link-type="dfn">validation</a>. This section
-    captures a selection of conversations held by the Working Group
-    related to the expected usage of the data fields in this
-    specification by <a href="#dfn-verifier" class="internalDFN"
-    data-link-type="dfn">verifiers</a>.</p>
-    <section class="informative" id="credential-subject-0">
-      <h3 id="a-1-credential-subject"><bdi class="secno">A.1</bdi>
-      Credential Subject<a class="self-link" aria-label="§" href=
-      "#credential-subject-0"></a></h3>
-      <p><em>This section is non-normative.</em></p>
-      <p>In the <a href="#dfn-verifiable-credentials" class=
-      "internalDFN" data-link-type="dfn">verifiable credentials</a>
-      presented by a <a href="#dfn-holders" class="internalDFN"
-      data-link-type="dfn">holder</a>, the value associated with
-      the <code>id</code> <a href="#dfn-property" class=
-      "internalDFN" data-link-type="dfn">property</a> for each
-      <code>credentialSubject</code> is expected to identify a
-      <a href="#dfn-subjects" class="internalDFN" data-link-type=
-      "dfn">subject</a> to the <a href="#dfn-verifier" class=
-      "internalDFN" data-link-type="dfn">verifier</a>. If the
-      <a href="#dfn-holders" class="internalDFN" data-link-type=
-      "dfn">holder</a> is also the <a href="#dfn-subjects" class=
-      "internalDFN" data-link-type="dfn">subject</a>, then the
-      <a href="#dfn-verifier" class="internalDFN" data-link-type=
-      "dfn">verifier</a> could authenticate the <a href=
-      "#dfn-holders" class="internalDFN" data-link-type=
-      "dfn">holder</a> if they have public key metadata related to
-      the <a href="#dfn-holders" class="internalDFN"
-      data-link-type="dfn">holder</a>. The <a href="#dfn-verifier"
-      class="internalDFN" data-link-type="dfn">verifier</a> could
-      then authenticate the <a href="#dfn-holders" class=
-      "internalDFN" data-link-type="dfn">holder</a> using a
-      signature generated by the <a href="#dfn-holders" class=
-      "internalDFN" data-link-type="dfn">holder</a> contained in
-      the <a href="#dfn-verifiable-presentations" class=
-      "internalDFN" data-link-type="dfn">verifiable
-      presentation</a>. The <code>id</code> <a href="#dfn-property"
-      class="internalDFN" data-link-type="dfn">property</a> is
-      optional. <a href="#dfn-verifier" class="internalDFN"
-      data-link-type="dfn">Verifiers</a> could use other <a href=
-      "#dfn-property" class="internalDFN" data-link-type=
-      "dfn">properties</a> in a <a href=
-      "#dfn-verifiable-credentials" class="internalDFN"
-      data-link-type="dfn">verifiable credential</a> to uniquely
-      identify a <a href="#dfn-subjects" class="internalDFN"
-      data-link-type="dfn">subject</a>.</p>
-      <div class="note" role="note" id=
-      "issue-container-generatedID-36">
-        <div role="heading" class="note-title marker" id=
-        "h-note-36" aria-level="4">
-          <span>Note</span>
-        </div>
-        <p class="">For information on how authentication and
-        WebAuthn might work with <a href=
-        "#dfn-verifiable-credentials" class="internalDFN"
-        data-link-type="dfn">verifiable credentials</a>, see the
-        Verifiable Credentials Implementation Guidelines
-        [<cite><a class="bibref" href="#bib-vc-imp-guide" title=
-        "Verifiable Credentials Implementation Guidelines 1.0"
-        data-link-type="biblio">VC-IMP-GUIDE</a></cite>]
-        document.</p>
-      </div>
-    </section>
-    <section class="informative" id="issuer-0">
-      <h3 id="a-2-issuer"><bdi class="secno">A.2</bdi>
-      Issuer<a class="self-link" aria-label="§" href=
-      "#issuer-0"></a></h3>
-      <p><em>This section is non-normative.</em></p>
-      <p>The value associated with the <code>issuer</code> <a href=
-      "#dfn-property" class="internalDFN" data-link-type=
-      "dfn">property</a> is expected to identify an <a href=
-      "#dfn-issuers" class="internalDFN" data-link-type=
-      "dfn">issuer</a> that is known to and trusted by the <a href=
-      "#dfn-verifier" class="internalDFN" data-link-type=
-      "dfn">verifier</a>.</p>
-      <p>Relevant metadata about the <code>issuer</code> <a href=
-      "#dfn-property" class="internalDFN" data-link-type=
-      "dfn">property</a> is expected to be available to the
-      <a href="#dfn-verifier" class="internalDFN" data-link-type=
-      "dfn">verifier</a>. For example, an <a href="#dfn-issuers"
-      class="internalDFN" data-link-type="dfn">issuer</a> can
-      publish information containing the public keys it uses to
-      digitally sign <a href="#dfn-verifiable-credentials" class=
-      "internalDFN" data-link-type="dfn">verifiable credentials</a>
-      that it issued. This metadata is relevant when checking the
-      proofs on the <a href="#dfn-verifiable-credentials" class=
-      "internalDFN" data-link-type="dfn">verifiable
-      credentials</a>.</p>
-    </section>
-    <section class="informative" id="issuance-date-0">
-      <h3 id="a-3-issuance-date"><bdi class="secno">A.3</bdi>
-      Issuance Date<a class="self-link" aria-label="§" href=
-      "#issuance-date-0"></a></h3>
-      <p><em>This section is non-normative.</em></p>
-      <p>The <code>issuanceDate</code> is expected to be within an
-      expected range for the <a href="#dfn-verifier" class=
-      "internalDFN" data-link-type="dfn">verifier</a>. For example,
-      a <a href="#dfn-verifier" class="internalDFN" data-link-type=
-      "dfn">verifier</a> can check that the issuance date of a
-      <a href="#dfn-verifiable-credentials" class="internalDFN"
-      data-link-type="dfn">verifiable credential</a> is not in the
-      future.</p>
-    </section>
     <section class="informative" id="proofs-signatures-0">
       <h3 id="a-4-proofs-signatures">
-      증명 (서명)<a class="self-link" aria-label="§" href=
-      "#proofs-signatures-0"></a></h3>
-      <p> <a href="#dfn-verifiable-credentials" class=
-      "internalDFN" data-link-type="dfn">검증 가능한 크리덴셜</a>
-      또는 <a href="#dfn-verifiable-presentations" class=
-      "internalDFN" data-link-type="dfn">검증 가능한 프레젠테이션</a>의
-      정보가 변조되지 않았음을 증명하는 데 사용되는 암호화 메커니즘을 
-      <em>증명</em>이라고 하자. 디지털 서명, 영지식 증명, 작업증명, 
-      지분증명 등을 포함하는 다양한 유형의 암호화 증명이 있다. 
-      일반적으로 증명을 검증할 때, 구현시 다음을 보장해야 한다:
-    </p>
+        증명 (서명)<a class="self-link" aria-label="§" href="#proofs-signatures-0"></a></h3>
+      <p> <a href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증 가능한 크리덴셜</a>
+        또는 <a href="#dfn-verifiable-presentations" class="internalDFN" data-link-type="dfn">검증 가능한 프레젠테이션</a>의
+        정보가 변조되지 않았음을 증명하는 데 사용되는 암호화 메커니즘을
+        <em>증명</em>이라고 하자. 디지털 서명, 영지식 증명, 작업증명,
+        지분증명 등을 포함하는 다양한 유형의 암호화 증명이 있다.
+        일반적으로 증명을 검증할 때, 구현시 다음을 보장해야 한다:
+      </p>
       <ul>
         <li>증명은 알려진 증명 모음의 형식으로 이용 가능하다.
         </li>
-        <li>모든 필수 증명 모음 <a href="#dfn-property"
-          class="internalDFN" data-link-type="dfn">속성</a>들이 존재한다.
+        <li>모든 필수 증명 모음 <a href="#dfn-property" class="internalDFN" data-link-type="dfn">속성</a>들이 존재한다.
         </li>
-        <li>증명 모음 <a href="#dfn-verify" class=
-        "internalDFN" data-link-type="dfn">검증</a>
-        알고리즘이 데이터에 적용되면 유효한 증명이 산출된다.
+        <li>증명 모음 <a href="#dfn-verify" class="internalDFN" data-link-type="dfn">검증</a>
+          알고리즘이 데이터에 적용되면 유효한 증명이 산출된다.
         </li>
       </ul>
-      <p>어떤 증명은 디지털 서명이다. 일반적으로 디지털 서명을 검증할 때, 
+      <p>어떤 증명은 디지털 서명이다. 일반적으로 디지털 서명을 검증할 때,
         구현시 다음을 보장해야 한다:</p>
       <ul>
-        <li>서명과 관련된 공개 키에 관한 최신 메타 데이터를 사용할 수 있다. 
-          메타 데이터에는 만료, 키 소유자 또는 키 목적과 관련된 <a href=
-          "#dfn-property" class="internalDFN" data-link-type="dfn">속성</a> 
+        <li>서명과 관련된 공개 키에 관한 최신 메타 데이터를 사용할 수 있다.
+          메타 데이터에는 만료, 키 소유자 또는 키 목적과 관련된 <a href="#dfn-property" class="internalDFN" data-link-type="dfn">속성</a>
           등이 포함될 수 있다.</li>
         <li>키는 중단되거나 취소 또는 만료되지 않는다.</li>
         <li>암호화된 서명은 검증되어야 한다.</li>
-        <li>암호화 모음이 <code>proofPurpose</code> <a href="#dfn-property" class=
-        "internalDFN" data-link-type="dfn">속성</a>을 필요로 한다면 
-        해당 속성은 존재해야 하고 <code>assertionMethod</code>와 같은 
-        유효한 값이어야 한다.
+        <li>암호화 모음이 <code>proofPurpose</code> <a href="#dfn-property" class="internalDFN" data-link-type="dfn">속성</a>을
+          필요로 한다면
+          해당 속성은 존재해야 하고 <code>assertionMethod</code>와 같은
+          유효한 값이어야 한다.
         </li>
       </ul>
-      <div class="note" role="note" id=
-      "issue-container-generatedID-37">
-        <div role="heading" class="note-title marker" id=
-        "h-note-37" aria-level="4">
+      <div class="note" role="note" id="issue-container-generatedID-37">
+        <div role="heading" class="note-title marker" id="h-note-37" aria-level="4">
         </div>
-        <p class="">디지털 서명은 위변조 방지 외에도 여러가지 보호 기능을 제공한다. 
-          예를 들어 연결된 데이터 서명 <code>created</code> <a href="#dfn-property" class=
-        "internalDFN" data-link-type="dfn">속성</a>은 <a href="#dfn-credential"
-        class="internalDFN" data-link-type="dfn">크리덴셜</a>이 
-        아직 <a href="#dfn-verify" class=
-        "internalDFN" data-link-type="dfn">검증된</a> 상태가 아닌 것으로 
-        간주되어야 할 날짜와 시간을 설정한다. The <code>verificationMethod</code> 
-        <a href="#dfn-property" class="internalDFN" data-link-type="dfn">
-          속성</a>속성은 디지털 서명을 확인하는데 사용될 수 있는 공개키를 지정한다. 
-          공개키 URL을 참조 해제하면 키의 컨트롤러에 대한 정보가 표시되며, 
-          이 정보는 <a href="#dfn-credential" class="internalDFN" data-link-type=
-          "dfn">크리덴셜</a> 발행자에 대해 확인할 수 있다. <code>proofPurpose</code> 
-        <a href="#dfn-property" class="internalDFN" data-link-type=
-        "dfn">속성</a>은 증명 목적을 명확하게 표현하고, 이 정보가 서명으로 
-        보호되도록 보장한다. 일반적으로 증명은 인증 목적으로 
-        <a href="#dfn-verifiable-presentations" class="internalDFN"
-        data-link-type="dfn">검증 가능한 프레젠테이션</a>에 첨부되거나 
-        인증 보장의 방법으로써 <a href="#dfn-verifiable-credentials" 
-        class="internalDFN" data-link-type="dfn">검증 가능한 크리덴셜</a>에 
-        첨부된다.</p>
+        <p class="">디지털 서명은 위변조 방지 외에도 여러가지 보호 기능을 제공한다.
+          예를 들어 연결된 데이터 서명 <code>created</code> <a href="#dfn-property" class="internalDFN" data-link-type="dfn">속성</a>은
+          <a href="#dfn-credential" class="internalDFN" data-link-type="dfn">크리덴셜</a>이
+          아직 <a href="#dfn-verify" class="internalDFN" data-link-type="dfn">검증된</a> 상태가 아닌 것으로
+          간주되어야 할 날짜와 시간을 설정한다. The <code>verificationMethod</code>
+          <a href="#dfn-property" class="internalDFN" data-link-type="dfn">
+            속성</a>속성은 디지털 서명을 확인하는데 사용될 수 있는 공개키를 지정한다.
+          공개키 URL을 참조 해제하면 키의 컨트롤러에 대한 정보가 표시되며,
+          이 정보는 <a href="#dfn-credential" class="internalDFN" data-link-type="dfn">크리덴셜</a> 발행자에 대해 확인할 수 있다.
+          <code>proofPurpose</code>
+          <a href="#dfn-property" class="internalDFN" data-link-type="dfn">속성</a>은 증명 목적을 명확하게 표현하고, 이 정보가 서명으로
+          보호되도록 보장한다. 일반적으로 증명은 인증 목적으로
+          <a href="#dfn-verifiable-presentations" class="internalDFN" data-link-type="dfn">검증 가능한 프레젠테이션</a>에 첨부되거나
+          인증 보장의 방법으로써 <a href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증 가능한 크리덴셜</a>에
+          첨부된다.</p>
       </div>
     </section>
     <section class="informative" id="expiration-0">
       <h3 id="a-5-expiration">
-      만료<a class="self-link" aria-label="§" href=
-      "#expiration-0"></a></h3>
-      <p><code>expirationDate</code>은 <a href="#dfn-verifier" class=
-      "internalDFN" data-link-type="dfn">verifier</a>의 예상 범위 안에 
-      있어야 한다. 예를 들어 <a href="#dfn-verifier" class="internalDFN" 
-      data-link-type="dfn">verifier</a>는 <a href="#dfn-verifiable-credentials" 
-      class="internalDFN" data-link-type="dfn">검증 가능한 크리덴셜</a>의 
-      만료 날짜가 과거 날짜가 아닌지 확인할 수 있다.</p>
+        만료<a class="self-link" aria-label="§" href="#expiration-0"></a></h3>
+      <p><code>expirationDate</code>은 <a href="#dfn-verifier" class="internalDFN" data-link-type="dfn">verifier</a>의 예상
+        범위 안에
+        있어야 한다. 예를 들어 <a href="#dfn-verifier" class="internalDFN" data-link-type="dfn">verifier</a>는 <a
+          href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증 가능한 크리덴셜</a>의
+        만료 날짜가 과거 날짜가 아닌지 확인할 수 있다.</p>
     </section>
     <section class="informative" id="status-0">
       <h3 id="a-6-status">
-      상태<a class="self-link" aria-label="§" href=
-      "#status-0"></a></h3>
-      <p><code>credentialStatus</code>이 사용 가능한 경우, <a href=
-      "#dfn-verifiable-credentials" class="internalDFN"
-      data-link-type="dfn">검증 가능한 크리덴셜</a>의 상태는 검증 가능한 
-      크리덴셜에 대한 <code>credentialStatus</code> <a href="#dfn-type" class=
-      "internalDFN" data-link-type="dfn">타입</a> 정의 및 <a href=
-      "#dfn-verifier" class="internalDFN" data-link-type="dfn">검증자</a>의 
-      평가 기준에 따라 <a href="#dfn-verifier" class="internalDFN"data-link-type="dfn">검증자</a>에 
-      의해 평가되어야 한다. 예를 들어, <a href="#dfn-verifier" class="internalDFN" 
-      data-link-type="dfn">검증자</a>는 <a href="#dfn-verifiable-credentials" class="internalDFN"
-      data-link-type="dfn">검증 가능한 크리덴셜</a>의 상태가 "<a href="#dfn-issuers" 
-      class="internalDFN" data-link-type="dfn">발급자</a>에 의해 취소됨"이 
-      아니라는 것을 보장할 수 있다.</p>
+        상태<a class="self-link" aria-label="§" href="#status-0"></a></h3>
+      <p><code>credentialStatus</code>이 사용 가능한 경우, <a href="#dfn-verifiable-credentials" class="internalDFN"
+          data-link-type="dfn">검증 가능한 크리덴셜</a>의 상태는 검증 가능한
+        크리덴셜에 대한 <code>credentialStatus</code> <a href="#dfn-type" class="internalDFN" data-link-type="dfn">타입</a> 정의 및
+        <a href="#dfn-verifier" class="internalDFN" data-link-type="dfn">검증자</a>의
+        평가 기준에 따라 <a href="#dfn-verifier" class="internalDFN" data-link-type="dfn">검증자</a>에
+        의해 평가되어야 한다. 예를 들어, <a href="#dfn-verifier" class="internalDFN" data-link-type="dfn">검증자</a>는 <a
+          href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증 가능한 크리덴셜</a>의 상태가 "<a
+          href="#dfn-issuers" class="internalDFN" data-link-type="dfn">발급자</a>에 의해 취소됨"이
+        아니라는 것을 보장할 수 있다.</p>
     </section>
     <section class="informative" id="fitness-for-purpose">
       <h3 id="a-7-fitness-for-purpose">
-      목적 적합성<a class="self-link" aria-label="§" href=
-      "#fitness-for-purpose"></a></h3>
-      <p>목적 적합성은 <a href="#dfn-verifiable-credentials" 
-        class="internalDFN"data-link-type="dfn">검증 가능한 크리덴셜</a>의 
-        사용자 지정 <a href="#dfn-property" class="internalDFN" 
-        data-link-type="dfn">속성</a>이 <a href="#dfn-verifier" class=
-      "internalDFN" data-link-type="dfn">검증자</a>의 목적에 적합한지 
-      여부이다. 예를 들어 <a href="#dfn-subjects" class="internalDFN" 
-      data-link-type="dfn">주체</a>가 21세 이상인지 <a href="#dfn-verifier" 
-      class="internalDFN"data-link-type="dfn">검증자</a>가 확인해야 하는 경우 
-      지정된 <code>birthdate</code> <a href="#dfn-property" class="internalDFN" 
-      data-link-type="dfn">속성</a> 또는 <code>ageOver</code> 와 같은 
-      보다 추상적인  <a href="#dfn-property" class="internalDFN" 
-      data-link-type="dfn">속성</a>에 의존할 수 있다.</p>
-      <p><a href="#dfn-issuers" class="internalDFN"
-      data-link-type="dfn">발행자</a>는 즉시 <a href="#dfn-claims" class=
-      "internalDFN" data-link-type="dfn">클레임</a>을 생성할 수 있도록 
-       <a href="#dfn-verifier" class="internalDFN" data-link-type=
-      "dfn">검증자</a>로부터 신뢰를 얻는다. 예를 들어, 프랜차이즈 패스트푸드 
-      식당 위치는 프랜차이즈 본사에서 만든 항린 쿠폰 <a href="#dfn-claims" class="internalDFN"data-link-type="dfn">클레임</a>을 신뢰한다. 
-      <a href="#dfn-issuers" class="internalDFN"data-link-type="dfn">
-        발급자</a>가 <a href="#dfn-verifiable-credentials" class="internalDFN"
-        data-link-type="dfn">검증 가능한 크리덴셜</a>에 표현한 정책 정보는, 
-        정책에 위배되는 책임을 용인하지 않는 한 <a href="#dfn-holders" class="internalDFN"data-link-type="dfn">보유자</a>와 <a href="#dfn-verifier" class="internalDFN" data-link-type="dfn">검증자</a>에 의해 존중되어야 한다.</p>
+        목적 적합성<a class="self-link" aria-label="§" href="#fitness-for-purpose"></a></h3>
+      <p>목적 적합성은 <a href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증 가능한 크리덴셜</a>의
+        사용자 지정 <a href="#dfn-property" class="internalDFN" data-link-type="dfn">속성</a>이 <a href="#dfn-verifier"
+          class="internalDFN" data-link-type="dfn">검증자</a>의 목적에 적합한지
+        여부이다. 예를 들어 <a href="#dfn-subjects" class="internalDFN" data-link-type="dfn">주체</a>가 21세 이상인지 <a
+          href="#dfn-verifier" class="internalDFN" data-link-type="dfn">검증자</a>가 확인해야 하는 경우
+        지정된 <code>birthdate</code> <a href="#dfn-property" class="internalDFN" data-link-type="dfn">속성</a> 또는
+        <code>ageOver</code> 와 같은
+        보다 추상적인 <a href="#dfn-property" class="internalDFN" data-link-type="dfn">속성</a>에 의존할 수 있다.</p>
+      <p><a href="#dfn-issuers" class="internalDFN" data-link-type="dfn">발행자</a>는 즉시 <a href="#dfn-claims"
+          class="internalDFN" data-link-type="dfn">클레임</a>을 생성할 수 있도록
+        <a href="#dfn-verifier" class="internalDFN" data-link-type="dfn">검증자</a>로부터 신뢰를 얻는다. 예를 들어, 프랜차이즈 패스트푸드
+        식당 위치는 프랜차이즈 본사에서 만든 항린 쿠폰 <a href="#dfn-claims" class="internalDFN" data-link-type="dfn">클레임</a>을 신뢰한다.
+        <a href="#dfn-issuers" class="internalDFN" data-link-type="dfn">
+          발급자</a>가 <a href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증 가능한 크리덴셜</a>에 표현한
+        정책 정보는,
+        정책에 위배되는 책임을 용인하지 않는 한 <a href="#dfn-holders" class="internalDFN" data-link-type="dfn">보유자</a>와 <a
+          href="#dfn-verifier" class="internalDFN" data-link-type="dfn">검증자</a>에 의해 존중되어야 한다.</p>
     </section>
   </section>
 
   <section class="appendix informative">
     <h2>Base Context</h2>
-<code>https://www.w3.org/2018/credentials/v1</code>에 있고 SHA-256 다이제스트 <strong><code>ab4ddd9a531758807a79a5b450510d61ae8d147eab966cc9a200c07095b0cdcc</code></strong> 를 갖는 기본 컨텍스트는 로컬 캐시 복사본을 구현하는데 사용될 수 있다. 편의상 이번 장에서는 기본 컨텍스트가 함께 제공한다.
-      </p>
+    <code>https://www.w3.org/2018/credentials/v1</code>에 있고 SHA-256 다이제스트
+    <strong><code>ab4ddd9a531758807a79a5b450510d61ae8d147eab966cc9a200c07095b0cdcc</code></strong> 를 갖는 기본 컨텍스트는 로컬 캐시
+    복사본을 구현하는데 사용될 수 있다. 편의상 이번 장에서는 기본 컨텍스트가 함께 제공한다.
+    </p>
 
     <pre class="informative">
 {
@@ -5281,16 +5035,15 @@ BjYgP62KvhIvW8BbkGUelYMetA
 
   </section>
 
-    <section class="informative appendix">
-      <h3>주체-보유자 관계</h3>
+  <section class="informative appendix">
+    <h3>주체-보유자 관계</h3>
 
-      <p>
-        이 섹션에서는 <a href="#dfn-subjects" class="internalDFN" data-link-type=
-        "dfn">주체</a>와 <a href="#dfn-holders" class="internalDFN" data-link-type=
-        "dfn">보유자</a> 간의 성립 가능한 관계와 <a href="#dfn-verifiable-credentials"
-         class="internalDFN"data-link-type="dfn">검증 가능한 크리덴셜</a> 
-         데이터 모델이 이러한 관계를 어떻게 표현하는지 설명한다. 다음 다이어그램은 이러한 관계를 보여주며, 다음 섹션에서는 이 관계가 데이터 모델에서 처리되는 방식을 설명한다.
-      </p>
+    <p>
+      이 섹션에서는 <a href="#dfn-subjects" class="internalDFN" data-link-type="dfn">주체</a>와 <a href="#dfn-holders"
+        class="internalDFN" data-link-type="dfn">보유자</a> 간의 성립 가능한 관계와 <a href="#dfn-verifiable-credentials"
+        class="internalDFN" data-link-type="dfn">검증 가능한 크리덴셜</a>
+      데이터 모델이 이러한 관계를 어떻게 표현하는지 설명한다. 다음 다이어그램은 이러한 관계를 보여주며, 다음 섹션에서는 이 관계가 데이터 모델에서 처리되는 방식을 설명한다.
+    </p>
 
     <figure>
       <img style="margin: auto; display: block; width: 75%;" src="diagrams/subject-ne-holder.svg" alt="Long decision tree
@@ -5313,33 +5066,46 @@ BjYgP62KvhIvW8BbkGUelYMetA
         Subject-Holder Relationships in Verifiable Credentials.
       </figcaption>
     </figure>
+    <section class="informative">
+      <h4>주체가 보유자</h4>
+
+      <p>
+        가장 일반적인 관계는 <a href="#dfn-subjects" class="internalDFN" data-link-type="dfn">주체</a>가
+        <a href="#dfn-holders" class="internalDFN" data-link-type="dfn">보유자</a>인
+        경우이다. 이 경우에 만약 <a href="#dfn-verifiable-presentations" class="internalDFN" data-link-type="dfn">검증 가능한
+          프레젠테이션</a>이
+        <a href="#dfn-holders" class="internalDFN" data-link-type="dfn">보유자</a>에
+        의해 디지털 서명 되어있고, 포함된 모든 <a href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증 가능한
+          크리덴셜</a>이 <a href="#dfn-holders" class="internalDFN" data-link-type="dfn">보유자</a>와 동일한 것으로 식별되는 <a
+          href="#dfn-subjects" class="internalDFN" data-link-type="dfn">주체</a>에 관한 것이라면 <a href="#dfn-verifier"
+          class="internalDFN" data-link-type="dfn">검증자</a>는 그 <a href="#dfn-subjects" class="internalDFN"
+          data-link-type="dfn">주체</a>가 <a href="#dfn-holders" class="internalDFN" data-link-type="dfn">보유자</a>라고 쉽게 추론할
+        수 있다.
+      </p>
+
+      <p>
+        만약 <code>credentialSubject</code>만이 <a href="#dfn-verifiable-credentials" class="internalDFN"
+          data-link-type="dfn">검증 가능한 크리덴셜</a>을 <a href="#dfn-verifiable-presentations" class="internalDFN"
+          data-link-type="dfn">검증 가능한 프레젠테이션</a>에 삽입할 수 있는 경우, <a href="#dfn-issuers" class="internalDFN"
+          data-link-type="dfn">발급자</a>는
+        아래에 설명된대로 <a href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증 가능한 크리덴셜</a>에
+        <code>nonTransferable</code> <a href="#dfn-property" class="internalDFN" data-link-type="dfn">속성</a>을 삽입할 수 있다.
+      </p>
+
       <section class="informative">
-        <h4>주체가 보유자</h4>
+        <h5>nonTransferable 속성</h5>
 
         <p>
-가장 일반적인 관계는 <a href=
-"#dfn-subjects" class="internalDFN" data-link-type="dfn">주체</a>가 
-<a href="#dfn-holders" class="internalDFN" data-link-type="dfn">보유자</a>인 
-경우이다. 이 경우에 만약 <a href="#dfn-verifiable-presentations" class="internalDFN" data-link-type="dfn">검증 가능한 프레젠테이션</a>이 
-<a href="#dfn-holders" class="internalDFN" data-link-type="dfn">보유자</a>에 
-의해 디지털 서명 되어있고, 포함된 모든 <a href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증 가능한 크리덴셜</a>이 <a href=
-"#dfn-holders" class="internalDFN" data-link-type="dfn">보유자</a>와 동일한 것으로 식별되는 <a href="#dfn-subjects" class="internalDFN" data-link-type="dfn">주체</a>에 관한 것이라면 <a href="#dfn-verifier" class="internalDFN" data-link-type="dfn">검증자</a>는 그 <a href="#dfn-subjects" class="internalDFN" data-link-type="dfn">주체</a>가 <a href="#dfn-holders" class="internalDFN" data-link-type="dfn">보유자</a>라고 쉽게 추론할 수 있다. 
+          <code>nonTransferable</code> <a href="#dfn-property" class="internalDFN" data-link-type="dfn">properties</a>은
+          <a href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증 가능한 크리덴셜</a>을
+          <code>credentialSubject</code>의해 발행된 증명을 가진 <a href="#dfn-verifiable-presentations" class="internalDFN"
+            data-link-type="dfn">검증 가능한 프레젠테이션</a>에만 캡슐화해야 함을 나타낸다. <code>nonTransferable</code> <a href="#dfn-property"
+            class="internalDFN" data-link-type="dfn">속성</a>이 없고 증명작성자가 <code>credentialSubject</code>가 아닌 <a
+            href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증 가능한 크리덴셜</a>을 포함하는 <a
+            href="#dfn-verifiable-presentations" class="internalDFN" data-link-type="dfn">검증 가능한 프레젠테이션</a>은 유효하지 않다.
         </p>
 
-        <p>
-만약 <code>credentialSubject</code>만이 <a href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증 가능한 크리덴셜</a>을 <a href="#dfn-verifiable-presentations" class="internalDFN" data-link-type="dfn">검증 가능한 프레젠테이션</a>에 삽입할 수 있는 경우, <a href="#dfn-issuers" class="internalDFN" data-link-type="dfn">발급자</a>는 
-아래에 설명된대로 <a href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증 가능한 크리덴셜</a>에 <code>nonTransferable</code> <a href="#dfn-property" class="internalDFN" data-link-type="dfn">속성</a>을 삽입할 수 있다. 
-        </p>
-
-        <section class="informative">
-          <h5>nonTransferable 속성</h5>
-
-          <p>
-<code>nonTransferable</code> <a href="#dfn-property" class="internalDFN" 
-data-link-type="dfn">properties</a>은 <a href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증 가능한 크리덴셜</a>을 <code>credentialSubject</code>의해 발행된 증명을 가진 <a href="#dfn-verifiable-presentations" class="internalDFN" data-link-type="dfn">검증 가능한 프레젠테이션</a>에만 캡슐화해야 함을 나타낸다. <code>nonTransferable</code> <a href="#dfn-property" class="internalDFN" data-link-type="dfn">속성</a>이 없고 증명작성자가 <code>credentialSubject</code>가 아닌 <a href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증 가능한 크리덴셜</a>을 포함하는 <a href="#dfn-verifiable-presentations" class="internalDFN" data-link-type="dfn">검증 가능한 프레젠테이션</a>은 유효하지 않다.
-          </p>
-
-          <pre class="example nohighlight" title="nonTransferable 속성의 사용">
+        <pre class="example nohighlight" title="nonTransferable 속성의 사용">
 {
   "@context": [
     "https://www.w3.org/2018/credentials/v1",
@@ -5663,9 +5429,9 @@ verifiable credential that was passed to it by the subject">
         검증가능한 크리덴셜은 인증 프레임워크가 아니므로, 위임은 이 규격 범위를 벗어난다.
         단, 검증가능한 크리덴셜이 인증과 위임시스템을 구축하기위해 사용될 가능성을 있는 것으로 이해된다.
         다음은 일부 사용 사례에 적합할 수 있는 한 가지 접근법이다.
-        <p>
+      <p>
 
-          <pre class="example nohighlight" title="A credential issued to a
+      <pre class="example nohighlight" title="A credential issued to a
 holder who is not the (only) subject of the credential, who has no relationship with
 the subject of the credential, but who has a relationship with the issuer">
 
