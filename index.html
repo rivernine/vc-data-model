@@ -149,7 +149,7 @@
       번역본입니다.
     </p>
     <p>
-      이 문서에 오역 및 오타를 포함할 수 있습니다. <b>영어 원문만이 공식적이고 규범적인 효력을 가지고 있습니다.</b><br />
+      이 문서에 오역 및 오타를 포함할 수 있다. <b>영어 원문만이 공식적이고 규범적인 효력을 가지고 있다.</b><br />
       문의나 개선사항은 <a href="https://github.com/ssimeetupkorea/ssimeetupkorea.github.io">깃헙 링크</a>나 <a
         href="mailto:jshim10@illinois.edu">jshim10@illinois.edu</a>로 연락주시기 바랍니다.<br />
     </p>
@@ -1556,8 +1556,8 @@
           <a>크리덴셜</a>은 무조건 <code>issuanceDate</code> <a>속성</a>을 가져야 한다.
           <code>issuanceDate</code> <a>속성</a>의 값은
           <a>크리덴셜</a>이 유효한 날짜와 시간을 나타내는 [[!RFC3339]] 결합 날짜 및 시간
-          문자열의 문자열 값이어야하며 이는 미래의 날짜와 시간 일 수 있습니다. 이 값은 <code>credentialSubject</code>
-          <a>속성</a>과 연관된 정보가 유효 해지는 가장 빠른 시점을 나타냅니다.
+          문자열의 문자열 값이어야하며 이는 미래의 날짜와 시간 일 수 있다. 이 값은 <code>credentialSubject</code>
+          <a>속성</a>과 연관된 정보가 유효 해지는 가장 빠른 시점을 나타낸다.
 
         </dd>
       </dl>
@@ -3181,27 +3181,23 @@
 
     </section>
 
-    <section>
-      <h2>Proof Formats</h2>
+    <section id="proof-formats">
+      <h2>프루프 형식</h2>
 
       <p>
-        The data model described in this specification is designed to be proof format
-        agnostic. This specification does not normatively require any particular digital
-        proof or signature format. While the data model is the canonical representation
-        of a <a>verifiable credential</a> or <a>verifiable presentation</a>, the
-        proofing mechanisms for these are often tied to the syntax used in the
-        transmission of the document between parties. As such, each proofing mechanism
-        has to specify whether the validation of the proof is calculated against the
-        state of the document as transmitted, against the transformed data model, or
-        against another form. At the time of publication, at least two proof formats
-        are being actively utilized by implementers and the Working Group felt
-        that documenting what these proof formats are and how they are being used would
-        be beneficial to implementers. The sections detailing the current proof formats
-        being actively utilized to issue <a>verifiable credentials</a> are:
+        이 규격에 기술된 데이터 모델은 증명 형식에 구애받지 않도록 설계되었다. 
+        이 규격은 특정한 디지털 증명이나 서명 형식을 표준으로 요구하지 않는다. 
+        데이터 모델은 <a>검증가능한 크리덴셜</a> 또는 <a>검증가능한 프레젠테이션</a>의 규범적 표현이지만, 
+        이들의 입증 메커니즘은 종종 당사자 사이의 문서 전송에 사용되는 구문과 관련이 있다. 
+        이와 같이 각 증명 메커니즘은 전송되는 문서의 상태에 대해, 변환된 데이터 모델을 기준으로 또는 다른 양식에 대해 검증이 계산되는지 여부를 명시해야 한다. 
+        출판 당시, 적어도 두 개의 증명 형식이 구현자에 의해 활발하게 사용되고 있으며 작업 그룹은 이러한 증명 형식이 무엇이고 
+        어떻게 사용되고 있는지를 문서화하는 것이 구현자에게 유익할 것이라고 생각했다. 
+        <a>검증가능한 크리덴셜</a>을 발급하기 위해 적극적으로 활용되고 있는 현재 증명 형식을 상세히 기술하는 섹션은 다음과 같다.
+
       </p>
 
       <ul>
-        <li>Section <a href="#json-web-token"></a>, and</li>
+        <li>Section <a href="#json-web-token"></a>,</li>
         <li>Section <a href="#linked-data-proofs"></a>.</li>
       </ul>
 
@@ -3210,14 +3206,14 @@
 
         <p>
           JSON Web Token (JWT) [RFC7519]은 여전히 두 당사자 간에 전달되는 <a>클레임</a>을 표현하기 위해
-          널리 사용되는 수단이다.JWT에 대한 검증가능한 크리덴셜 데이터 모델을 제공함으로써
+          널리 사용되는 수단이다. JWT에 대한 검증가능한 크리덴셜 데이터 모델을 제공함으로써
           기존 시스템과 라이브러리가 섹션 <a href="#ecosystem-overview"></a>에 설명된 생태계에 참여할 수 있다.
           JWT는 일련의 <a>클레임</a> JSON Web Signature (JWS) [RFC7515] 또는 JWE [RFC7516]에
           포함된 JSON 개체로 인코딩한다. 이 규격에서 JWE의 사용은 범위를 벗어나므로 다루지 않는다.
         </p>
 
         <section id="relation-to-the-verifiable-credentials-data-model">
-          <h4>Relation to the Verifiable Credentials Data Model</h4>
+          <h4>검증가능한 크리덴셜 데이터 모델과의 관계</h4>
 
           <p>
             이 규격은 검증가능한 크리덴셜 데이터 모델의 인코딩 규칙을 JWT 및 JWS에 정의한다.
@@ -3230,18 +3226,13 @@
         </section>
 
         <section id="json-web-token-extentions">
-          <h4>JSON Web Token Extensions</h4>
+          <h4>JSON Web Token 익스텐션</h4>
 
           <p>
-            This specification introduces two new registered <a>claim</a> names, which
-            contain those parts of the standard <a>verifiable credentials</a> and
-            <a>verifiable presentations</a> where no explicit encoding rules for JWT exist.
-            These objects are enclosed in the JWT payload as follows:
             이 규격은 JWT에 대한 명시적 인코딩 규칙이 존재하지 않는
             표준 <a>검증가능한 크리덴셜</a> 및 <a>검증가능한 프레젠테이션</a>의 일부를 포함하는
             새로 등록된 두 개의 <a>클레임</a>의 이름에 대해 소개한다.
-            이러한 객체들은 다음과 같이 JWT 전송 데이터에 포함되어있다
-
+            이러한 객체들은 다음과 같이 JWT 전송 데이터에 포함되어있다:
           </p>
 
           <ul>
@@ -3258,10 +3249,10 @@
         </section>
 
         <section id="jwt-and-jws-considerations">
-          <h4>JWT and JWS Considerations</h4>
+          <h4>JWT and JWS 고려사항</h4>
 
           <section id="jwt-encoding">
-            <h5>JWT Encoding</h5>
+            <h5>JWT 인코딩</h5>
 
             <p>
               <a>검증가능한 크리덴셜</a>을 JWT로 인코딩하려면
@@ -3374,11 +3365,10 @@
 
             <p>
               여기에 지정되지 않은 JOSE 헤더 매개 변수 및/또는 JWT 클레임 이름 사용에 대한
-              자세한 내용은 검증가능한 크리덴셜 구현 지침 [[?VC-IMP-GUIDE]] 문서를 참조하시오.
+              자세한 내용은 검증가능한 크리덴셜 구현 지침 [[?VC-IMP-GUIDE]] 문서를 참조.
             </p>
 
             <p>
-
               이 규격 버전은 섹션 <a href="#advanced-concepts">고급 개념</a>
               (예: <code>refreshService</code>, <code>termsOfUse</code> 및 <code>evidence</code>)에 요약된 개념에 대한
               JWT별 인코딩 규칙을 정의하지 않는다.
@@ -3401,7 +3391,7 @@
           </section>
 
           <section id="jwt-decoding">
-            <h5>JWT Decoding</h5>
+            <h5>JWT 디코딩</h5>
 
             <p>
               JWT를 표준 <a>검증가능한 크리덴셜</a>으로 디코딩하려면 다음 변환을 수행해야 한다.
@@ -3409,19 +3399,19 @@
 
             <ol>
               <li>
-                JSON 객체를 생성하십시오.
+                JSON 객체를 생성.
               </li>
               <li>
-                <code>vc</code> <a>클레임</a>의 내용을 새 JSON 객체에 추가하십시오.
+                <code>vc</code> <a>클레임</a>의 내용을 새 JSON 객체에 추가.
 
               </li>
               <li>
-                나머지 JWT 특정 헤더 및 <a>클레임</a>을 변환하고 결과를 새 JSON 객체에 추가하십시오.
+                나머지 JWT 특정 헤더 및 <a>클레임</a>을 변환하고 결과를 새 JSON 객체에 추가.
               </li>
             </ol>
 
             <p>
-              JWT 특정 헤더 및 <a>클레임</a>을 변환하려면 반드시 다음 작업을 수행하십시오.
+              JWT 특정 헤더 및 <a>클레임</a>을 변환하려면 반드시 다음 작업을 수행.
 
             </p>
 
@@ -3609,7 +3599,7 @@ BjYgP62KvhIvW8BbkGUelYMetA
       </section>
 
       <section id="linked-data-proofs">
-        <h3>Linked Data Proofs</h3>
+        <h3>연결된 데이터 프루프들</h3>
 
         <p>
           이 규격은 Linked Data를 이용하여 URL, JSON-LD와 같은 표준을 사용하여
@@ -3636,7 +3626,7 @@ BjYgP62KvhIvW8BbkGUelYMetA
 
         <p class="note">
           다양한 syntax 형식(예: JSON+JWT, JSON-LD+JWT 또는 JSON-LD+LD-Proofs)의 다양한 품질에 대한 자세한 내용은
-          검증가능한 크리덴셜 구현 지침 [[VC-IMP-GUIDE]] 문서를 참조하십시오.
+          검증가능한 크리덴셜 구현 지침 [[VC-IMP-GUIDE]] 문서를 참조.
         </p>
 
       </section>
@@ -3646,7 +3636,7 @@ BjYgP62KvhIvW8BbkGUelYMetA
   </section>
 
   <section class="informative" id="privacy-considerations">
-    <h2>Privacy Considerations</h2>
+    <h2>프라이버시 고려사항들</h2>
 
     <p>
       이 섹션에서는 검증가능한 크리덴셜 데이터 모델을
@@ -4345,7 +4335,7 @@ BjYgP62KvhIvW8BbkGUelYMetA
       </p>
 
       <p>
-        위의 예는 내용 무결성 보호를 달성하는 한 가지 방법이지만 특정 애플리케이션들에 더 적합한 다른 솔루션들이 있습니다. 구현자들은 내용 무결성으로 보호되지 않는 외부의 기계판독가능한 내용들에 대한
+        위의 예는 내용 무결성 보호를 달성하는 한 가지 방법이지만 특정 애플리케이션들에 더 적합한 다른 솔루션들이 있다. 구현자들은 내용 무결성으로 보호되지 않는 외부의 기계판독가능한 내용들에 대한
         링크가 어떻게 그들의 어플리케이션에 대한 성공적인 공격을 만들어 낼 수 있는지 이해해야 한다.
       </p>
 
@@ -4446,9 +4436,9 @@ BjYgP62KvhIvW8BbkGUelYMetA
       </p>
 
       <p>
-        데이터모델을 이용해 <a>검증가능한 크리덴셜</a>을 만들때, 데이터 모델 디자이너는 <em>데이터 우선 접근</em> 방식을 사용하는 것이 좋습니다. 예를 들어, <a>크리덴셜</a>을 묘사하기 위해
-        데이터 또는 그래픽 이미지를 사용하기로 선택한 경우, 디자이너는 기관의 이름 또는 전문 자격과 같은 이미지의 모든 요소를 시청자의 해석에 의존하지 말고 기계판독이 가능한 방식으로 표현해야합니다. 데이터
-        우선 접근 방식은 다양한 능력을 가진 사람들을 위해 서로 다른 인터페이스를 구축을 위한 기본 요소를 제공하기 때문에 선호됩니다.
+        데이터모델을 이용해 <a>검증가능한 크리덴셜</a>을 만들때, 데이터 모델 디자이너는 <em>데이터 우선 접근</em> 방식을 사용하는 것이 좋다. 예를 들어, <a>크리덴셜</a>을 묘사하기 위해
+        데이터 또는 그래픽 이미지를 사용하기로 선택한 경우, 디자이너는 기관의 이름 또는 전문 자격과 같은 이미지의 모든 요소를 시청자의 해석에 의존하지 말고 기계판독이 가능한 방식으로 표현해야한다. 데이터
+        우선 접근 방식은 다양한 능력을 가진 사람들을 위해 서로 다른 인터페이스를 구축을 위한 기본 요소를 제공하기 때문에 선호된다.
       </p>
     </section>
   </section>
