@@ -20,7 +20,7 @@
       shortName: "vc-data-model",
 
       // subtitle for the spec
-      subtitle: "Expressing verifiable information on the Web",
+      subtitle: "웹에서 검증가능한 정보를 표현하는법",
 
       // if you wish the publication date to be other than today, set this
       publishDate: "2019-11-19",
@@ -157,10 +157,10 @@
     <p>
       원문작성일: 2019-11-19<br />
       최초번역일: 2020-01-11<br />
-      최종수정일: 2020-01-11<br />
+      최종수정일: 2020-05-22<br />
     </p>
     <dt><span style="font-weight: 500;">에디터 (가나다순)</span>: </dt>
-    <dd><a href="mailto:jshim10@illinois.edu" ]>심재훈</a></dd>
+    <dd><a href="https://www.linkedin.com/in/jaehoonjshim/" ]>심재훈</a></dd>
     <dd><a href="https://www.linkedin.com/in/minho-yoo-1b968837/" ]>유민호</a> (<a href="https://iotrust.kr/">IoTrust
         Co.,Ltd.</a>)</dd>
     <dd><a href="mailto:projector301@gmail.com" ]>윤희태</a> (<a href="https://http://blockcrafters.com/">Block Crafters
@@ -169,15 +169,11 @@
     <dd>&nbsp;</dd>
     <dt><span style="font-weight: 500;">번역자 (가나다순)</span>: </dt>
     <dd><a href="mailto:anh1026@kaist.ac.kr" ]>안형철</a></dd>
-
     <dd><a href="mailto:magnified02@gmail.com" ]>유수웅</a></dd>
-
     <dd><a href="mailto:hyunsy822@gmail.com" ]>현수영</a></dd>
-    <dd><a href="mailto:bentconomy@gmail.com" ]>Benny Jung</a></dd>
   </div>
   <section id='abstract'>
     <p>
-
       <a>크리덴셜</a>(자격)은 우리 일상 생활의 일부이다. 운전면허증은 우리가 자동차를
       운전할 수 있음을 주장하는데 사용하고, 대학 학위는 교육 수준을 주장하는데 사용하며,
       정부가 발급한 여권은 국가 간 여행을 가능하게 한다. 본 사양에서는 웹 상에서 이러한
@@ -308,7 +304,7 @@
         본 사양의 목표는 디지털 <a>크리덴셜</a> 표현의 용이성을 향상시키려는 것이지만,
         그와 더불어 개인 정보 보호 목표와의 균형을 맞추고자 한다.
         디지털 정보의 지속성과 이질적인 디지털 데이터 소스를 수집하고 상호 연관시킬 수 있는
-        용이성은 검증 가능하고 쉽게 기계적 <a>검증가능한</a> <a>크리덴셜</a>의 사용이
+        용이성은 검증가능하고 쉽게 기계적 <a>검증가능한</a> <a>크리덴셜</a>의 사용이
         악화될 수 있다는 개인 정보 보호 우려를 포함한다.
         본 문서의 섹션 <a href="#privacy-considerations"></a>에서 개인 프라이버시
         고려사항에서 이러한 여러 문제를 간략하게 다룬다. 또한 문서 전체적으로
@@ -4691,8 +4687,8 @@ BjYgP62KvhIvW8BbkGUelYMetA
     <section class="informative" id="proofs-signatures-0">
       <h3 id="a-4-proofs-signatures">
         증명 (서명)<a class="self-link" aria-label="§" href="#proofs-signatures-0"></a></h3>
-      <p> <a href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증 가능한 크리덴셜</a>
-        또는 <a href="#dfn-verifiable-presentations" class="internalDFN" data-link-type="dfn">검증 가능한 프레젠테이션</a>의
+      <p> <a href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증가능한 크리덴셜</a>
+        또는 <a href="#dfn-verifiable-presentations" class="internalDFN" data-link-type="dfn">검증가능한 프레젠테이션</a>의
         정보가 변조되지 않았음을 증명하는 데 사용되는 암호화 메커니즘을
         <em>증명</em>이라고 하자. 디지털 서명, 영지식 증명, 작업증명,
         지분증명 등을 포함하는 다양한 유형의 암호화 증명이 있다.
@@ -4736,8 +4732,8 @@ BjYgP62KvhIvW8BbkGUelYMetA
           <code>proofPurpose</code>
           <a href="#dfn-property" class="internalDFN" data-link-type="dfn">속성</a>은 증명 목적을 명확하게 표현하고, 이 정보가 서명으로
           보호되도록 보장한다. 일반적으로 증명은 인증 목적으로
-          <a href="#dfn-verifiable-presentations" class="internalDFN" data-link-type="dfn">검증 가능한 프레젠테이션</a>에 첨부되거나
-          인증 보장의 방법으로써 <a href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증 가능한 크리덴셜</a>에
+          <a href="#dfn-verifiable-presentations" class="internalDFN" data-link-type="dfn">검증가능한 프레젠테이션</a>에 첨부되거나
+          인증 보장의 방법으로써 <a href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증가능한 크리덴셜</a>에
           첨부된다.</p>
       </div>
     </section>
@@ -4747,26 +4743,26 @@ BjYgP62KvhIvW8BbkGUelYMetA
       <p><code>expirationDate</code>은 <a href="#dfn-verifier" class="internalDFN" data-link-type="dfn">verifier</a>의 예상
         범위 안에
         있어야 한다. 예를 들어 <a href="#dfn-verifier" class="internalDFN" data-link-type="dfn">verifier</a>는 <a
-          href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증 가능한 크리덴셜</a>의
+          href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증가능한 크리덴셜</a>의
         만료 날짜가 과거 날짜가 아닌지 확인할 수 있다.</p>
     </section>
     <section class="informative" id="status-0">
       <h3 id="a-6-status">
         상태<a class="self-link" aria-label="§" href="#status-0"></a></h3>
       <p><code>credentialStatus</code>이 사용 가능한 경우, <a href="#dfn-verifiable-credentials" class="internalDFN"
-          data-link-type="dfn">검증 가능한 크리덴셜</a>의 상태는 검증 가능한
+          data-link-type="dfn">검증가능한 크리덴셜</a>의 상태는 검증가능한
         크리덴셜에 대한 <code>credentialStatus</code> <a href="#dfn-type" class="internalDFN" data-link-type="dfn">타입</a> 정의 및
         <a href="#dfn-verifier" class="internalDFN" data-link-type="dfn">검증자</a>의
         평가 기준에 따라 <a href="#dfn-verifier" class="internalDFN" data-link-type="dfn">검증자</a>에
         의해 평가되어야 한다. 예를 들어, <a href="#dfn-verifier" class="internalDFN" data-link-type="dfn">검증자</a>는 <a
-          href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증 가능한 크리덴셜</a>의 상태가 "<a
+          href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증가능한 크리덴셜</a>의 상태가 "<a
           href="#dfn-issuers" class="internalDFN" data-link-type="dfn">발급자</a>에 의해 취소됨"이
         아니라는 것을 보장할 수 있다.</p>
     </section>
     <section class="informative" id="fitness-for-purpose">
       <h3 id="a-7-fitness-for-purpose">
         목적 적합성<a class="self-link" aria-label="§" href="#fitness-for-purpose"></a></h3>
-      <p>목적 적합성은 <a href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증 가능한 크리덴셜</a>의
+      <p>목적 적합성은 <a href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증가능한 크리덴셜</a>의
         사용자 지정 <a href="#dfn-property" class="internalDFN" data-link-type="dfn">속성</a>이 <a href="#dfn-verifier"
           class="internalDFN" data-link-type="dfn">검증자</a>의 목적에 적합한지
         여부이다. 예를 들어 <a href="#dfn-subjects" class="internalDFN" data-link-type="dfn">주체</a>가 21세 이상인지 <a
@@ -4779,7 +4775,7 @@ BjYgP62KvhIvW8BbkGUelYMetA
         <a href="#dfn-verifier" class="internalDFN" data-link-type="dfn">검증자</a>로부터 신뢰를 얻는다. 예를 들어, 프랜차이즈 패스트푸드
         식당 위치는 프랜차이즈 본사에서 만든 항린 쿠폰 <a href="#dfn-claims" class="internalDFN" data-link-type="dfn">클레임</a>을 신뢰한다.
         <a href="#dfn-issuers" class="internalDFN" data-link-type="dfn">
-          발급자</a>가 <a href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증 가능한 크리덴셜</a>에 표현한
+          발급자</a>가 <a href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증가능한 크리덴셜</a>에 표현한
         정책 정보는,
         정책에 위배되는 책임을 용인하지 않는 한 <a href="#dfn-holders" class="internalDFN" data-link-type="dfn">보유자</a>와 <a
           href="#dfn-verifier" class="internalDFN" data-link-type="dfn">검증자</a>에 의해 존중되어야 한다.</p>
@@ -5041,7 +5037,7 @@ BjYgP62KvhIvW8BbkGUelYMetA
     <p>
       이 섹션에서는 <a href="#dfn-subjects" class="internalDFN" data-link-type="dfn">주체</a>와 <a href="#dfn-holders"
         class="internalDFN" data-link-type="dfn">보유자</a> 간의 성립 가능한 관계와 <a href="#dfn-verifiable-credentials"
-        class="internalDFN" data-link-type="dfn">검증 가능한 크리덴셜</a>
+        class="internalDFN" data-link-type="dfn">검증가능한 크리덴셜</a>
       데이터 모델이 이러한 관계를 어떻게 표현하는지 설명한다. 다음 다이어그램은 이러한 관계를 보여주며, 다음 섹션에서는 이 관계가 데이터 모델에서 처리되는 방식을 설명한다.
     </p>
 
@@ -5072,10 +5068,10 @@ BjYgP62KvhIvW8BbkGUelYMetA
       <p>
         가장 일반적인 관계는 <a href="#dfn-subjects" class="internalDFN" data-link-type="dfn">주체</a>가
         <a href="#dfn-holders" class="internalDFN" data-link-type="dfn">보유자</a>인
-        경우이다. 이 경우에 만약 <a href="#dfn-verifiable-presentations" class="internalDFN" data-link-type="dfn">검증 가능한
+        경우이다. 이 경우에 만약 <a href="#dfn-verifiable-presentations" class="internalDFN" data-link-type="dfn">검증가능한
           프레젠테이션</a>이
         <a href="#dfn-holders" class="internalDFN" data-link-type="dfn">보유자</a>에
-        의해 디지털 서명 되어있고, 포함된 모든 <a href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증 가능한
+        의해 디지털 서명 되어있고, 포함된 모든 <a href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증가능한
           크리덴셜</a>이 <a href="#dfn-holders" class="internalDFN" data-link-type="dfn">보유자</a>와 동일한 것으로 식별되는 <a
           href="#dfn-subjects" class="internalDFN" data-link-type="dfn">주체</a>에 관한 것이라면 <a href="#dfn-verifier"
           class="internalDFN" data-link-type="dfn">검증자</a>는 그 <a href="#dfn-subjects" class="internalDFN"
@@ -5085,10 +5081,10 @@ BjYgP62KvhIvW8BbkGUelYMetA
 
       <p>
         만약 <code>credentialSubject</code>만이 <a href="#dfn-verifiable-credentials" class="internalDFN"
-          data-link-type="dfn">검증 가능한 크리덴셜</a>을 <a href="#dfn-verifiable-presentations" class="internalDFN"
-          data-link-type="dfn">검증 가능한 프레젠테이션</a>에 삽입할 수 있는 경우, <a href="#dfn-issuers" class="internalDFN"
+          data-link-type="dfn">검증가능한 크리덴셜</a>을 <a href="#dfn-verifiable-presentations" class="internalDFN"
+          data-link-type="dfn">검증가능한 프레젠테이션</a>에 삽입할 수 있는 경우, <a href="#dfn-issuers" class="internalDFN"
           data-link-type="dfn">발급자</a>는
-        아래에 설명된대로 <a href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증 가능한 크리덴셜</a>에
+        아래에 설명된대로 <a href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증가능한 크리덴셜</a>에
         <code>nonTransferable</code> <a href="#dfn-property" class="internalDFN" data-link-type="dfn">속성</a>을 삽입할 수 있다.
       </p>
 
@@ -5097,12 +5093,12 @@ BjYgP62KvhIvW8BbkGUelYMetA
 
         <p>
           <code>nonTransferable</code> <a href="#dfn-property" class="internalDFN" data-link-type="dfn">properties</a>은
-          <a href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증 가능한 크리덴셜</a>을
+          <a href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증가능한 크리덴셜</a>을
           <code>credentialSubject</code>의해 발행된 증명을 가진 <a href="#dfn-verifiable-presentations" class="internalDFN"
-            data-link-type="dfn">검증 가능한 프레젠테이션</a>에만 캡슐화해야 함을 나타낸다. <code>nonTransferable</code> <a href="#dfn-property"
+            data-link-type="dfn">검증가능한 프레젠테이션</a>에만 캡슐화해야 함을 나타낸다. <code>nonTransferable</code> <a href="#dfn-property"
             class="internalDFN" data-link-type="dfn">속성</a>이 없고 증명작성자가 <code>credentialSubject</code>가 아닌 <a
-            href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증 가능한 크리덴셜</a>을 포함하는 <a
-            href="#dfn-verifiable-presentations" class="internalDFN" data-link-type="dfn">검증 가능한 프레젠테이션</a>은 유효하지 않다.
+            href="#dfn-verifiable-credentials" class="internalDFN" data-link-type="dfn">검증가능한 크리덴셜</a>을 포함하는 <a
+            href="#dfn-verifiable-presentations" class="internalDFN" data-link-type="dfn">검증가능한 프레젠테이션</a>은 유효하지 않다.
         </p>
 
         <pre class="example nohighlight" title="nonTransferable 속성의 사용">
