@@ -901,46 +901,38 @@ often, but not required to be, related.
 
     </section>
 
-    <section  class="informative">
-        <h3>Concrete Lifecycle Example</h3>
+    <section  class="informative" id="concrete-lifecycle-example">
+        <h3>완전한 수명주기 예제</h3>
 
         <p>
-The previous sections introduced the concepts of <a>claims</a>,
-<a>verifiable credentials</a>, and <a>verifiable presentations</a> using
-graphical depictions. This section provides a concrete set of simple but
-complete lifecycle examples of the data model expressed in one of the concrete
-syntaxes supported by this specification. The lifecycle of <a>credentials</a>
-and <a>presentations</a> in the
-<a href="#ecosystem-overview">Verifiable Credentials Ecosystem</a> often
-take a common path:
+이전 섹션에서는 그래픽 개념을 사용하여 <a>클레임</a>, <a>검증가능한 크리덴셜</a> 및 <a>검증가능한 프레젠테이션</a>등의 개념을 
+소개했다. 이 섹션에서는 이 사양에서 지원하는 구체적인 구문 중 하나로 표현 된 데이터 모델의 단순하지만 완전한 
+수명주기 예제를 제공한다. <a href="#ecosystem-overview">검증가능한 크리덴셜 생태계</a>에서 <a>크리덴셜</a> 및 <a>프레젠테이션</a>의 수명주기는 종종 다음과 
+같은 공통 경로를 취한다:
         </p>
 
         <ol>
           <li>
-Issuance of one or more <a>verifiable credentials</a>.
+하나 이상의 <a>검증가능한 크리덴셜</a> 발급
           </li>
           <li>
-Storage of <a>verifiable credentials</a> in a <a>credential repository</a>
-(such as a digital wallet).
+<a>크리덴셜 저장소</a> (예 : 디지털 지갑)에 <a>검증가능한 크리덴셜</a> 저장
+
           </li>
           <li>
-Composition of <a>verifiable credentials</a> into a
-<a>verifiable presentation</a> for <a>verifiers</a>.
+<a>검증자</a>를 위해 <a>검증가능한 크리덴셜</a>을 <a>검증가능한 프리젠테이션</a>으로 구성
           </li>
           <li>
-<a>Verification</a> of the <a>verifiable presentation</a> by the
-<a>verifier</a>.
+<a>검증자</a>에 의한 <a>검증가능한 프레젠테이션</a>의 <a>검증</a>
           </li>
         </ol>
 
         <p>
-To illustrate this lifecycle, we will use the example of redeeming an alumni
-discount from a university. In the example below, Pat receives an alumni
-<a>verifiable credential</a> from a university, and Pat stores the
-<a>verifiable credential</a> in a digital wallet.
+이 수명주기를 설명하기 위해 대학에서 동문 할인을 사용하는 예를 사용한다. 아래 예에서 Pat은 대학교로부터 
+동문 <a>검증가능한 크리덴셜<a/>을 받고, <a>검증가능한 크리덴셜</a>을 디지털 지갑에 저장한다.
         </p>
 
-        <pre class="example nohighlight" title="A simple example of a verifiable credential">
+        <pre class="example nohighlight" title="검증 가능한 크리덴셜의 간단한 예">
 {
   <span class='comment'>// set the context, which establishes the special terms we will be using
   // such as 'issuer' and 'alumniOf'.</span>
@@ -993,18 +985,14 @@ discount from a university. In the example below, Pat receives an alumni
         </pre>
 
         <p>
-Pat then attempts to redeem the alumni discount. The <a>verifier</a>, a ticket
-sales system, states that any alumni of "Example University" receives a discount
-on season tickets to sporting events. Using a mobile device, Pat starts the
-process of purchasing a season ticket. A step in this process requests an alumni
-<a>verifiable credential</a>, and this request is routed to Pat's digital wallet.
-The digital wallet asks Pat if they would like to provide a previously issued
-<a>verifiable credential</a>. Pat selects the alumni
-<a>verifiable credential</a>, which is then composed into a
-<a>verifiable presentation</a>. The <a>verifiable presentation</a> is sent to
-the <a>verifier</a> and <a>verified</a>.
+Pat은 동문 할인을 사용하려한다. 티켓 판매 시스템인 <a>검증자</a>는 "Example University"의 모든 
+동창생이 스포츠 행사에 대한 시즌 티켓 할인을 받는다. Pat은 모바일 장치를 사용하여 시즌 티켓 구매 
+프로세스를 시작한다. 이 프로세스의 단계는 동문 <a>검증가능한 크리덴셜</a>을 요청하며 이 요청은 Pat의 
+디지털 지갑으로 라우팅된다. 전자 지갑은 Pat에게 이전에 발급 된 <a>검증가능한 크리덴셜</a>을 제공 할 것인지 
+묻는다. Pat은 동문 <a>검증가능한 크리덴셜</a>을 선택하여 <a>검증가능한 프레젠테이션</a>으로 구성한다. <a>검증가능한 
+프리젠테이션</a>이 <a>검증자</a>에게 전송되고 <a>검증</a>된다.
         </p>
-        <pre class="example nohighlight" title="A simple example of a verifiable presentation">
+        <pre class="example nohighlight" title="검증 가능한 프레젠테이션의 간단한 예">
 {
   "@context": [
     "https://www.w3.org/2018/credentials/v1",
@@ -1072,6 +1060,10 @@ Signatures [[LD-SIGNATURES]], 2018 RSA Signature Suite [[LDS-RSA2018]], and
 JSON Web Signature (JWS) Unencoded Payload Option [[RFC7797]]. A list
 of proof mechanisms is available in the Verifiable Credentials
 Extension Registry [[VC-EXTENSION-REGISTRY]].
+		위에서 사용한 <code>proof</code> 메커니즘에 대해 더 자세히 알고 싶은 구현자는 섹션 <a href="#proofs-signatures"></a>
+		에서 다음 사양을 자세히 알아볼 수 있습니다. 링크 된 데이터 증명 [[LD-PROOFS]], 링크 된 
+		데이터 서명 [[LD-SIGNATURES]], 2018 RSA 서명 제품군 [[LDS-RSA2018]] 및 JSON 웹 서명 (JWS) 인코딩되지 
+		않은 페이로드 옵션 [[RFC7797]]. 증명 메커니즘 목록은 검증 가능한 신임 정보 확장 레지스트리 [[VC-EXTENSION-REGISTRY]]에 있다.
         </p>
       </section>
     </section>
