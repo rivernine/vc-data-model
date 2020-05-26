@@ -48,99 +48,86 @@
   </dd>
   <dt><dfn data-lt="holder|holders|holder's|holders'|보유자">보유자 (holder)</dfn></dt>
   <dd>
-A role an <a>entity</a> might perform by possessing one or more
-<a>verifiable credentials</a> and generating <a>presentations</a> from them.
-A holder is usually, but not always, a <a>subject</a> of the <a>verifiable
-credentials</a> they are holding. Holders store their <a>credentials</a> in
-<a>credential repositories</a>.
+하나 혹은 그 이상의 <a>검증가능한 크리덴셜</a>을 소유하고 
+그 크리덴셜로부터 <a>프레젠테이션</a>을 생성하는 <a>엔터티</a>의 역할. 
+항상 그런 것은 아니지만, 보유자는 보통 보유하고 있는 <a>검증가능한 크리덴셜</a>의 <a>주체</a>다. 
+보유자는 <a>크리덴셜</a>을 <a>크리덴셜 저장소</a>에 저장한다.
 
   </dd>
   <dt><dfn data-lt="identities|identity's|신원">신원 (identity)</dfn></dt>
   <dd>
-The means for keeping track of <a>entities</a> across contexts. Digital
-identities enable tracking and customization of <a>entity</a> interactions
-across digital contexts, typically using identifiers and attributes. Unintended
-distribution or use of identity information can compromise privacy. Collection
-and use of such information should follow the principle of
-<a>data minimization</a>.
+컨텍스트에서 <a>엔터티</a>를 추적하기 위한 수단. 
+일반적으로 식별자와 속성을 사용하는 디지털 컨텍스트에서, 
+디지털 신원은 <a>엔터티</a>의 상호작용을 추적하고 커스터마이징 할 수 있게 한다. 
+의도하지 않은 신원 정보의 배포나 사용은 프라이버시를 침해할 수 있다. 
+그러한 정보의 수집과 사용은 <a>데이터 최소화</a>의 원칙을 따라야 한다.
   </dd>
   <dt><dfn data-lt="identity providers|idp|신원 제공자">신원 제공자 (identity provider)</dfn></dt>
   <dd>
-An identity provider, sometimes abbreviated as <em>IdP</em>, is a system
-for creating, maintaining, and managing identity information for
-<a>holders</a>, while providing authentication services to
-<a>relying party</a> applications within a federation or distributed network.
-In this case the <a>holder</a> is always the <a>subject</a>. Even if the
-<a>verifiable credentials</a> are bearer <a>credentials</a>, it is assumed the
-<a>verifiable credentials</a> remain with the <a>subject</a>, and if they are
-not, they were stolen by an attacker. This specification does not use this term
-unless comparing or mapping the concepts in this document to other
-specifications. This specification decouples the <a>identity provider</a>
-concept into two distinct concepts: the <a>issuer</a> and the <a>holder</a>.
+<em>IdP</em>로 축약되기도 하는 신원 제공자는 
+<a>보유자</a>를 위해 신원 정보를 생성, 유지, 관리하는 시스템이다. 
+연합이나 분산 네트워크 내의 <a>신뢰 당사자</a> 어플리케이션에게 인증 서비스를 제공한다. 
+이 경우에 <a>보유자</a>는 항상 (클레임의) 주체이다. 
+비록 <a>검증가능한 크리덴셜</a>이 지참인(bearer) <a>크리덴셜</a>이라고 하더라도, 
+그 <a>검증가능한 크리덴셜</a>은 <a>주체</a>에게 남아있다고 가정한다. 
+만약 주체에게 남아있지 않다면, 그 크리덴셜은 공격자에게 도난당한 것이다. 
+이 규격에서는 다른 규격의 개념과 비교하거나 매핑하지 않는 이상, 이 용어를 사용하지 않는다. 
+이 규격에서는 <a>신원 제공자</a> 개념을 <a>발급자</a>와 <a>보유자</a>라는 두 개의 별도 개념으로 분리한다.
   </dd>
   <dt><dfn data-lt="issuers|issuer's|발급자">발급자 (issuer)</dfn></dt>
   <dd>
-A role an <a>entity</a> can perform by asserting <a>claims</a> about one or
-more <a>subjects</a>, creating a <a>verifiable credential</a> from these
-<a>claims</a>, and transmitting the <a>verifiable credential</a> to a
-<a>holder</a>.
+하나 혹은 그 이상의 <a>주체</a>에 대한 <a>클레임</a>을 주장하고, 
+그 <a>클레임</a>으로부터 <a>검증가능한 크리덴셜</a>을 생성하며 
+<a>검증가능한 크리덴셜</a>을 <a>보유자</a>에게 전달하는 <a>엔터티</a>의 역할.
   </dd>
   <dt><dfn data-lt="presentations|프레젠테이션|프레젠테이션들">프레젠테이션 (presentation)</dfn></dt>
   <dd>
-Data derived from one or more <a>verifiable credentials</a>, issued by one or
-more <a>issuers</a>, that is shared with a specific <a>verifier</a>. A
-<dfn data-lt="verifiable presentations|검증가능한 프레젠테이션|검증가능 프레젠테이션">검증가능 프레젠테이션 (verifiable presentation)</dfn>
-is a tamper-evident presentation encoded in such a way that authorship of the
-data can be trusted after a process of cryptographic verification. Certain
-types of verifiable presentations might contain data that is synthesized from,
-but do not contain, the original <a>verifiable credentials</a> (for example,
-zero-knowledge proofs).
+하나 혹은 그 이상의 <a>발급자</a>가 발급한, 
+하나 이상의 <a>검증가능한 크리덴셜</a>에서 파생된 데이터로 특정 <a>검증자</a>와 공유된다. 
+<dfn data-lt="verifiable presentations|검증가능한 프레젠테이션|검증가능 프레젠테이션">검증가능 프레젠테이션 (verifiable presentation)</dfn>은 
+암호화 검증 절차를 거치면 데이터의 원저자을 신뢰할 수 있는 방식으로 인코딩된 변조 방지 가능한 프레젠테이션이다. 
+특정 타입의 검증가능한 프레젠테이션은 원래의 <a>검증가능한 크리덴셜</a>을 포함하지 않고 
+그로부터 합성된 데이터를 포함할 수 있다. (예. 영지식증명)
   </dd>
   <dt><dfn data-lt="credential repository|credential repositories|repositories|저장소">저장소 (repository)</dfn></dt>
   <dd>
-A program, such as a storage vault or personal <a>verifiable credential</a>
-wallet, that stores and protects access to <a>holders'</a>
-<a>verifiable credentials</a>.
+저장 금고 혹은 개인용 <a>검증가능한 크리덴셜</a> 지갑과 같이 
+<a>보유자</a>의 <a>검증가능한 크리덴셜</a>을 저장하고 접근을 보호하는 프로그램.
   </dd>
   <dt><dfn data-lt="selective disclosure|선택적 공개">선택적 공개 (selective disclosure)</dfn></dt>
   <dd>
-The ability of a <a>holder</a> to make fine-grained decisions about what 
-information to share.
+어떤 정보를 공유할지에 대해 <a>보유자</a>가 세분화된 결정을 내릴 수 있는 능력
   </dd>
   <dt><dfn data-lt="subjects|subject's|주체|주체들">주체 (subject)</dfn></dt>
   <dd>
-A thing about which <a>claims</a> are made.
+만들어진 <a>클레임</a>에 대한 대상
   </dd>
   <dt><dfn data-lt="사용자 에이전트">사용자 에이전트 (user agent)</dfn></dt>
   <dd>
-A program, such as a browser or other Web client, that mediates the
-communication between <a>holders</a>, <a>issuers</a>, and <a>verifiers</a>.
+브라우저나 웹 클라이언트와 같이 
+<a>보유자</a>와 <a>발급자</a>, <a>검증자</a> 간의 통신을 중재하는 프로그램.
   </dd>
   <dt><dfn data-lt="credential validation|유효성 검사">유효성 검사 (validation)</dfn></dt>
   <dd>
-The assurance that a <a>verifiable credential</a> or a
-<a>verifiable presentation</a> meets the needs of a <a>verifier</a> and other
-dependent stakeholders. This specification is constrained to <a>verifying</a>
-<a>verifiable credentials</a> and <a>verifiable presentations</a> regardless of
-their usage. Validating <a>verifiable credentials</a> or
-<a>verifiable presentations</a> is outside the scope of this specification.
+<a>검증가능한 크리덴셜</a>이나 <a>검증가능한 프레젠테이션</a>이 
+<a>검증자</a>와 기타 종속적인 이해 관계자의 요구사항을 만족한다는 보증. 
+이 규격에서는 <a>검증가능한 크리덴셜</a>과 <a>검증가능한 프레젠테이션</a>을 사용법과 관계없이 <a>검증</a>하도록 하고 있다. 
+<a>검증가능한 크리덴셜</a>이나 <a>검증가능한 프레젠테이션</a>에 대한 유효성 검사는 이 규격의 범위를 벗어난다.
   </dd>
   <dt><dfn data-lt="verifiable data registries|검증가능한 데이터 레지스트리">검증가능한 데이터 레지스트리 (verifiable data registry)</dfn></dt>
   <dd>
-A role a system might perform by mediating the creation and <a>verification</a>
-of identifiers, keys, and other relevant data, such as
-<a>verifiable credential</a> schemas, revocation registries, issuer public keys,
-and so on, which might be required to use <a>verifiable credentials</a>. Some
-configurations might require correlatable identifiers for <a>subjects</a>. Some
-registries, such as ones for UUIDs and public keys, might just act as namespaces
-for identifiers.
+<a>검증가능한 크리덴셜</a> 스키마, 폐기 레지스트리, 발급자 공개키 등과 같이 
+<a>검증가능한 크리덴셜</a>을 사용할 때 필요한 
+식별자와 키 그리고 기타 관련 데이터의 생성과 <a>검증</a>을 중재하는 시스템이 수행할 수 있는 역할. 
+어떤 구성에서는 <a>주체</a>와 연관된 식별자가 필요할 수 있다. 
+UUID와 공개키를 위한 일부 레지스트리는 식별자를 위해 네임스페이스와 같은 역할을 할 수 있다.
   </dd>
   <dt><dfn data-lt="verification|verify|verified|verifying|verifiable|verifiability|검증|검증가능한|검증가능성">검증 (verification)</dfn></dt>
   <dd>
-The evaluation of whether a <a>verifiable credential</a> or <a>verifiable presentation</a> 
-is an authentic and timely statement of the issuer or presenter, respectively.  
-    This includes checking that: the credential (or presentation) conforms to the specification; the proof method is
-satisfied; and, if present, the status check succeeds.
+<a>검증가능한 크리덴셜</a>이나 <a>검증가능한 프레젠테이션</a>이 
+발급자 또는 제출자 각각에 대하여 진실되고 시의적절한 진술인지에 대한 평가. 
+크리덴셜 (또는 프레젠테이션)이 본 규격을 준수하는지, 
+증명 방법을 만족하는지, 상태 확인이 존재한다면 성공했는지에 대한 확인을 포함한다.
 
   </dd>
   <dt><dfn data-lt="verifier|verifiers|verifier's|credential verifiers|credential verifier's|검증자|검증자들">검증자 (verifier)</dfn></dt>
@@ -149,9 +136,12 @@ A role an <a>entity</a> performs by receiving one or more
 <a>verifiable credentials</a>, optionally inside a
 <a>verifiable presentation</a> for processing. Other specifications might refer
 to this concept as a <dfn data-lt="relying parties|신뢰 당사자">relying party</dfn>.
+하나 또는 그 이상의 <a>검증가능한 크리덴셜</a>이나, 
+선택적으로 가공된 <a>검증가능한 프레젠테이션</a>을 받은 <a>엔터티</a>가 수행하는 역할. 
+다른 규격에서는 이 개념을 <dfn data-lt="relying parties|relying party|신뢰 당사자">신뢰 당사자</dfn>로 언급하기도 한다.
   </dd>
   <dt><dfn data-lt="URI|URIs">URI</dfn></dt>
   <dd>
-A Uniform Resource Identifier, as defined by [[RFC3986]].
+[[RFC3986]]에 정의된 Uniform Resource Identifier.
   </dd>
 </dl>
