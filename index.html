@@ -809,47 +809,39 @@
       </p>
 
     </section>
+    <section  class="informative" id="concrete-lifecycle-example">
+        <h3>완전한 수명주기 예제</h3>
 
-    <section class="informative">
-      <h3>Concrete Lifecycle Example</h3>
+        <p>
+이전 섹션에서는 그래픽 개념을 사용하여 <a>클레임</a>, <a>검증가능한 크리덴셜</a> 및 <a>검증가능한 프레젠테이션</a> 등의 개념을 
+소개했다. 이 섹션에서는 이 사양에서 지원하는 구체적인 구문 중 하나로 표현 된 데이터 모델의 단순하지만 완전한 
+수명주기 예제를 제공한다. <a href="#ecosystem-overview"></a>에서 
+<a>크리덴셜</a> 및 <a>프레젠테이션</a>의 수명주기는 종종 다음과 
+같은 공통 경로를 취한다:
+        </p>
 
-      <p>
-        The previous sections introduced the concepts of <a>claims</a>,
-        <a>verifiable credentials</a>, and <a>verifiable presentations</a> using
-        graphical depictions. This section provides a concrete set of simple but
-        complete lifecycle examples of the data model expressed in one of the concrete
-        syntaxes supported by this specification. The lifecycle of <a>credentials</a>
-        and <a>presentations</a> in the
-        <a href="#ecosystem-overview">Verifiable Credentials Ecosystem</a> often
-        take a common path:
-      </p>
+        <ol>
+          <li>
+하나 이상의 <a>검증가능한 크리덴셜</a> 발급
+          </li>
+          <li>
+<a>크리덴셜 저장소</a> (예 : 디지털 지갑)에 <a>검증가능한 크리덴셜</a> 저장
 
-      <ol>
-        <li>
-          Issuance of one or more <a>verifiable credentials</a>.
-        </li>
-        <li>
-          Storage of <a>verifiable credentials</a> in a <a>credential repository</a>
-          (such as a digital wallet).
-        </li>
-        <li>
-          Composition of <a>verifiable credentials</a> into a
-          <a>verifiable presentation</a> for <a>verifiers</a>.
-        </li>
-        <li>
-          <a>Verification</a> of the <a>verifiable presentation</a> by the
-          <a>verifier</a>.
-        </li>
-      </ol>
+          </li>
+          <li>
+<a>검증자</a>를 위해 <a>검증가능한 크리덴셜</a>을 <a>검증가능한 프리젠테이션</a>으로 구성
+          </li>
+          <li>
+<a>검증자</a>에 의한 <a>검증가능한 프레젠테이션</a>의 <a>검증</a>
+          </li>
+        </ol>
 
-      <p>
-        To illustrate this lifecycle, we will use the example of redeeming an alumni
-        discount from a university. In the example below, Pat receives an alumni
-        <a>verifiable credential</a> from a university, and Pat stores the
-        <a>verifiable credential</a> in a digital wallet.
-      </p>
+        <p>
+이 수명주기를 설명하기 위해 대학에서 동문 할인을 사용하는 예를 사용한다. 아래 예에서 Pat은 대학교로부터 
+동문 <a>검증가능한 크리덴셜<a/>을 받고, <a>검증가능한 크리덴셜</a>을 디지털 지갑에 저장한다.
+        </p>
 
-      <pre class="example nohighlight" title="A simple example of a verifiable credential">
+        <pre class="example nohighlight" title="검증 가능한 크리덴셜의 간단한 예">
 {
   <span class='comment'>// set the context, which establishes the special terms we will be using
   // such as 'issuer' and 'alumniOf'.</span>
@@ -900,20 +892,15 @@
   }
 }
         </pre>
-
-      <p>
-        Pat then attempts to redeem the alumni discount. The <a>verifier</a>, a ticket
-        sales system, states that any alumni of "Example University" receives a discount
-        on season tickets to sporting events. Using a mobile device, Pat starts the
-        process of purchasing a season ticket. A step in this process requests an alumni
-        <a>verifiable credential</a>, and this request is routed to Pat's digital wallet.
-        The digital wallet asks Pat if they would like to provide a previously issued
-        <a>verifiable credential</a>. Pat selects the alumni
-        <a>verifiable credential</a>, which is then composed into a
-        <a>verifiable presentation</a>. The <a>verifiable presentation</a> is sent to
-        the <a>verifier</a> and <a>verified</a>.
-      </p>
-      <pre class="example nohighlight" title="A simple example of a verifiable presentation">
+        <p>
+Pat은 동문 할인을 받으려 한다. 티켓 판매 시스템인 <a>검증자</a>는 "Example University"의 모든 
+동창생이 스포츠 행사에 대한 시즌 티켓 할인을 받는다. Pat은 모바일 장치를 사용하여 시즌 티켓 구매 
+프로세스를 시작한다. 이 프로세스의 단계는 동문 <a>검증가능한 크리덴셜</a>을 요청하며 이 요청은 Pat의 
+디지털 지갑으로 라우팅된다. 전자 지갑은 Pat에게 이전에 발급 된 <a>검증가능한 크리덴셜</a>을 제공 할 것인지 
+묻는다. Pat은 동문 <a>검증가능한 크리덴셜</a>을 선택하여 <a>검증가능한 프레젠테이션</a>으로 구성한다. <a>검증가능한 
+프리젠테이션</a>이 <a>검증자</a>에게 전송되고 <a>검증</a>된다.
+        </p>
+        <pre class="example nohighlight" title="검증 가능한 프레젠테이션의 간단한 예">
 {
   "@context": [
     "https://www.w3.org/2018/credentials/v1",
@@ -971,88 +958,67 @@
   }
 }
         </pre>
-
-      <p class="note">
-        Implementers that are interested in understanding more about the
-        <code>proof</code> mechanism used above can learn more in
-        Section <a href="#proofs-signatures"></a> and by reading the
-        following specifications: Linked Data Proofs [[LD-PROOFS]], Linked Data
-        Signatures [[LD-SIGNATURES]], 2018 RSA Signature Suite [[LDS-RSA2018]], and
-        JSON Web Signature (JWS) Unencoded Payload Option [[RFC7797]]. A list
-        of proof mechanisms is available in the Verifiable Credentials
-        Extension Registry [[VC-EXTENSION-REGISTRY]].
-      </p>
+        <p class="note">
+위에서 사용한 <code>proof</code> 메커니즘에 대해 더 자세히 알고 싶은 구현자는 섹션 <a href="#proofs-signatures"></a>
+에서 다음 사양을 자세히 알아볼 수 있다. 링크 된 데이터 증명 [[LD-PROOFS]], 링크 된 
+데이터 서명 [[LD-SIGNATURES]], 2018 RSA 서명 제품군 [[LDS-RSA2018]] 및 JSON 웹 서명 (JWS) 인코딩되지 
+않은 페이로드 옵션 [[RFC7797]]. 증명 메커니즘 목록은 검증 가능한 신임 정보 확장 레지스트리 [[VC-EXTENSION-REGISTRY]]에 있다.
+        </p>
+      </section>
     </section>
   </section>
 
-  <section class="normative">
-    <h2>Basic Concepts</h2>
-
-    <p>
-      This section introduces some basic concepts for the specification, in
-      preparation for Section <a href="#advanced-concepts"></a> later in the
-      document.
-    </p>
-
-    <section>
-      <h3>Contexts</h3>
+    <section class="normative" id="basic-concepts">
+      <h2>기본 개념</h2>
 
       <p>
-        When two software systems need to exchange data, they need to use terminology
-        that both systems understand. As an analogy, consider how two people
-        communicate. Both people must use the same language and the words they use must
-        mean the same thing to each other. This might be referred to as
-        <em>the context of a conversation</em>.
-      </p>
-      <p>
-        <a>Verifiable credentials</a> and <a>verifiable presentations</a> have many
-        attributes and values that are identified by <a>URIs</a>. However, those
-        <a>URIs</a> can be long and not very human-friendly. In such cases, short-form
-        human-friendly aliases can be more helpful. This specification uses the
-        <code>@context</code> <a>property</a> to map such short-form aliases to the URIs
-        required by specific <a>verifiable credentials</a> and
-        <a>verifiable presentations</a>.
-      </p>
-      <p class="note">
-        In JSON-LD, the <code>@context</code> <a>property</a> can also be used to
-        communicate other details, such as datatype information, language information,
-        transformation rules, and so on, which are beyond the needs of this
-        specification, but might be useful in the future or to related work. For more
-        information, see
-        <a href="https://www.w3.org/TR/json-ld11/#the-context">Section 3.1: The Context</a>
-        of the [[JSON-LD]] specification.
-      </p>
-      <p>
-        <a>Verifiable credentials</a> and <a>verifiable presentations</a> MUST include a
-        <code>@context</code> <a>property</a>.
+이 섹션에서는 섹션 <a href="#advanced-concepts"></a>을 준비하기 위해 사양에 대한 몇 가지 기본 개념을 소개한다.
       </p>
 
-      <dl>
-        <dt><dfn>@context</dfn></dt>
-        <dd>
-          The value of the <code>@context</code> <a>property</a> MUST be an ordered set
-          where the first item is a <a>URI</a> with the value
-          <code>https://www.w3.org/2018/credentials/v1</code>. For reference, a copy of
-          the base context is provided in Appendix <a href="#base-context"></a>.
-          Subsequent items in the array MUST express context information and be composed
-          of any combination of <a>URIs</a> or objects. It is RECOMMENDED that each
-          <a>URI</a> in the <code>@context</code> be one which, if dereferenced, results
-          in a document containing machine-readable information about the
-          <code>@context</code>.
-        </dd>
-      </dl>
-      <p class="note">
-        Though this specification requires that a <code>@context</code> <a>property</a>
-        be present, it is not required that the value of the <code>@context</code>
-        <a>property</a> be processed using JSON-LD. This is to support processing using
-        plain JSON libraries, such as those that might be used when the
-        <a>verifiable credential</a> is encoded as a JWT. All libraries or processors
-        MUST ensure that the order of the values in the <code>@context</code>
-        <a>property</a> is what is expected for the specific application. Libraries or
-        processors that support JSON-LD can process the <code>@context</code>
-        <a>property</a> using full JSON-LD processing as expected.
-      </p>
-      <pre class="example nohighlight" title="Usage of the @context property">
+      <section id="contexts">
+        <h3>컨텍스트</h3>
+
+        <p>
+두 소프트웨어 시스템이 데이터를 교환해야하는 경우 두 시스템이 이해하는 용어를 사용해야 한다. 
+비유하자면 두 사람이 어떻게 의사소통을 하는지 고려해 보라. 두 사람 모두 같은 언어를 사용해야하며 
+그들이 사용하는 단어는 서로 같은 것을 의미해야 한다. 이것을 <em>대화의 맥락</em>이라고 할 수 있다.
+        </p>
+        <p>
+<a>검증가능한 크리덴셜</a> 및 <a>검증가능한 프레젠테이션</a>에는 <a>URIs</a>로 식별되는 많은 속성과 값이 있다. 
+그러나 이러한 <a>URIs</a>는 길고 사람에게 친숙하지 않을 수 있다. 이러한 경우, 짧은 형태의 인간 친화적 
+별칭이 더 도움이 될 수 있다. 이 사양에서는 <code>@context</code> <a>속성</a>을 사용하여 이러한 짧은 별칭을 특정 
+<a>검증가능한 크리덴셜</a> 및 <a>검증가능한 프레젠테이션</a>에 필요한 URI에 매핑한다.
+       </p>
+  <p class="note">
+JSON-LD에서 <code>@context</code> <a>속성</a>을 사용하여 데이터 유형 정보, 언어 정보, 변환 규칙 
+등과 같은 다른 세부 정보를 전달할 수도 있다. 
+이것은 이 사양의 요구 사항을 넘어서지만 향후에나 관련 작업에서는 유용 할 수 있다. 
+자세한 정보는 [[JSON-LD]] 스펙의 
+<a href="https://www.w3.org/TR/json-ld11/#the-context">섹션 3.1 : 컨텍스트</a>를 참조.
+        </p>
+        <p>
+<a>검증가능한 크리덴셜</a> 및 <a>검증가능한 프레젠테이션</a>에는 반드시 <code>@context</code> <a>속성</a>이 포함되어야 한다.
+        </p>
+
+        <dl>
+          <dt><dfn>@context</dfn></dt>
+          <dd>
+<code>@context</code>의 <a>속성</a> 값은 첫 번째 항목이 
+<code>https://www.w3.org/2018/credentials/v1</code> 값을 갖는 <a>URI</a> 인 순서 
+집합이어야 한다. 참고로, 기본 컨텍스트의 사본은 부록 <a href="#base-context"></a>에 제공된다. 배열의 후속 
+항목은 반드시 컨텍스트 정보를 표현해야하며 <a>URIs</a> 또는 객체의 조합으로 구성되어야 한다. <code>@context</code>의 
+각 <a>URI</a>는 역 참조되는 경우 <code>@context</code>에 대한 기계 판독 가능 정보를 포함하는 문서를 생성하는 <a>URI</a> 여야한다.
+          </dd>
+        </dl>
+        <p class="note">
+이 사양에서는 <code>@context</code> <a>속성</a>이 있어야 하지만 
+<code>@context</code> <a>속성</a>의 값을 JSON-LD를 사용하여 처리 할 필요는 없다. 
+이는 <a>검증가능한 크리덴셜</a>이 JWT로 인코딩 될 때 사용되는 것처럼 일반 JSON 라이브러리를 사용한 처리를 
+지원하기 위한 것이다. 모든 라이브러리 또는 프로세서는 <code>@context</code> <a>속성</a>의 값 순서가 특정 응용 프로그램에 예상되는 
+순서여야한다. JSON-LD를 지원하는 라이브러리 또는 프로세서는 예상대로 전체 JSON-LD 처리를 사용하여 <code>@context</code> 
+<a>속성</a>을 처리 할 수 있다.
+        </p>
+        <pre class="example nohighlight" title="@context 속성의 사용법">
 {
   <span class="highlight">"@context": [
     "https://www.w3.org/2018/credentials/v1",
@@ -1076,30 +1042,26 @@
   "proof": { <span class="comment">...</span> }
 }
         </pre>
+        <p>
+위의 예는 기본 컨텍스트 <a>URI</a> (<code>https://www.w3.org/2018/credentials/v1<code>)를 사용하여 
+대화가 <a>검증가능한 크리덴셜</a>에 
+관한 것임을 설정한다. 두 번째 <a>URI</a> (<code>https://www.w3.org/2018/credentials/examples/v1</code>)는 
+대화가 예제에 관한 것임을 설정한다.
+        </p>
 
-      <p>
-        The example above uses the base context <a>URI</a>
-        (<code>https://www.w3.org/2018/credentials/v1</code>) to establish that the
-        conversation is about a <a>verifiable credential</a>. The second <a>URI</a>
-        (<code>https://www.w3.org/2018/credentials/examples/v1</code>) establishes that
-        the conversation is about examples.
-      </p>
+        <p class="note">
+이 문서는 예제를 보여주기 위해 예제 컨텍스트 <a>URI</a> 
+(<code>https://www.w3.org/2018/credentials/examples/v1</code>)를 사용한다. 
+실제 구현에서는 파일럿 또는 프로덕션 
+시스템을 포함하여 어떤 다른 목적으로도 이 <a>URI</a>를 사용하면 안된다.
+        </p>
 
-      <p class="note">
-        This document uses the example context <a>URI</a>
-        (<code>https://www.w3.org/2018/credentials/examples/v1</code>) for the purpose
-        of demonstrating examples. Implementations are expected to not use this
-        <a>URI</a> for any other purpose, such as in pilot or production systems.
-      </p>
-
-      <p>
-        The data available at <code>https://www.w3.org/2018/credentials/v1</code> is a
-        static document that is never updated and SHOULD be downloaded and cached. The
-        associated human-readable vocabulary document for the Verifiable Credentials
-        Data Model is available at
-        <a href="https://www.w3.org/2018/credentials">https://www.w3.org/2018/credentials</a>.
-        This concept is further expanded on in Section <a href="#extensibility"></a>.
-      </p>
+        <p>
+<code>https://www.w3.org/2018/credentials/v1</code>에 있는 데이터는 절대 업데이트되지 않으며 다운로드 및 
+캐시되어야하는 정적 문서이다. 검증 가능한 자격 증명 데이터 모델에 대한 사람이 읽을 수 있는 관련 어휘 
+문서는 <a href="https://www.w3.org/2018/credentials">https://www.w3.org/2018/credentials</a>에서 제공된다. 이 개념은 
+섹션 <a href="#extensibility"></a>에서 더욱 심도있게 다룬다.
+        </p>
 
     </section>
 
