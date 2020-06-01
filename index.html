@@ -513,56 +513,52 @@
       </ul>
     </section>
 
-    <section id="conformance">Conformance</section>
+    <section id="conformance" >적합성</section>
     <p>
-      This specification makes no normative statements with regard to the
-      conformance of roles in the ecosystem, such as <a>issuers</a>, <a>holders</a>,
-      or <a>verifiers</a>, because the conformance of ecosystem roles are highly
-      application, use case, and market vertical specific.
+      본 규격서는 <a>발급자</a>, <a>보유자</a>, <a>검증자</a>와 같은 생태계에서 
+      역할의 준수와 관련하여 규범적인 진술을 하지 않으며, 
+      그 이유는 생태계의 준수는 적용, 유즈케이스 및 시장의 수직적 특성이 높기 때문이다.
     </p>
 
     <p>
-      Digital proof mechanisms, a subset of which are digital signatures, are required
-      to ensure the protection of a <a>verifiable credential</a>. Having and
-      validating proofs, which may be dependent on the syntax of the proof
-      (for example, using the JSON Web Signature of a JSON Web Token for proofing a
-      key holder), are an essential part of processing a <a>verifiable credential</a>.
-      At the time of publication, Working Group members had implemented
-      <a>verifiable credentials</a> using at least three proof mechanisms:
+      <a>검증가능한 크리덴셜</a>의 보호를 보장하기 위하여 부분집합인 전자서명인 
+      전자 증명 메커니즘이 필요하다. 증명의 구문에 의존할 수 있는 증명을 소유하고 
+      검증하는 것은 (예를 들어, 키 소유자를 증명하기 위해 JSON 웹 토큰의 
+      JSON 웹 서명 사용) <a>검증가능한 크리덴셜</a>을 처리하는 데 필수적이다. 
+      출판 당시 워킹 그룹 구성원은 최소한 세 가지 증명 메커니즘을 사용하여 
+      <a>검증가능한 크리덴셜</a>을 구현했다:
     </p>
 
     <ul>
       <li>
-        JSON Web Tokens [[RFC7519]] secured using JSON Web Signatures [[RFC7515]]
+        JSON 웹 토큰 [[RFC7519]]과 JSON 웹 서명을 사용하여 보안 [[RFC7515]]
       </li>
       <li>
-        Linked Data Signatures [[?LD-SIGNATURES]]
+        연결된 데이터 서명 [[?LD-SIGNATURES]]
       </li>
       <li>
-        Camenisch-Lysyanskaya Zero-Knowledge Proofs [[?CL-SIGNATURES]].
+        Camenisch-Lysyanskaya 영지식 증명 [[?CL-SIGNATURES]].
       </li>
     </ul>
 
     <p>
-      Implementers are advised to note that not all proof mechanisms are standardized
-      as of the publication date of this specification. The group expects some of
-      these mechanisms, as well as new ones, to mature independently and become
-      standardized in time. Given there are multiple valid proof mechanisms, this
-      specification does not standardize on any single digital signature mechanism.
-      One of the goals of this specification is to provide a data model that can be
-      protected by a variety of current and future digital proof mechanisms.
-      Conformance to this specification does not depend on the details of a particular
-      proof mechanism; it requires clearly identifying the mechanism a
-      <a>verifiable credential</a> uses.
+      구현자는 다음 사항에 유의해야 한다. 모든 증명 메커니즘이 본 규격서의 
+      게재 날짜를 기준으로 표준화된 것이 아니다. 본 그룹은 새로운 메커니즘뿐만 아니라 
+      메커니즘 중 일부가 독립적으로 성숙되고 시간이 지나면 표준화될 것으로 기대한다. 
+      다양하며 유효한 증명 메커니즘이 있기 때문에 본 규격서는 단일 전자서명 
+      메커니즘을 표준화 하지 않는다. 본 규격서의 목표 중 하나는 다양한 현재 및 
+      미래의 전자 증명 메커니즘으로 보호할 수 있는 데이터 모델을 제공하는 것이다. 
+      본 사양에 대한 적합성은 특정 증명 메커니즘의 세부 사항에 의존하지 않는다. 
+      <a>검증가능한 크리덴셜</a>이 사용하는 메커니즘을 명확하게 식별해야 한다.
     </p>
 
     <p>
-      This document also contains examples that contain JSON and JSON-LD content.
-      Some of these examples contain characters that are invalid JSON, such as
-      inline comments (<code>//</code>) and the use of ellipsis (<code>...</code>)
-      to denote information that adds little value to the example. Implementers are
-      cautioned to remove this content if they desire to use the information as
-      valid JSON or JSON-LD.
+      본 문서에는 JSON 및 JSON-LD 컨텐츠가 포함된 예제도 포함되어 있다. 
+      예제 중 일부에는 인라인 주석 (<code>//</code>) 및 
+      줄임표 (<code>...</code>)를 사용하여 예제에 중요하지 
+      않은 정보를 나타내는 유효하지 않은 JSON 문자가 포함되어 있다. 
+      구현자는 정보를 유효한 JSON 또는 JSON-LD로 사용하려는 경우 
+      이 컨텐츠를 삭제해야 한다.
     </p>
   </section>
 
@@ -575,54 +571,51 @@
     </div>
   </section>
 
-  <section class="informative">
-    <h2>Core Data Model</h2>
+  <section class="informative" id="core-data-model">
+    <h2>핵심 데이터 모델</h2>
 
     <p>
-      The following sections outline core data model concepts, such as <a>claims</a>,
-      <a>credentials</a>, and <a>presentations</a>, which form the foundation of this
-      specification.
+      다음 장에서는 본 사양의 기초를 구성하는 <a>클레임</a>, <a>크리덴셜</a> 및 
+      <a>프레젠테이션</a>과 같은 핵심 데이터 모델 개념에 대해 개략적으로 설명한다.
     </p>
 
-    <section class="informative">
-      <h3>Claims</h3>
+    <section class="informative" id="claims">
+      <h3>클레임</h3>
 
       <p>
-        A <a>claim</a> is a statement about a <a>subject</a>. A <a>subject</a> is
-        a thing about which <a>claims</a> can be made. <a>Claims</a> are expressed using
-        <strong><em>subject</em></strong>-<dfn data-lt="property|properties|속성|속성들">property</dfn>-<dfn>value</dfn>
-        relationships.
+        <a>클레임</a>은 <a>주체</a>에 대한 진술이다. <a>주체</a>는 <a>클레임</a>을 할 수 있으며, 
+        <strong><em>주체</em></strong>-<dfn data-lt="property|properties|속성|속성들">속성</dfn>-<dfn>값</dfn> 
+        관계를 사용하여 표현한다.
       </p>
 
       <figure id="basic-structure">
         <img style="margin: auto; display: block; width: 50%;" src="diagrams/claim.svg" alt="subject has a property which
             has a value">
         <figcaption style="text-align: center;">
-          The basic structure of a claim.
+          클레임의 기본 구조.
         </figcaption>
       </figure>
 
       <p>
-        The data model for <a>claims</a>, illustrated in <a href="#basic-structure"></a>
-        above, is powerful and can be used to express a large variety of statements. For
-        example, whether someone graduated from a particular university can be expressed
-        as shown in <a href="#basic-example"></a> below.
+        위 <a href="#basic-structure"></a>에 설명된 <a>클레임</a>의 데이터 모델은 
+        강력하며 다양한 구문을 표현하는 데 사용될 수 있다. 
+        예를 들어, 특정 대학을 졸업한 사람은 아래 <a href="#basic-example"></a>과 
+        같이 표현될 수 있다.
       </p>
 
       <figure id="basic-example">
         <img style="margin: auto; display: block; width: 60%;" src="diagrams/claim-example.svg" alt="Pat has an alumniOf
             property whose value is Example University">
         <figcaption style="text-align: center;">
-          A basic claim expressing that Pat is an alumni of "Example University".
+          Pat이 "Example University"의 졸업생임을 표현하는 기본 클레임.
         </figcaption>
       </figure>
 
       <p>
-        Individual <a>claims</a> can be merged together to express a <a>graph</a> of
-        information about a <a>subject</a>. The example shown in
-        <a href="#multiple-claims"></a> below extends the previous <a>claim</a> by
-        adding the <a>claims</a> that Pat knows Sam and that Sam is employed as a
-        professor.
+        독립된 <a>클레임</a>을 합쳐서 <a>주체</a>에 대한 정보를 나타내는 
+        <a>그래프</a>를 표현할 수 있다. 아래 <a href="#multiple-claims"></a>의
+         예시는 Pat이 Sam을 알고 있으며 Sam이 교수로 채용되었다는 <a>클레임</a>을 
+         추가하여 이전 <a>클레임</a>을 확장한다.
       </p>
 
       <figure id="multiple-claims">
@@ -630,29 +623,28 @@
             diagram with another property called knows whose value is
             Sam, and Sam has a property jobTitle whose value is Professor">
         <figcaption style="text-align: center;">
-          Multiple claims can be combined to express a graph of information.
+          정보의 그래프를 표현하기 위하여 다수의 클레임을 조합할 수 있다.
         </figcaption>
       </figure>
 
       <p>
-        To this point, the concepts of a <a>claim</a> and a <a>graph</a> of information
-        are introduced. To be able to trust <a>claims</a>, more information is
-        expected to be added to the graph.
+        이 시점에서, <a>클레임</a>의 개념과 정보 그래프를 소개한다. 
+        <a>클레임</a>을 신뢰하기 위하여 더 많은 정보가 <a>그래프</a>에 
+        추가될 것으로 예상한다.
       </p>
     </section>
 
-    <section class="informative">
-      <h3>Credentials</h3>
+    <section class="informative" id="credentials">
+      <h3>크리덴셜</h3>
 
       <p>
-        A <a>credential</a> is a set of one or more <a>claims</a> made by the same
-        <a>entity</a>. <a>Credentials</a> might also include an identifier and
-        metadata to describe properties of the <a>credential</a>, such as the
-        <a>issuer</a>, the expiry date and time, a representative image, a public key
-        to use for <a>verification</a> purposes, the revocation mechanism, and so on.
-        The metadata might be signed by the <a>issuer</a>. A
-        <a>verifiable credential</a> is a set of tamper-evident <a>claims</a> and
-        metadata that cryptographically prove who issued it.
+        <a>크리덴셜</a>은 동일한 <a>엔터티</a>가 만든 하나 이상의 
+        <a>클레임</a> 집합이다. <a>크리덴셜</a>에는 <a>발급자</a>, 유효기한, 
+        대표 이미지, <a>검증</a> 목적으로 사용할 공개키, 해지 메커니즘 등과 같은 
+        <a>크리덴셜</a>의 속성을 설명하는 식별자 및 메타데이터도 포함될 수 있다. 
+        메타데이터는 <a>발급자</a>가 서명한 것일 수 있다. 
+        <a>검증가능한 크리덴셜</a>은 누가 이를 발급했는지 
+        암호학적으로 증명하는 위변조 방지 <a>클레임</a> 및 메타데이터 집합이다.
       </p>
 
       <figure id="basic-vc">
@@ -660,36 +652,36 @@
 	       Credential contains Credential Metadata, Claim(s), and
 	       Proof(s)">
         <figcaption style="text-align: center;">
-          Basic components of a verifiable credential.
+          검증가능한 크리덴셜의 기본 구성 요소.
         </figcaption>
       </figure>
 
       <p>
-        Examples of <a>verifiable credentials</a> include digital employee
-        identification cards, digital birth certificates, and digital educational
-        certificates.
+
+        <a>검증가능한 크리덴셜</a>의 예로는 전자 직원 신분증, 
+        전자 출생 증명서, 전자 교육 증명서가 있다.
       </p>
 
       <p class="note">
-        <a>Credential</a> identifiers are often used to identify specific instances
-        of a <a>credential</a>. These identifiers can also be used for correlation. A
-        <a>holder</a> wanting to minimize correlation is advised to use a selective
-        disclosure scheme that does not reveal the <a>credential</a> identifier.
+        <a>크리덴셜</a> 식별자는 종종 <a>크리덴셜</a>의 특정 인스턴스를 식별하는 데 
+        사용된다. 이러한 식별자는 상관 관계에 사용될 수도 있다. 
+        상관 관계를 최소화하려는 <a>보유자</a>는 <a>크리덴셜</a> 식별자를 
+        밝히지 않는 선택적 공개 체계를 사용하는 것이 좋다.
       </p>
 
       <p>
-        <a href="#basic-vc"></a> above shows the basic components of a
-        <a>verifiable credential</a>, but abstracts the details about how <a>claims</a>
-        are organized into information <a>graphs</a>, which are then organized into
-        <a>verifiable credentials</a>. <a href="#info-graph-vc"></a> below shows a
-        more complete depiction of a <a>verifiable credential</a>, which is normally
-        composed of at least two information <a>graphs</a>. The first <a>graph</a>
-        expresses the <a>verifiable credential</a> itself, which contains
-        <span class="color-text" style="color:#d5a6bd;">credential metadata</span> and
-        <span class="color-text" style="color:#ffe599;">claims</span>. The second
-        <a>graph</a> expresses the
-        <span class="color-text" style="color:#b6d7a8;">digital proof</span>, which is
-        usually a digital signature.
+        위 <a href="#basic-vc"></a>는 <a>검증가능한 크리덴셜</a>의 기본 구성 
+        요소를 보여 주지만, <a>클레임</a>이 정보 <a>그래프</a>로 구성되고 
+        <a>검증가능한 크리덴셜</a>로 구성되는 방식에 대한 세부 정보를 추상화 한다. 
+        하단의 <a href="#info-graph-vc"></a>은 <a>검증가능한 크리덴셜</a>을 
+        더 완벽하게 묘사한 것으로 일반적으로 두 개 이상의 정보 그래프로 구성된다. 
+        첫 번째 <a>그래프</a>는 
+        <span class="color-text" style="color:#d5a6bd;">크리덴셜 메타데이터</span>와 
+        <span class="color-text" style="color:#ffe599;">클레임</span>을 
+        포함하는 <a>검증가능한 크리덴셜</a>을 표시한다. 
+        두 번째 <a>그래프</a>는 일반적으로 전자 서명인 
+        <span class="color-text" style="color:#b6d7a8;">디지털 프루프</span>를 
+        표현한다.
       </p>
 
       <figure id="info-graph-vc">
@@ -706,51 +698,46 @@
 	       Public Key 7, 'created' of 2017-06-18T21:19:10Z, and 'jws'
          of 'BavEll0...3JT24='">
         <figcaption style="text-align: center;">
-          Information graphs associated with a basic verifiable credential.
+          검증가능한 기본 크리덴셜과 관련된 정보 그래프.
         </figcaption>
       </figure>
 
       <p class="note">
-        It is possible to have a <a>credential</a>, such as a marriage certificate,
-        containing multiple <a>claims</a> about different <a>subjects</a> that are not
-        required to be related.
+        결혼 증명서와 같은 <a>크리덴셜</a>을 소유할 수 있으며, 포함되지 않아도 
+        되는 다른 <a>주체</a>에 대한 여러 가지 <a>클레임</a>을 포함할 수 있다.
       </p>
       <p class="note">
-        It is possible to have a <a>credential</a> that does not contain any
-        <a>claims</a> about the <a>entity</a> to which the <a>credential</a> was issued.
-        For example, a <a>credential</a> that only contains <a>claims</a> about a
-        specific dog, but is issued to its owner.
+        <a>크리덴셜</a>이 발급된 <a>엔터티</a>에 대한 어떠한 <a>클레임</a>도 
+        포함하지 않는 <a>크리덴셜</a>을 가질 수 있다. 
+        예를 들어, 특정 강아지에 대한 <a>클레임</a>을 포함하는 소유자에게 
+        발급되는 <a>크리덴셜</a>이다.
       </p>
     </section>
 
-    <section class="informative">
-      <h3>Presentations</h3>
+    <section class="informative" id="presentations">
+      <h3>프리젠테이션</h3>
 
       <p>
-        Enhancing privacy is a key design feature of this specification. Therefore, it
-        is important for <a>entities</a> using this technology to be able to express
-        only the portions of their persona that are appropriate for a given situation.
-        The expression of a subset of one's persona is called a
-        <a>verifiable presentation</a>. Examples of different personas include a
-        person's professional persona, their online gaming persona, their
-        family persona, or an incognito persona.
+        프라이버시 향상은 본 규격서의 핵심 디자인 기능이다. 따라서, 본 기술을 사용하는 
+        <a>엔터티</a>는 주어진 상황에 적절한 자신의 페르소나 부분만 표현할 수 
+        있어야 한다. 페르소나의 부분 집합 표현을 <a>검증가능한 프레젠테이션</a>이라고 
+        한다. 다른 페르소나의 예시는 개인의 전문 페르소나, 온라인 게임 페르소나, 
+        가족 페르소나, 시크릿 페르소나가 있다.
       </p>
 
       <p>
-        A <a>verifiable presentation</a> expresses data from one or more
-        <a>verifiable credentials</a>, and is packaged in such a way that the
-        authorship of the data is <a>verifiable</a>. If <a>verifiable credentials</a>
-        are presented directly, they become <a>verifiable presentations</a>. Data
-        formats derived from <a>verifiable credentials</a> that are cryptographically
-        <a>verifiable</a>, but do not of themselves contain
-        <a>verifiable credentials</a>, might also be <a>verifiable presentations</a>.
+        <a>검증가능한 프레젠테이션</a>은 하나 이상의 <a>검증가능한 크리덴셜</a>의 
+        데이터를 표현하며, 데이터의 소유권을 <a>검증할 수</a>있는 방식으로 포장된다. 
+        <a>검증가능한 크리덴셜</a>이 직접 제공되면 <a>검증가능한 프레젠테이션</a>이 
+        된다. 암호학적 방식으로 <a>검증할 수</a> 있지만 <a>검증가능한 크리덴셜</a>를 
+        포함하지 않는 <a>검증가능한 크리덴셜</a>에서 파생된 데이터 형식도 
+        <a>검증가능한 프레젠테이션</a>일 수 있다.
       </p>
 
       <p>
-        The data in a <a>presentation</a> is often about the same <a>subject</a>, but
-        might have been issued by multiple <a>issuers</a>. The aggregation of this
-        information typically expresses an aspect of a person, organization, or
-        <a>entity</a>.
+        <a>프레젠테이션</a>의 데이터는 종종 같은 <a>주체</a>에 관한 것 이지만 
+        여러 <a>발급자</a>가 발급했을 수 있다. 이 정보의 집합은 일반적으로 
+        개인, 조직, <a>엔터티</a>의 관점을 표현한다.
       </p>
 
       <figure id="basic-vp">
@@ -758,30 +745,31 @@
             Presentation contains Presentation Metadata, Verifiable
             Credential(s), and Proof(s)">
         <figcaption style="text-align: center;">
-          Basic components of a verifiable presentation.
+          검증가능한 프리젠테이션의 기본 구성 요소.
         </figcaption>
       </figure>
 
       <p>
-        <a href="#basic-vp"></a> above shows the components of a
-        <a>verifiable presentation</a>, but abstracts the details about how
-        <a>verifiable credentials</a> are organized into information <a>graphs</a>,
-        which are then organized into <a>verifiable presentations</a>.
-        <a href="#info-graph-vp"></a> below shows a more complete depiction of a
-        <a>verifiable presentation</a>, which is normally composed of at least four
-        information <a>graphs</a>. The first <a>graph</a> expresses the
-        <a>verifiable presentation</a> itself, which contains
-        <span class="color-text" style="color:#b4a7d6;">presentation metadata</span>.
-        The <code>verifiablePresentation</code> property in the <a>graph</a> refers to
-        one or more <a>verifiable credentials</a> (each a self-contained <a>graph</a>),
-        which in turn contains
-        <span class="color-text" style="color:#d5a6bd;">credential metadata</span> and
-        <span class="color-text" style="color:#ffe599;">claims</span>.
-        The third <a>graph</a> expresses the
-        <span class="color-text" style="color:#b6d7a8;">credential graph proof</span>,
-        which is usually a digital signature. The fourth <a>graph</a> expresses the
-        <span class="color-text" style="color:#a4c2f4;">presentation graph proof</span>,
-        which is usually a digital signature.
+        위 <a href="#basic-vp"></a>은 <a>검증가능한 프레젠테이션</a>의 구성 요소를 
+        보여주지만, 간략하게 <a>검증가능한 크리덴셜</a>이 정보 <a>그래프</a>로 
+        구성되어 <a>검증가능한 프레젠테이션</a>으로 구성되는 방법에 대한 
+        세부 사항을 요약한다. 하단의 <a href="#info-graph-vp"></a>은 
+        <a>검증가능한 프레젠테이션</a>을 더 완벽하게 묘사한 것으로, 
+        일반적으로 최소 4 개의 정보 <a>그래프</a>로 구성된다. 
+        첫 번째 <a>그래프</a>는 
+        <span class="color-text" style="color:#b4a7d6;">프레젠테이션 메타데이터</span>가 포함된 
+        <a>검증가능한 프레젠테이션</a>을 표현한다. 
+        그래프의 <code>verifiablePresentation</code> 속성은 
+        <span class="color-text" style="color:#d5a6bd;">크리덴셜 메타데이터</span> 
+        및 <span class="color-text" style="color:#ffe599;">클레임</span>을 
+        포함하는 하나 이상의 <a>검증가능한 크리덴셜</a> (각각 독립 <a>그래프</a>)을 
+        표현한다. 
+        세 번째 <a>그래프</a>는 일반적으로 전자서명인 
+        <span class="color-text" style="color:#b6d7a8;">크리덴셜 그래프 프루프</span>
+        를 표현한다. 
+        네 번째 <a>그래프</a>는 일반적으로 전자서명인 
+        <span class="color-text" style="color:#a4c2f4;">프리젠테이션 그래프 프루프</span>
+        를 표현한다.
       </p>
 
       <figure id="info-graph-vp">
@@ -798,14 +786,14 @@
 	       2018-01-15T12:43:56Z, 'challenge' of d28348djsj3239, and
 	       'jws' of 'p2KaZ...8Fj3K='">
         <figcaption style="text-align: center;">
-          Information graphs associated with a basic verifiable presentation.
+          검증가능한 기본 프레젠테이션과 관련된 정보 그래프.
         </figcaption>
       </figure>
 
       <p class="note">
-        It is possible to have a <a>presentation</a>, such as a business persona, which
-        draws on multiple <a>credentials</a> about different <a>subjects</a> that are
-        often, but not required to be, related.
+        비즈니스 페르소나와 같은 <a>프레젠테이션</a>을 가질 수 있다. 
+        비즈니스 페르소나는 종종 연관되어 있지만 필요하지 않은 다른 
+        <a>주체</a>에 대한 여러 <a>크리덴셜</a>을 사용한다.
       </p>
 
     </section>
