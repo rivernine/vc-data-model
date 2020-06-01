@@ -2,7 +2,7 @@
 <html lang=ko>
 
 <head>
-  <title>검증가능한 크리덴셜 데이터 모델 1.0</title>
+  <title>검증가능한 크리덴셜 데이터 모델 (Verifiable Credentials Data Model) 1.0</title>
   <meta http-equiv='Content-Type' content='text/html;charset=utf-8' />
   <!--
       === NOTA BENE ===
@@ -157,7 +157,7 @@
     <p>
       원문작성일: 2019-11-19<br />
       최초번역일: 2020-01-11<br />
-      최종수정일: 2020-05-22<br />
+      최종수정일: 2020-06-01<br />
     </p>
     <dt><span style="font-weight: 500;">에디터 (가나다순)</span>: </dt>
     <dd><a href="https://www.linkedin.com/in/jaehoonjshim/" ]>심재훈</a></dd>
@@ -168,8 +168,11 @@
     <dd><a href="mailto:daoauth@gmail.com" ]>임도형</a></dd>
     <dd>&nbsp;</dd>
     <dt><span style="font-weight: 500;">번역자 (가나다순)</span>: </dt>
+    <dd><a href="mailto:anh1026@kaist.ac.kr" ]>김학근</a></dd>
     <dd><a href="mailto:anh1026@kaist.ac.kr" ]>안형철</a></dd>
+    <dd><a href="mailto:osktr5@gmail.com" ]>오세광</a></dd>
     <dd><a href="mailto:magnified02@gmail.com" ]>유수웅</a></dd>
+    <dd><a href="mailto:anh1026@kaist.ac.kr" ]>최규현</a></dd>
     <dd><a href="mailto:hyunsy822@gmail.com" ]>현수영</a></dd>
   </div>
   <section id='abstract'>
@@ -184,7 +187,7 @@
 
   <section id='sotd'>
     <!-- 이 부분은 영어 부분을 대채할 수 없기 때문에 삭제 -->
-    <p>
+    <!-- <p>
       The Working Group thanks the following individuals not only for their
       contributions toward the content of this document, but also for yeoman's work
       in this standards community that drove changes, discussion, and consensus among
@@ -208,7 +211,7 @@
       well as our W3C Staff Contact, Kazuyuki Ashimura, for their expert
       management and steady guidance of the group through the W3C standardization
       process.
-    </p>
+    </p> -->
   </section>
   <section class="informative">
     <h2>소개</h2>
@@ -513,7 +516,7 @@
       </ul>
     </section>
 
-    <section id="conformance" >적합성</section>
+    <section id="conformance"></section>
     <p>
       본 규격서는 <a>발급자</a>, <a>보유자</a>, <a>검증자</a>와 같은 생태계에서 
       역할의 준수와 관련하여 규범적인 진술을 하지 않으며, 
@@ -565,7 +568,7 @@
   </section>
 
   <section class="informative">
-    <h2>Terminology</h2>
+    <h2>용어</h2>
 
     <div data-include="./terms.html" data-oninclude="restrictReferences">
     </div>
@@ -715,7 +718,7 @@
     </section>
 
     <section class="informative" id="presentations">
-      <h3>프리젠테이션</h3>
+      <h3>프레젠테이션</h3>
 
       <p>
         프라이버시 향상은 본 규격서의 핵심 디자인 기능이다. 따라서, 본 기술을 사용하는 
@@ -745,7 +748,7 @@
             Presentation contains Presentation Metadata, Verifiable
             Credential(s), and Proof(s)">
         <figcaption style="text-align: center;">
-          검증가능한 프리젠테이션의 기본 구성 요소.
+          검증가능한 프레젠테이션의 기본 구성 요소.
         </figcaption>
       </figure>
 
@@ -768,7 +771,7 @@
         <span class="color-text" style="color:#b6d7a8;">크리덴셜 그래프 프루프</span>
         를 표현한다. 
         네 번째 <a>그래프</a>는 일반적으로 전자서명인 
-        <span class="color-text" style="color:#a4c2f4;">프리젠테이션 그래프 프루프</span>
+        <span class="color-text" style="color:#a4c2f4;">프레젠테이션 그래프 프루프</span>
         를 표현한다.
       </p>
 
@@ -817,7 +820,7 @@
 
           </li>
           <li>
-<a>검증자</a>를 위해 <a>검증가능한 크리덴셜</a>을 <a>검증가능한 프리젠테이션</a>으로 구성
+<a>검증자</a>를 위해 <a>검증가능한 크리덴셜</a>을 <a>검증가능한 프레젠테이션</a>으로 구성
           </li>
           <li>
 <a>검증자</a>에 의한 <a>검증가능한 프레젠테이션</a>의 <a>검증</a>
@@ -826,7 +829,7 @@
 
         <p>
 이 수명주기를 설명하기 위해 대학에서 동문 할인을 사용하는 예를 사용한다. 아래 예에서 Pat은 대학교로부터 
-동문 <a>검증가능한 크리덴셜<a/>을 받고, <a>검증가능한 크리덴셜</a>을 디지털 지갑에 저장한다.
+동문 <a>검증가능한 크리덴셜</a>을 받고, <a>검증가능한 크리덴셜</a>을 디지털 지갑에 저장한다.
         </p>
 
         <pre class="example nohighlight" title="검증 가능한 크리덴셜의 간단한 예">
@@ -886,7 +889,7 @@ Pat은 동문 할인을 받으려 한다. 티켓 판매 시스템인 <a>검증�
 프로세스를 시작한다. 이 프로세스의 단계는 동문 <a>검증가능한 크리덴셜</a>을 요청하며 이 요청은 Pat의 
 디지털 지갑으로 라우팅된다. 전자 지갑은 Pat에게 이전에 발급 된 <a>검증가능한 크리덴셜</a>을 제공 할 것인지 
 묻는다. Pat은 동문 <a>검증가능한 크리덴셜</a>을 선택하여 <a>검증가능한 프레젠테이션</a>으로 구성한다. <a>검증가능한 
-프리젠테이션</a>이 <a>검증자</a>에게 전송되고 <a>검증</a>된다.
+프레젠테이션</a>이 <a>검증자</a>에게 전송되고 <a>검증</a>된다.
         </p>
         <pre class="example nohighlight" title="검증 가능한 프레젠테이션의 간단한 예">
 {
@@ -1031,7 +1034,7 @@ JSON-LD에서 <code>@context</code> <a>속성</a>을 사용하여 데이터 유�
 }
         </pre>
         <p>
-위의 예는 기본 컨텍스트 <a>URI</a> (<code>https://www.w3.org/2018/credentials/v1<code>)를 사용하여 
+위의 예는 기본 컨텍스트 <a>URI</a> (<code>https://www.w3.org/2018/credentials/v1</code>)를 사용하여 
 대화가 <a>검증가능한 크리덴셜</a>에 
 관한 것임을 설정한다. 두 번째 <a>URI</a> (<code>https://www.w3.org/2018/credentials/examples/v1</code>)는 
 대화가 예제에 관한 것임을 설정한다.
@@ -4939,7 +4942,7 @@ BjYgP62KvhIvW8BbkGUelYMetA
       </figcaption>
     </figure>
     <section class="informative">
-      <h4>주체가 보유자</h4>
+      <h4>주체가 보유자인 경우</h4>
 
       <p>
         가장 일반적인 관계는 <a>주체</a>가 <a>보유자</a>인 경우이다. 
