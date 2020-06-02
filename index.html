@@ -2177,115 +2177,95 @@ JSON-LD에서 <code>@context</code> <a>속성</a>을 사용하여 데이터 유�
       </p>
 
       <section id="semantic-interoperability">
-        <h4>Semantic Interoperability</h4>
+        <h4>의미론적 상호운용성</h4>
 
         <p>
-          This specification ensures that "plain" JSON and JSON-LD syntaxes are
-          semantically compatible without requiring JSON implementations to use a JSON-LD
-          processor. To achieve this, the specification imposes the following additional
-          requirements on both syntaxes:
+          본 규격은 JSON-LD 프로세서를 사용하기 위한 JSON 구현의 필요 없이 
+          전통적인 JSON 과 JSON-LD의 문법이 의미적으로 호환되도록 보장한다. 
+          이를 달성하기 위해서, 규격은 다음의 추가적인 요구사항을 양쪽 모두의 문법에 부과한다.
         </p>
 
         <ul>
           <li>
-            JSON-based processors MUST process the <code>@context</code> key, ensuring the
-            expected values exist in the expected order for the <a>credential</a> type being
-            processed. The order is important because keys used in a <a>credential</a>,
-            which are defined using the values associated with <code>@context</code>, are
-            defined using a "first defined wins" mechanism and changing the order might
-            result in a different key definition "winning".
+            JSON 기반의 프로세서들은 반드시 <code>@context</code> 키를 처리해야 한다. 
+            <a>크리덴셜</a> 타입이 처리되기 위해서는 기대되는 값들이 기대되는 순서로 존재하는 것이 보장되어야 하기 때문이다. 
+            그 순서가 중요하다. 크레덴션에 사용된 키들은 <code>@context</code>와 관련된 값들을 이용하여 정의되고, 
+            “먼저 정의된 것이 이기는” 메커니즘에 의하여 정의되기 때문에 순서를 바꾸는 것은 다른 정의가 “이기는” 결과를 초래한다.
           </li>
           <li>
-            JSON-LD-based processors MUST produce an error when a JSON-LD context redefines
-            any term in the
-            <a href="https://www.w3.org/TR/json-ld/#dfn-active-context">active context</a>.
-            The only way to change the definition of existing terms is to introduce a new
-            term that clears the active context within the scope of that new term. Authors
-            that are interested in this feature should read about the
-            <code>@protected</code> feature in the JSON-LD 1.1 specification.
+            JSON-LD 컨텍스트가 <a href="https://www.w3.org/TR/json-ld/#dfn-active-context">액티브 컨텍스트</a> 안의 
+            term을 재정의할 경우 JSON-LD 기반의 프로세서들은 반드시 에러를 생성해야 한다. 
+            기존 term들의 정의를 변경하는 유일한 방법은 새로운 term을 도입하여 새로운 term의 스코프 내에서 액티브 컨텍스트를 지우는 것이다.
+            이 기능에 관심있는 사람은 JSON-LD 1.1 규격의 <code>@protected</code> 기능을 살펴보아야 한다.
           </li>
         </ul>
 
         <p>
-          A human-readable document describing the expected order of values for the
-          <code>@context</code> <a>property</a> is expected to be published by any
-          implementer seeking interoperability. A machine-readable description
-          (that is, a normal JSON-LD Context document) is expected to be published
-          at the URL specified in the <code>@context</code> <a>property</a> by
-          JSON-LD implementers seeking interoperability.
+          <code>@context</code> <a>속성</a>의 기대되는 값 순서를 기술하는, 
+          사람이 읽을 수 있는 문서는 상호운용성을 추구하는 구현자에 의하여 게시되어야 한다. 
+          기계가 읽을 수 있는 설명(즉, 일반 JSON-LD 컨텍스트 문서)는 
+          상호 운용성을 추구하는 JSON-LD 구현자가 <code>@context</code> <a>속성</a>에 지정된 URL에 게시해야 한다.
         </p>
 
         <p>
-          The requirements above guarantee semantic interoperability between JSON and
-          JSON-LD for terms defined by the <code>@context</code> mechanism. While JSON-LD
-          processors will use the specific mechanism provided and can verify that all
-          terms are correctly specified, JSON-based processors implicitly accept the same
-          set of terms without testing that they are correct. In other words, the context
-          in which the data exchange happens is explicitly stated for both JSON and
-          JSON-LD by using the same mechanism. With respect to JSON-based processors, this
-          is achieved in a lightweight manner, without having to use JSON-LD processing
-          libraries.
+          위의 요구사항은 <code>@context</code> 메커니즘에 의해 정의된 term에 대해 
+          JSON과 JSON-LD 간의 의미론적 상호운용성을 보장한다. 
+          JSON-LD 프로세서가 특정 메커니즘을 사용하여 모든 term이 올바르게 지정되었는지 확인할 수 있는 반면, 
+          JSON 기반 프로세서는 term들이 올바르게 지정되었는지 확인하는 테스트 없이 암시적으로 동일한 term들의 집합을 수용한다. 
+          즉, 데이터 교환이 발생하는 컨텍스트는 동일한 메커니즘을 사용하여 JSON과 JSON-LD 모두에서 명시적으로 선언된다. 
+          이것이 JSON 기반 프로세서에서는 JSON-LD 처리 라이브러리를 사용할 필요없이 간단한 방식으로 달성된다.
       </section>
     </section>
 
-    <section>
-      <h3>Data Schemas</h3>
+    <section id="data-schemas">
+      <h3>데이터 스키마</h3>
 
       <p>
-        Data schemas are useful when enforcing a specific structure on a given
-        collection of data. There are at least two types of data schemas that this
-        specification considers:
+        데이터 스키마는 주어진 데이터 컬렉션에 특정 구조를 적용할 때 유용하다. 
+        이 규격에서는 고려하는 데이터 스키마 유형은 최소 두 가지가 있다.
       </p>
 
       <ul>
         <li>
-          Data verification schemas, which are used to <a>verify</a> that the structure
-          and contents of a <a>verifiable credential</a> conform to a published schema.
+          데이터 검증 스키마는 <a>검증가능한 크리덴셜</a>의 구조와 내용이 게시된 스키마를 따르는지 <a>검증</a>하는 데 사용된다.
         </li>
         <li>
-          Data encoding schemas, which are used to map the contents of a
-          <a>verifiable credential</a> to an alternative representation format, such as a
-          binary format used in a zero-knowledge proof.
+          데이터 인코딩 스키마는 <a>검증가능한 크리덴셜</a>을 대체 표현 형식으로 맵핑하는데 사용된다. 
+          이 때 대체 표현 형식이란 영지식 증명에서 사용되는 이진 형식 같은 것을 의미한다.
         </li>
       </ul>
 
       <p>
-        It is important to understand that data schemas serve a different purpose from
-        the <code>@context</code> property, which neither enforces data structure or
-        data syntax, nor enables the definition of arbitrary encodings to alternate
-        representation formats.
+        데이터 스키마는 <code>@context</code>와는 다른 용도로 사용된다는 것을 이해해야 한다. 
+        <code>@context</code> 속성은 데이터 구조나 데이터 구문을 강요하지도 않고 
+        임의의 인코딩 정의를 대체 표현 형식으로 변환하게 할 수도 없다.
       </p>
 
       <p>
-        This specification defines the following <a>property</a> for the expression of a
-        data schema:
+        이 규격은 데이터 스키마 표현을 위해 다음 <a>속성</a>을 정의한다.
       </p>
 
       <dl>
         <dt><var>credentialSchema</var></dt>
         <dd>
-          The value of the <code>credentialSchema</code> <a>property</a> MUST be one or
-          more data schemas that provide <a>verifiers</a> with enough information to
-          determine if the provided data conforms to the provided schema. Each
-          <code>credentialSchema</code> MUST specify its <code>type</code> (for example,
-          <code>JsonSchemaValidator2018</code>), and an <code>id</code> <a>property</a>
-          that MUST be a <a>URI</a> identifying the schema file. The precise contents of
-          each data schema is determined by the specific type definition.
+          <code>credentialSchema</code> <a>속성</a>의 값은 
+          제공된 데이터가 제공된 스키마와 일치하는지 판별하기에 충분한 정보를 <a>검증자</a>에게 제공하는 
+          하나 이상의 데이터 스키마여야 한다. 
+          각각의 <code>credentialSchema</code>은 그것의 타입을 지정해야 한다(예: <code>JsonSchemaValidator2018</code>). 
+          <code>credentialSchema</code>의 <code>id</code> <a>속성</a>은 스키마 파일을 식별할 수 있는 <a>URI</a>여야 한다. 
+          각 데이터 스키마의 정확한 내용은 구체적인 타입 정의에 의해 결정된다.
         </dd>
       </dl>
 
       <p class="note">
-        The <code>credentialSchema</code> <a>property</a> provides an opportunity to
-        annotate type definitions or lock them to specific versions of the vocabulary.
-        Authors of <a>verifiable credentials</a> can include a static version of their
-        vocabulary using <code>credentialSchema</code> that is locked to some content
-        integrity protection mechanism. The <code>credentialSchema</code>
-        <a>property</a> also makes it possible to perform syntactic checking on the
-        <a>credential</a> and to use <a>verification</a> mechanisms such as JSON Schema
-        [[JSON-SCHEMA-2018]] validation.
+        <code>credentialSchema</code> <a>속성</a>은 타입 정의에 주석을 달거나 특정 버전의 용어에 고정할 수 있게 한다. 
+        <a>검증가능한 크리덴셜</a>의 작성자는 일부 콘텐츠 무결성 보호 메커니즘에 고정된 <code>credentialSchema</code>을 사용하여 
+        정적 버전의 용어를 포함할 수 있다. 
+        <code>credentialSchema</code> <a>속성</a>을 사용하면 <a>크리덴셜</a>에 대해 구문 검사를 수행하고 
+        JSON 스키마 [[JSON-SCHEMA-2018]] 유효성 검사와 같은 검증 메커니즘을 사용할 수 있다.
       </p>
 
-      <pre class="example nohighlight" title="Usage of the credentialSchema property to perform JSON schema validation">
+      <pre class="example nohighlight" title="JSON 스키마 유효성 검사을 수행하기 위한 credentialSchema 속성의 사용">
 {
   "@context": [
     "https://www.w3.org/2018/credentials/v1",
@@ -2311,16 +2291,14 @@ JSON-LD에서 <code>@context</code> <a>속성</a>을 사용하여 데이터 유�
         </pre>
 
       <p>
-        In the example above, the <a>issuer</a> is specifying a
-        <code>credentialSchema</code>, which points to a [[?JSON-SCHEMA-2018]] file that
-        can be used by a <a>verifier</a> to determine if the
-        <a>verifiable credential</a> is well formed.
+        위의 예에서 <a>발급자</a>는 <code>credentialSchema</code>를 지정하고 있는데, 
+        해당 <code>credentialSchema</code>는 <a>검증가능한 크리덴셜</a>이 제대로 구성되어 있는지 확인할 수 있도록 
+        <a>검증자</a>가 사용할 수 있는 [[?JSON-SCHEMA-2018]] 파일을 가리킨다. 
       </p>
 
       <p class="note">
-        For information about linkages to JSON Schema [[JSON-SCHEMA-2018]] or other
-        optional <a>verification</a> mechanisms, see the Verifiable Credentials
-        Implementation Guidelines [[VC-IMP-GUIDE]] document.
+        JSON 스키마 [[JSON-SCHEMA-2018]] 또는 기타 검증 메커니즘에 대한 링크 정보는 
+        검증가능한 크리덴셜 구현 가이드라인 [[VC-IMP-GUIDE]] 문서를 참조.
       </p>
 
       <p>
@@ -2328,10 +2306,14 @@ JSON-LD에서 <code>@context</code> <a>속성</a>을 사용하여 데이터 유�
         as those used to perform zero-knowledge proofs. For more information on using
         the <code>credentialSchema</code> <a>property</a> with zero-knowledge proofs,
         see Section <a href="#zero-knowledge-proofs"></a>.
+
+        데이터 스키마를 사용하여 영지식 증명을 수행하는 데 사용되는 것과 같은 다른 이진 형식에 대한 맵핑을 지정할 수도 있다. 
+        영지식 증명으로 <code>credentialSchema</code> <a>속성</a>을 사용하는 것에 대한 자세한 정보는 
+        섹션 <a href="#zero-knowledge-proofs"></a>을 참조.
       </p>
 
       <pre class="example nohighlight"
-        title="Usage of the credentialSchema property to perform zero-knowledge validation">
+        title="영지식 유효성 검사을 위한 credentialSchema 속성 사용">
 {
   "@context": [
     "https://www.w3.org/2018/credentials/v1",
@@ -2357,66 +2339,55 @@ JSON-LD에서 <code>@context</code> <a>속성</a>을 사용하여 데이터 유�
         </pre>
 
       <p>
-        In the example above, the <a>issuer</a> is specifying a
-        <code>credentialSchema</code> pointing to a zero-knowledge packed binary data
-        format that is capable of transforming the input data into a format, which can
-        then be used by a <a>verifier</a> to determine if the proof provided with the
-        <a>verifiable credential</a> is valid.
+        위의 예에서 <a>발급자</a>는 영지식 증명용으로 패키징된 이진 데이터 형식을 가리키는 <code>credentialSchema</code>를 지정한다. 
+        이 이진 데이터 형식은 입력 데이터를 <a>검증자</a>가 이용할 수 있는 형식으로 변환할 수 있는데, 
+        <a>검증자</a>는 변환된 데이터 형식을 이용하여 <a>검증가능한 크리덴셜</a>과 함께 제공된 증명의 유효성을 확인할 수 있다.  
       </p>
 
     </section>
 
-    <section>
-      <h3>Refreshing</h3>
+    <section id="refreshing">
+      <h3>리프레싱</h3>
 
       <p>
-        It is useful for systems to enable the manual or automatic refresh of an
-        expired <a>verifiable credential</a>. For more information about expired
-        <a>verifiable credentials</a>, see Section <a href="#expiration"></a>. This
-        specification defines a <code>refreshService</code> <a>property</a>, which
-        enables an <a>issuer</a> to include a link to a refresh service.
+        만료된 <a>검증가능한 크리덴셜</a>을 수동 또는 자동으로 리프레시할 수 있게 하는 것은 시스템에 유용하다. 
+        만료된 <a>검증가능한 크리덴셜</a>에 대한 더 자세한 정보는 
+        섹션 <a href="#expiration"></a>에서 기술한다. 
+        이 규격은 <a>발급자</a>가 리프레시 서비스에 대한 링크를 포함할 수 있도록 <code>refreshService</code> <a>속성</a>을 정의한다. 
       </p>
       <p>
-        The <a>issuer</a> can include the refresh service as an element inside the
-        <a>verifiable credential</a> if it is intended for either the <a>verifier</a> or
-        the <a>holder</a> (or both), or inside the <a>verifiable presentation</a> if it
-        is intended for the <a>holder</a> only. In the latter case, this enables the
-        <a>holder</a> to refresh the <a>verifiable credential</a> before creating a
-        <a>verifiable presentation</a> to share with a <a>verifier</a>. In the former
-        case, including the refresh service inside the <a>verifiable credential</a>
-        enables either the <a>holder</a> or the <a>verifier</a> to perform future
-        updates of the <a>credential</a>.
+        만약 <a>검증가능한 크리덴셜</a>이 <a>검증자</a>나 <a>보유자</a>(또는 둘 다)를 위한 용도라면, 
+        <a>발급자</a>는 <a>검증가능한 크리덴셜</a> 내부의 요소로서 리프레시 서비스를 포함시킬 수 있고, 
+        <a>보유자</a>만을 위한 경우라면 <a>검증가능한 프레젠테이션</a> 내부의 요소로서 포함시킬 수 있다. 
+        후자의 경우, <a>검증자</a>와 공유할 <a>검증가능한 프레젠테이션</a>을 생성하기 전에 
+        <a>보유자</a>는 <a>검증가능한 크리덴셜</a>을 리프레시 할 수 있다. 
+        전자의 경우 <a>검증가능한 크리덴셜</a> 안에 리프레시 서비스를 포함시키면, 
+        <a>보유자</a>나 <a>검증자</a>가 <a>크리덴셜</a>의 향후 업데이트를 수행할 수 있다.
       </p>
       <p>
-        The refresh service is only expected to be used when either the
-        <a>credential</a> has expired or the <a>issuer</a> does not publish
-        <a>credential</a> status information. <a>Issuers</a> are advised not to put the
-        <code>refreshService</code> <a>property</a> in a <a>verifiable credential</a>
-        that does not contain public information or whose refresh service is not
-        protected in some way.
+        리프레시 서비스는 <a>크리덴셜</a>이 만료되었거나 
+        <a>발급자</a>가 <a>크리덴셜</a> 상태 정보를 게시하지 않은 경우에만 사용되어야 한다. 
+        공개된 정보를 포함하지 않거나 리프레시 서비스가 어떤 식으로든 보호되지 않는 검증 가능한 크리덴셜에 
+        <code>refreshService</code> <a>속성</a>을 넣는 것은 <a>발급자</a>에게 권장되지 않는다.  
       </p>
       <p class="note">
-        Placing a <code>refreshService</code> <a>property</a> in a
-        <a>verifiable credential</a> so that it is available to <a>verifiers</a> can
-        remove control and consent from the <a>holder</a> and allow the
-        <a>verifiable credential</a> to be issued directly to the <a>verifier</a>,
-        thereby bypassing the <a>holder</a>.
+        <a>검증자</a>가 사용할 수 있도록 <code>refreshService</code> <a>속성</a>을 <a>검증가능한 크리덴셜</a> 안에 배치하면 
+        <a>보유자</a>가 제어와 동의를 할 수 없게 되고 <a>검증가능한 크리덴셜</a>이 
+        직접적으로 <a>검증자</a>에게 발행되어 <a>보유자</a>를 우회하게 된다. 
       </p>
 
       <dl>
         <dt><var>refreshService</var></dt>
         <dd>
-          The value of the <code>refreshService</code> <a>property</a> MUST be one or
-          more refresh services that provides enough information to the recipient's
-          software such that the recipient can refresh the <a>verifiable credential</a>.
-          Each <code>refreshService</code> value MUST specify its <code>type</code> (for
-          example, <code>ManualRefreshService2018</code>) and its <code>id</code>, which
-          is the URL of the service. The precise content of each refresh service is
-          determined by the specific <code>refreshService</code> <a>type</a> definition.
+          <code>refreshService</code> <a>속성</a>의 값은 수신자가 <a>검증가능한 크리덴셜</a>을 리프레시할 수 있도록 
+          수신자의 소프트웨어에 충분한 정보를 제공하는 하나 이상의 리프레시 서비스여야 한다. 
+          각각의 <code>refreshService</code> 값은 타입(예: <code>ManualRefreshService2018</code>)과 
+          서비스의 URI인 <code>id</code>를 지정해야 한다. 
+          각 리프레시 서비스의 자세한 내용은 특정 <code>refreshService</code>의 <a>타입</a> 정의에 의해 결정된다. 
         </dd>
       </dl>
 
-      <pre class="example nohighlight" title="Usage of the refreshService property by an issuer">
+      <pre class="example nohighlight" title="발급자에 의한 refreshService 속성 사용">
 {
   "@context": [
     "https://www.w3.org/2018/credentials/v1",
@@ -2442,9 +2413,8 @@ JSON-LD에서 <code>@context</code> <a>속성</a>을 사용하여 데이터 유�
         </pre>
 
       <p>
-        In the example above, the <a>issuer</a> specifies a manual
-        <code>refreshService</code> that can be used by directing the <a>holder</a> or
-        the <a>verifier</a> to <code>https://example.edu/refresh/3732</code>.
+        위의 예에서 <a>발급자</a>는 <a>보유자</a> 또는 <a>검증자</a>를 
+        <code>https://example.edu/refresh/3732</code>로 디렉팅하는데 사용될 수 있는 수동 <code>refreshService</code>를 지정한다.
       </p>
 
     </section>
